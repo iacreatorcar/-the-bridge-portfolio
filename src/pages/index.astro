@@ -1,7 +1,6 @@
 ---
 // --- FRONTMATTER: Logica e Variabili ---
 const name = "Carmine D'alise";
-const headline = "Technical Operations Manager | Digital Solutions Architect";
 
 const quickLinks = [
   { name: "Main Portfolio", url: "https://carmine-dalise-portfolio.vercel.app/", icon: "📂" },
@@ -12,43 +11,43 @@ const quickLinks = [
 const cityTours = [
   { 
     title: "Rome: The Eternal City", 
-    desc_it: "Un viaggio cinematografico nel cuore della storia imperiale.",
-    desc_en: "A cinematic journey through the heart of imperial history.",
+    it: "Un viaggio cinematografico nel cuore della storia imperiale.",
+    en: "A cinematic journey through the heart of imperial history.",
     url: "https://youtu.be/I6D_WXXDE0o", 
     category: "Imperial Italy"
   },
   { 
     title: "Venice: Serene Waters", 
-    desc_it: "Esplorazione aerea e urbana della città sull'acqua.",
-    desc_en: "Aerial and urban exploration of the city on water.",
+    it: "Esplorazione aerea e urbana della città sull'acqua.",
+    en: "Aerial and urban exploration of the city on water.",
     url: "https://youtu.be/6HA0Han_aqc", 
     category: "Imperial Italy"
   },
   { 
     title: "Greenland Expedition", 
-    desc_it: "Riprese esclusive in condizioni estreme tra i ghiacci del nord.",
-    desc_en: "Exclusive footage in extreme conditions among northern icebergs.",
+    it: "Riprese esclusive in condizioni estreme tra i ghiacci del nord.",
+    en: "Exclusive footage in extreme conditions among northern icebergs.",
     url: "https://youtu.be/nD8ppejGs4Q", 
     category: "Extreme Expeditions"
   },
   { 
     title: "Barcelona Experience", 
-    desc_it: "L'energia della Catalogna vista attraverso l'occhio del drone.",
-    desc_en: "The energy of Catalonia seen through the drone's eye.",
+    it: "L'energia della Catalogna vista attraverso l'occhio del drone.",
+    en: "The energy of Catalonia seen through the drone's eye.",
     url: "https://youtu.be/n6kDGHPseNc", 
     category: "Mediterranean Gems"
   },
   { 
     title: "Dubrovnik: Pearl of the Adriatic", 
-    desc_it: "Tour delle mura storiche e della costa croata.",
-    desc_en: "Tour of historical walls and the Croatian coastline.",
+    it: "Tour delle mura storiche e della costa croata.",
+    en: "Tour of historical walls and the Croatian coastline.",
     url: "https://youtu.be/Wq83nqRWJKI", 
     category: "Mediterranean Gems"
   },
   { 
     title: "Zante: The Blue Horizon", 
-    desc_it: "Scoperta delle acque cristalline e delle scogliere greche.",
-    desc_en: "Discovery of crystal clear waters and Greek cliffs.",
+    it: "Scoperta delle acque cristalline e delle scogliere greche.",
+    en: "Discovery of crystal clear waters and Greek cliffs.",
     url: "https://youtu.be/VYvCDKUl9PE", 
     category: "Mediterranean Gems"
   }
@@ -63,7 +62,16 @@ const cityTours = [
     <style>
         :root { --accent: #38bdf8; --bg: #020617; --card: #1e293b; }
         body { background: var(--bg); color: #f1f5f9; font-family: sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; padding: 2rem 0; }
-        .container { max-width: 900px; width: 90%; text-align: center; }
+        .container { max-width: 900px; width: 90%; text-align: center; position: relative; }
+        
+        /* Language Switcher Style */
+        .lang-switcher { position: fixed; top: 20px; right: 20px; display: flex; gap: 10px; z-index: 100; }
+        .lang-switcher button { 
+            background: #1e293b; border: 1px solid var(--accent); color: white; 
+            padding: 8px 15px; border-radius: 20px; cursor: pointer; transition: 0.3s; font-size: 0.8rem;
+        }
+        .lang-switcher button.active { background: var(--accent); color: var(--bg); font-weight: bold; }
+
         .nav-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
         .nav-card { background: var(--card); padding: 2rem; border-radius: 1rem; border: 1px solid rgba(56, 189, 248, 0.3); text-decoration: none; color: white; transition: 0.3s; display: block; }
         .nav-card:hover { transform: translateY(-5px); border-color: var(--accent); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
@@ -79,9 +87,16 @@ const cityTours = [
     </style>
 </head>
 <body>
+    <div class="lang-switcher">
+        <button onclick="setLanguage('it')" id="btn-it" class="active">IT 🇮🇹</button>
+        <button onclick="setLanguage('en')" id="btn-en">EN 🇬🇧</button>
+    </div>
+
     <div class="container">
         <h1>THE BRIDGE</h1>
-        <p style="color: var(--accent); font-weight: bold; font-size: 1.2rem;">{headline}</p>
+        <p id="headline" style="color: var(--accent); font-weight: bold; font-size: 1.2rem;">
+            Technical Operations Manager | Digital Solutions Architect
+        </p>
         
         <div class="nav-grid">
             {quickLinks.map(link => (
@@ -93,7 +108,7 @@ const cityTours = [
         </div>
 
         <div class="video-section">
-            <h2 style="font-size: 1.8rem; border-bottom: 2px solid var(--accent); padding-bottom: 0.8rem; margin-bottom: 2rem;">
+            <h2 id="video-title" style="font-size: 1.8rem; border-bottom: 2px solid var(--accent); padding-bottom: 0.8rem; margin-bottom: 2rem;">
                 🌍 Global City Tours & Drone Media
             </h2>
             <div class="video-grid">
@@ -106,29 +121,50 @@ const cityTours = [
                         
                         <h3 style="margin: 0 0 1rem 0; font-size: 1.3rem; color: #fff;">{tour.title}</h3>
                         
-                        <div style="display: flex; flex-direction: column; gap: 12px;">
-                            <div style="display: flex; align-items: flex-start; gap: 10px;">
-                                <span style="font-size: 1.1rem;">🇮🇹</span>
-                                <p style="font-size: 0.85rem; color: #94a3b8; margin: 0; line-height: 1.4;">{tour.desc_it}</p>
-                            </div>
-                            <div style="display: flex; align-items: flex-start; gap: 10px;">
-                                <span style="font-size: 1.1rem;">🇬🇧</span>
-                                <p style="font-size: 0.85rem; color: #94a3b8; margin: 0; line-height: 1.4;">{tour.desc_en}</p>
-                            </div>
-                        </div>
+                        <p class="lang-text" 
+                           data-it={tour.it} 
+                           data-en={tour.en} 
+                           style="font-size: 0.9rem; color: #94a3b8; margin: 0; line-height: 1.4;">
+                            {tour.it}
+                        </p>
                     </a>
                 ))}
             </div>
         </div>
 
         <div class="bio">
-            <p>"Unire 20 anni di logistica navale con lo sviluppo software moderno. <br>
-            Knowledge: <strong>Otallo, Sanity CMS, Stripe, SourceToAD</strong>."</p>
+            <p id="bio-text" 
+               data-it=' "Unire 20 anni di logistica navale con lo sviluppo software moderno. <br> Knowledge: Otallo, Sanity CMS, Stripe, SourceToAD." '
+               data-en=' "Merging 20 years of maritime logistics with modern software development. <br> Knowledge: Otallo, Sanity CMS, Stripe, SourceToAD." '>
+                "Unire 20 anni di logistica navale con lo sviluppo software moderno. <br>
+                Knowledge: <strong>Otallo, Sanity CMS, Stripe, SourceToAD</strong>."
+            </p>
         </div>
         
         <div style="margin-top: 4rem; font-size: 0.85rem; opacity: 0.6; border-top: 1px solid #1e293b; padding-top: 2rem;">
             Digital Experience Lead @ Aroya Cruises | Former Technical Manager @ MSC
         </div>
     </div>
+
+    <script is:inline>
+        function setLanguage(lang) {
+            // 1. Aggiorna i pulsanti
+            document.getElementById('btn-it').classList.toggle('active', lang === 'it');
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+
+            // 2. Aggiorna il Titolo della sezione Video
+            const videoTitle = document.getElementById('video-title');
+            videoTitle.innerText = lang === 'it' ? "🌍 City Tours Globali & Drone Media" : "🌍 Global City Tours & Drone Media";
+
+            // 3. Aggiorna la Bio
+            const bio = document.getElementById('bio-text');
+            bio.innerHTML = bio.getAttribute('data-' + lang);
+
+            // 4. Aggiorna tutte le descrizioni dei Video
+            document.querySelectorAll('.lang-text').forEach(el => {
+                el.innerText = el.getAttribute('data-' + lang);
+            });
+        }
+    </script>
 </body>
 </html>

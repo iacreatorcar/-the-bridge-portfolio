@@ -1,28 +1,28 @@
-# 🚢 THE BRIDGE | Carmine D'Alise - Professional Portfolio
+# 🚢 THE BRIDGE | Carmine D'Alise
+### Tech Operations Manager & Digital Solutions Architect
 
-**THE BRIDGE** è un ecosistema digitale interattivo che rappresenta il punto di incontro tra 20 anni di esperienza nella logistica navale e le più moderne tecnologie di sviluppo software. Sviluppato con **Astro**, questo portfolio è ottimizzato per velocità, SEO e chiarezza professionale.
+**THE BRIDGE** is a professional interactive ecosystem representing the nexus between 20 years of expertise in maritime logistics and modern full-stack software development. Built with **Astro**, this portfolio is engineered for high performance, SEO optimization, and professional clarity.
 
 
 
-## 🚀 Visione del Progetto
-A differenza di un portfolio standard, "The Bridge" è progettato come un hub centrale per:
-- **Tech Stack:** Visualizzazione dinamica delle competenze (React, Docker, AI, Cisco).
-- **Maritime SOP & Audit:** Accesso diretto a procedure operative e report tecnici.
-- **Creative Media:** Integrazione di contenuti visivi e riprese aeree (City Tours).
-- **Professional Path:** Timeline interattiva delle certificazioni e dell'esperienza MSC/Aroya.
+## 🚀 Project Vision
+Unlike a standard resume, "The Bridge" serves as a central hub for:
+- **Comprehensive Tech Stack:** Dynamic visualization of core competencies (React, Docker, AI, Cisco Networking).
+- **Maritime SOP & Audit:** Direct access to standard operating procedures, digital audit reports, and technical demos.
+- **Creative Media:** Integration of high-quality visual content and aerial cinematography (City Tours).
+- **Professional Roadmap:** Interactive timeline of certifications and career milestones (MSC, Aroya Cruises).
 
-## 🛠️ Core Tech Stack
-Il progetto utilizza le seguenti tecnologie:
-* **Framework:** Astro (Static Site Generation)
-* **Styling:** CSS3 (Modern Flex/Grid con approccio Mobile-First)
-* **Logic:** JavaScript (Vanilla JS per la gestione dei Tab e Multilingua)
-* **Deploy:** Vercel (CI/CD)
+## 🛠️ Core Technology Stack
+- **Framework:** Astro (Static Site Generation for lightning-fast loads)
+- **Styling:** CSS3 (Modern Flex/Grid with a Mobile-First approach)
+- **Logic:** Vanilla JavaScript (Efficient Tab management & Localization logic)
+- **Deployment:** Vercel (CI/CD Pipeline)
 
-## 📁 Struttura del Progetto
+## 📁 Project Structure
 ```text
 /
-├── public/              # Asset statici (Icone, Immagini)
+├── public/              # Static assets (Icons, Images)
 ├── src/
 │   └── pages/
-│       └── index.astro  # Core del Portfolio (Logica, Frontmatter, UI)
-└── package.json         # Dipendenze del progetto
+│       └── index.astro  # Core Portfolio (Logic, Data, & UI)
+└── package.json         # Project dependencies

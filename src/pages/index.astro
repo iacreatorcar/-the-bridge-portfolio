@@ -29,18 +29,27 @@ const cityTours = [
   { title: "Zante: The Blue Horizon", it: "Acque cristalline e scogliere greche.", en: "Crystal clear waters and Greek cliffs.", url: "https://youtu.be/VYvCDKUl9PE", category: "Med Gems" }
 ];
 
-const sopDocs = [
+const digitalProcedures = [
   { 
-    title: "SOP: IT & Maritime Logistics", 
-    it: "Procedure standard per l'integrazione di sistemi IT in ambiente navale.", 
-    en: "Standard procedures for IT systems integration in maritime environments.", 
-    url: "#" // Inserisci qui il link al PDF quando pronto
+    title: "General Technical Portfolio", 
+    it: "Panoramica completa delle competenze tecniche e demo on-board.", 
+    en: "Comprehensive overview of technical skills and on-board demos.", 
+    url: "https://www.canva.com/design/DAGFNejoyL4/MHkiG61sTBJYGzgKQS8NKQ/view",
+    type: "Portfolio"
   },
   { 
-    title: "Technical Audit Reports", 
-    it: "Framework di analisi per la conformità tecnologica e sicurezza.", 
-    en: "Analysis framework for technological compliance and security.", 
-    url: "#" 
+    title: "Audit Digital On-board Presentation", 
+    it: "Presentazione demo per l'audit dei sistemi digitali di bordo.", 
+    en: "Demo presentation for on-board digital systems audit.", 
+    url: "https://www.canva.com/design/DAG_slG5SOQ/q103hlBwW8zR5BM4FEqWdQ/edit",
+    type: "Canva"
+  },
+  { 
+    title: "S.O.P. Cabin Guest TVs", 
+    it: "Procedure operative standard per i sistemi TV nelle cabine ospiti.", 
+    en: "Standard operating procedures for guest cabin TV systems.", 
+    url: "https://www.canva.com/design/DAG_tM6ZZCo/0GixaphLXoGF_3fadZvxFw/edit",
+    type: "Canva"
   }
 ];
 ---
@@ -51,7 +60,7 @@ const sopDocs = [
     <meta name="viewport" content="width=device-width" />
     <title>The Bridge | {name}</title>
     <style>
-        :root { --accent: #38bdf8; --bg: #020617; --card: #1e293b; --gold: #fbbf24; }
+        :root { --accent: #38bdf8; --bg: #020617; --card: #1e293b; --gold: #fbbf24; --canva: #00c4cc; }
         body { background: var(--bg); color: #f1f5f9; font-family: sans-serif; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; }
         .container { max-width: 1000px; width: 90%; text-align: center; padding: 4rem 0; }
         
@@ -79,7 +88,8 @@ const sopDocs = [
         
         h1 { font-size: clamp(2.5rem, 8vw, 4rem); margin: 0; letter-spacing: -2px; }
         .badge { font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; border: 1px solid var(--accent); color: var(--accent); }
-        .btn-download { display: inline-block; margin-top: 1rem; font-size: 0.7rem; font-weight: bold; color: var(--gold); border: 1px solid var(--gold); padding: 5px 10px; border-radius: 4px; text-decoration: none; }
+        .btn-action { display: inline-block; margin-top: 1rem; font-size: 0.7rem; font-weight: bold; border: 1px solid var(--gold); color: var(--gold); padding: 5px 10px; border-radius: 4px; text-decoration: none; transition: 0.2s; }
+        .btn-action:hover { background: rgba(251, 191, 36, 0.1); }
     </style>
 </head>
 <body>
@@ -141,12 +151,15 @@ const sopDocs = [
 
         <div id="section-sop" class="content-section">
             <div class="grid-layout">
-                {sopDocs.map(doc => (
+                {digitalProcedures.map(doc => (
                     <div class="info-card">
-                        <span style="font-size: 1.5rem;">📑</span>
+                        <div style="display:flex; justify-content: space-between;">
+                            <span style="font-size: 1.5rem;">{doc.type === 'Portfolio' ? '🚀' : '📑'}</span>
+                            <span class="badge" style="border-color: var(--canva); color: var(--canva);">CANVA</span>
+                        </div>
                         <h4 style="margin: 0.8rem 0 0.2rem 0; color: #fff;">{doc.title}</h4>
                         <p class="lang-text" data-it={doc.it} data-en={doc.en} style="font-size: 0.8rem; opacity: 0.6;">{doc.it}</p>
-                        <a href={doc.url} download class="btn-download">DOWNLOAD PDF</a>
+                        <a href={doc.url} target="_blank" class="btn-action">VIEW PRESENTATION</a>
                     </div>
                 ))}
             </div>

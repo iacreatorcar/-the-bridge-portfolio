@@ -64,7 +64,6 @@ const cityTours = [
         body { background: var(--bg); color: #f1f5f9; font-family: sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; padding: 2rem 0; }
         .container { max-width: 900px; width: 90%; text-align: center; position: relative; }
         
-        /* Language Switcher Style */
         .lang-switcher { position: fixed; top: 20px; right: 20px; display: flex; gap: 10px; z-index: 100; }
         .lang-switcher button { 
             background: #1e293b; border: 1px solid var(--accent); color: white; 
@@ -93,7 +92,12 @@ const cityTours = [
     </div>
 
     <div class="container">
+        <div style="margin-bottom: 0.5rem; letter-spacing: 3px; font-size: 0.9rem; opacity: 0.7; color: var(--accent); text-transform: uppercase;">
+            {name} Presents
+        </div>
+
         <h1>THE BRIDGE</h1>
+        
         <p id="headline" style="color: var(--accent); font-weight: bold; font-size: 1.2rem;">
             Technical Operations Manager | Digital Solutions Architect
         </p>
@@ -109,7 +113,7 @@ const cityTours = [
 
         <div class="video-section">
             <h2 id="video-title" style="font-size: 1.8rem; border-bottom: 2px solid var(--accent); padding-bottom: 0.8rem; margin-bottom: 2rem;">
-                🌍 Global City Tours & Drone Media
+                🌍 City Tours Globali & Drone Media
             </h2>
             <div class="video-grid">
                 {cityTours.map(tour => (
@@ -141,26 +145,27 @@ const cityTours = [
             </p>
         </div>
         
-        <div style="margin-top: 4rem; font-size: 0.85rem; opacity: 0.6; border-top: 1px solid #1e293b; padding-top: 2rem;">
-            Digital Experience Lead @ Aroya Cruises | Former Technical Manager @ MSC
+        <div style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #1e293b; opacity: 0.9;">
+            <div style="font-weight: bold; font-size: 1.1rem; color: #fff; margin-bottom: 0.3rem;">
+                {name}
+            </div>
+            <div style="font-size: 0.85rem; opacity: 0.6;">
+                Digital Experience Lead @ Aroya Cruises | Former Technical Manager @ MSC
+            </div>
         </div>
     </div>
 
     <script is:inline>
         function setLanguage(lang) {
-            // 1. Aggiorna i pulsanti
             document.getElementById('btn-it').classList.toggle('active', lang === 'it');
             document.getElementById('btn-en').classList.toggle('active', lang === 'en');
 
-            // 2. Aggiorna il Titolo della sezione Video
             const videoTitle = document.getElementById('video-title');
             videoTitle.innerText = lang === 'it' ? "🌍 City Tours Globali & Drone Media" : "🌍 Global City Tours & Drone Media";
 
-            // 3. Aggiorna la Bio
             const bio = document.getElementById('bio-text');
             bio.innerHTML = bio.getAttribute('data-' + lang);
 
-            // 4. Aggiorna tutte le descrizioni dei Video
             document.querySelectorAll('.lang-text').forEach(el => {
                 el.innerText = el.getAttribute('data-' + lang);
             });

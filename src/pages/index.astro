@@ -8,12 +8,11 @@ const quickLinks = [
   { name: "Cruise CMS (Emergent)", url: "https://sea-services.emergent.host", icon: "🚢" }
 ];
 
-// --- NUOVA VARIABILE: TECH STACK ---
 const techStack = [
   {
     category: "Full-Stack & Web Dev",
     it: "Sviluppo Web e App Moderne",
-    items: ["React.js", "Astro", "HTML5/CSS3", "JS/JSON", "SQL", "Python", "C++", "Vercel"],
+    items: ["React.js", "Astro", "HTML5/CSS3", "JS/JSON", "SQL", "Python", "C++", "Vercel", "GitHub"],
     icon: "💻"
   },
   {
@@ -25,7 +24,7 @@ const techStack = [
   {
     category: "Cloud, AI & DevOps",
     it: "Infrastruttura e Automazione",
-    items: ["Azure", "Docker", "GitHub", "Relevance AI", "Mesh", "Discord Bots"],
+    items: ["Azure", "Docker", "Relevance AI", "Mesh", "Discord Bots", "API Integrations"],
     icon: "☁️"
   },
   {
@@ -42,10 +41,50 @@ const techStack = [
   }
 ];
 
-// Mantieni le costanti certifications, cityTours e digitalProcedures del codice precedente...
-const certifications = [ /* ... dati precedenti ... */ ];
-const cityTours = [ /* ... dati precedenti ... */ ];
-const digitalProcedures = [ /* ... dati precedenti ... */ ];
+const certifications = [
+  { title: "AI Automation Agent & Product Masterclass", issuer: "Udemy", date: "2025", it: "Sviluppo agenti AI e Design Thinking.", en: "AI Agent development and Design Thinking.", url: "https://alison.com/verify/aa8ea2b0de" },
+  { title: "Crestron CTI-CTF & 4K Dante Audinate", issuer: "Crestron / Audinate", date: "2024", it: "Sistemi AV over IP e controllo domotico.", en: "AV over IP systems and automation control.", url: null },
+  { title: "Cisco Networking Devices (ICND2) CCNA", issuer: "Alison / Cisco", date: "2023", it: "Gestione reti complesse Cisco.", en: "Managing complex Cisco networks.", url: "https://alison.com/verify/9459c939f3" },
+  { title: "Graphic Design & UI Visuals", issuer: "Alison", date: "2023", it: "Design visivo e comunicazione grafica.", en: "Visual design and graphic communication.", url: "https://alison.com/verify/97ee06d337" },
+  { title: "Cyber Security: Threats & Prevention", issuer: "Alison", date: "2023", it: "Analisi minacce e difesa informatica.", en: "Threat analysis and cyber defense.", url: "https://alison.com/verify/82ee5bf1f2" },
+  { title: "SAPUI5 Development & enterprise Apps", issuer: "Alison", date: "2023", it: "Sviluppo enterprise SAP e interfacce web.", en: "SAP enterprise development and web UI.", url: "https://alison.com/verify/e15fb4d2a0" },
+  { title: "Supply Chain & Content Management", issuer: "Alison", date: "2023", it: "Logistica e strategie contenuti digitali.", en: "Logistics and digital content strategies.", url: "https://alison.com/verify/10d6a15cd9" },
+  { title: "Technical Hardware & Networks", issuer: "Istituto Gamma", date: "2017", it: "Infrastrutture IT e networking.", en: "IT infrastructure and networking.", url: null },
+  { title: "High School Diploma: Elettronica", issuer: "Augusto Righi", date: "1999", it: "Hardware e telecomunicazioni.", en: "Hardware and telecommunications.", url: null }
+];
+
+const cityTours = [
+  { title: "Rome: The Eternal City", it: "Cuore della storia imperiale.", en: "Heart of imperial history.", url: "https://youtu.be/I6D_WXXDE0o", category: "Imperial Italy" },
+  { title: "Venice: Serene Waters", it: "Esplorazione aerea sull'acqua.", en: "Aerial exploration on water.", url: "https://youtu.be/6HA0Han_aqc", category: "Imperial Italy" },
+  { title: "Greenland Expedition", it: "Riprese esclusive tra i ghiacci.", en: "Extreme footage among ice.", url: "https://youtu.be/nD8ppejGs4Q", category: "Extreme" },
+  { title: "Barcelona Experience", it: "Energia della Catalogna (Drone).", en: "Catalonia energy (Drone).", url: "https://youtu.be/n6kDGHPseNc", category: "Med Gems" },
+  { title: "Dubrovnik: Pearl of Adriatic", it: "Mura storiche e costa croata.", en: "Historical walls and Croatian coast.", url: "https://youtu.be/Wq83nqRWJKI", category: "Med Gems" },
+  { title: "Zante: The Blue Horizon", it: "Acque cristalline e scogliere greche.", en: "Crystal clear waters and Greek cliffs.", url: "https://youtu.be/VYvCDKUl9PE", category: "Med Gems" }
+];
+
+const digitalProcedures = [
+  { 
+    title: "General Technical Portfolio", 
+    it: "Panoramica completa delle competenze tecniche e demo on-board.", 
+    en: "Comprehensive overview of technical skills and on-board demos.", 
+    url: "https://www.canva.com/design/DAGFNejoyL4/MHkiG61sTBJYGzgKQS8NKQ/view",
+    type: "Portfolio"
+  },
+  { 
+    title: "Audit Digital On-board Presentation", 
+    it: "Presentazione demo per l'audit dei sistemi digitali di bordo.", 
+    en: "Demo presentation for on-board digital systems audit.", 
+    url: "https://www.canva.com/design/DAG_slG5SOQ/q103hlBwW8zR5BM4FEqWdQ/edit",
+    type: "Canva"
+  },
+  { 
+    title: "S.O.P. Cabin Guest TVs", 
+    it: "Procedure operative standard per i sistemi TV nelle cabine ospiti.", 
+    en: "Standard operating procedures for guest cabin TV systems.", 
+    url: "https://www.canva.com/design/DAG_tM6ZZCo/0GixaphLXoGF_3fadZvxFw/edit",
+    type: "Canva"
+  }
+];
 ---
 
 <html lang="it">
@@ -55,41 +94,52 @@ const digitalProcedures = [ /* ... dati precedenti ... */ ];
     <title>The Bridge | {name}</title>
     <style>
         :root { --accent: #38bdf8; --bg: #020617; --card: #1e293b; --gold: #fbbf24; --canva: #00c4cc; --tech-bg: #111827; }
-        body { background: var(--bg); color: #f1f5f9; font-family: 'Inter', sans-serif; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; }
+        body { background: var(--bg); color: #f1f5f9; font-family: sans-serif; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; }
         .container { max-width: 1000px; width: 90%; text-align: center; padding: 4rem 0; }
         
+        /* Navigation Tabs */
         .tab-bar { display: flex; justify-content: center; gap: 0.5rem; margin: 3rem 0; border-bottom: 1px solid #1e293b; padding-bottom: 1rem; flex-wrap: wrap; }
-        .tab-btn { background: none; border: none; color: #94a3b8; font-size: 0.9rem; font-weight: bold; cursor: pointer; padding: 0.5rem 1rem; transition: 0.3s; position: relative; }
+        .tab-btn { background: none; border: none; color: #94a3b8; font-size: 0.85rem; font-weight: bold; cursor: pointer; padding: 0.5rem 0.8rem; transition: 0.3s; position: relative; }
         .tab-btn.active { color: var(--accent); }
         .tab-btn.active::after { content: ''; position: absolute; bottom: -1rem; left: 0; width: 100%; height: 2px; background: var(--accent); }
 
         .content-section { display: none; min-height: 400px; animation: fadeIn 0.4s ease-out; }
-        .content-section.active { display: block; }
+        .content-section.active { display: block !important; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
 
         .grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; text-align: left; }
         .info-card { background: #0f172a; border: 1px solid #1e293b; padding: 1.2rem; border-radius: 0.75rem; transition: 0.3s; text-decoration: none; color: inherit; display: block; }
         .info-card:hover { border-color: var(--accent); background: #1e293b; }
 
-        /* Tech Tags Styling */
-        .tech-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
-        .tag { background: var(--tech-bg); color: var(--accent); font-size: 0.75rem; padding: 4px 10px; border-radius: 20px; border: 1px solid rgba(56, 189, 248, 0.2); }
+        /* Tech Tags */
+        .tech-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem; }
+        .tag { background: var(--tech-bg); color: var(--accent); font-size: 0.7rem; padding: 3px 8px; border-radius: 12px; border: 1px solid rgba(56, 189, 248, 0.2); }
 
         .lang-switcher { position: fixed; top: 20px; right: 20px; z-index: 100; display: flex; gap: 5px; }
         .lang-switcher button { background: #1e293b; border: 1px solid var(--accent); color: white; padding: 5px 10px; border-radius: 10px; cursor: pointer; font-size: 0.7rem; }
-        
+        .lang-switcher button.active { background: var(--accent); color: var(--bg); }
+
         .nav-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 2rem 0; }
         .nav-card { background: var(--card); padding: 1rem; border-radius: 0.5rem; text-decoration: none; color: white; border: 1px solid rgba(56, 189, 248, 0.2); transition: 0.3s; }
+        .nav-card:hover { border-color: var(--accent); transform: translateY(-3px); }
         
         h1 { font-size: clamp(2.5rem, 8vw, 4rem); margin: 0; letter-spacing: -2px; }
         .badge { font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; border: 1px solid var(--accent); color: var(--accent); }
+        .btn-action { display: inline-block; margin-top: 1rem; font-size: 0.7rem; font-weight: bold; border: 1px solid var(--gold); color: var(--gold); padding: 5px 10px; border-radius: 4px; text-decoration: none; transition: 0.2s; }
+        .btn-action:hover { background: rgba(251, 191, 36, 0.1); }
     </style>
 </head>
 <body>
+    <div class="lang-switcher">
+        <button onclick="setLanguage('it')" id="btn-it" class="active">IT</button>
+        <button onclick="setLanguage('en')" id="btn-en">EN</button>
+    </div>
+
     <div class="container">
         <div style="letter-spacing: 4px; font-size: 0.8rem; opacity: 0.6; color: var(--accent);">CARMINE D'ALISE PRESENTS</div>
         <h1>THE BRIDGE</h1>
-        
+        <p style="opacity: 0.7; font-weight: 300; margin-top: 0.5rem;">Tech Operations Manager | Digital Solutions Architect</p>
+
         <div class="nav-grid">
             {quickLinks.map(link => (
                 <a href={link.url} target="_blank" class="nav-card">
@@ -123,16 +173,103 @@ const digitalProcedures = [ /* ... dati precedenti ... */ ];
             </div>
         </div>
 
+        <div id="section-certs" class="content-section">
+            <div class="grid-layout">
+                {certifications.map(cert => (
+                    <div class="info-card">
+                        <div style="display:flex; justify-content: space-between;">
+                            <span class="badge" style="border-color: var(--gold); color: var(--gold);">{cert.date}</span>
+                            {cert.url && <a href={cert.url} target="_blank" style="text-decoration:none;">🔗</a>}
+                        </div>
+                        <h4 style="margin: 0.8rem 0 0.2rem 0; color: #fff;">{cert.title}</h4>
+                        <small style="color: var(--accent);">{cert.issuer}</small>
+                        <p class="lang-text" data-it={cert.it} data-en={cert.en} style="font-size: 0.8rem; opacity: 0.6; margin-top: 0.5rem;">{cert.it}</p>
+                    </div>
+                ))}
+            </div>
         </div>
+
+        <div id="section-media" class="content-section">
+            <div class="grid-layout">
+                {cityTours.map(tour => (
+                    <a href={tour.url} target="_blank" class="info-card">
+                        <div style="display:flex; justify-content: space-between;">
+                            <span class="badge">{tour.category}</span>
+                            <span>📹</span>
+                        </div>
+                        <h4 style="margin: 0.8rem 0 0.2rem 0; color: #fff;">{tour.title}</h4>
+                        <p class="lang-text" data-it={tour.it} data-en={tour.en} style="font-size: 0.8rem; opacity: 0.6;">{tour.it}</p>
+                    </a>
+                ))}
+            </div>
+        </div>
+
+        <div id="section-sop" class="content-section">
+            <div class="grid-layout">
+                {digitalProcedures.map(doc => (
+                    <div class="info-card">
+                        <div style="display:flex; justify-content: space-between;">
+                            <span style="font-size: 1.5rem;">{doc.type === 'Portfolio' ? '🚀' : '📑'}</span>
+                            <span class="badge" style="border-color: var(--canva); color: var(--canva);">CANVA</span>
+                        </div>
+                        <h4 style="margin: 0.8rem 0 0.2rem 0; color: #fff;">{doc.title}</h4>
+                        <p class="lang-text" data-it={doc.it} data-en={doc.en} style="font-size: 0.8rem; opacity: 0.6;">{doc.it}</p>
+                        <a href={doc.url} target="_blank" class="btn-action">VIEW PRESENTATION</a>
+                    </div>
+                ))}
+            </div>
+        </div>
+
+        <div class="bio" style="margin-top: 5rem;">
+            <p id="bio-text" data-it='"20 anni di logistica navale incontrano lo sviluppo software moderno."' data-en='"20 years of maritime logistics meet modern software development."'>
+                "20 anni di logistica navale incontrano lo sviluppo software moderno."
+            </p>
+        </div>
+
+        <div style="margin-top: 3rem; opacity: 0.4; font-size: 0.7rem; border-top: 1px solid #1e293b; padding-top: 2rem;">
+            {name} | Digital Experience Lead @ Aroya Cruises | Former Technical Manager @ MSC
+        </div>
+    </div>
 
     <script is:inline>
         function showTab(tabName) {
-            document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
-            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-            document.getElementById('section-' + tabName).classList.add('active');
-            document.getElementById('tab-' + tabName).classList.add('active');
+            // 1. Rimuovi la classe active da TUTTE le sezioni e nascondile
+            document.querySelectorAll('.content-section').forEach(s => {
+                s.classList.remove('active');
+                s.style.display = 'none';
+            });
+
+            // 2. Rimuovi active da tutti i bottoni
+            document.querySelectorAll('.tab-btn').forEach(b => {
+                b.classList.remove('active');
+            });
+
+            // 3. Mostra solo la sezione selezionata
+            const selectedSection = document.getElementById('section-' + tabName);
+            if (selectedSection) {
+                selectedSection.classList.add('active');
+                selectedSection.style.display = 'block';
+            }
+
+            // 4. Attiva il bottone selezionato
+            const selectedBtn = document.getElementById('tab-' + tabName);
+            if (selectedBtn) {
+                selectedBtn.classList.add('active');
+            }
         }
-        // ... setLanguage function ...
+
+        function setLanguage(lang) {
+            document.getElementById('btn-it').classList.toggle('active', lang === 'it');
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+            const bio = document.getElementById('bio-text');
+            bio.innerText = bio.getAttribute('data-' + lang);
+            document.querySelectorAll('.lang-text').forEach(el => {
+                el.innerText = el.getAttribute('data-' + lang);
+            });
+        }
+
+        // Inizializzazione per sicurezza
+        window.onload = () => showTab('tech');
     </script>
 </body>
 </html>

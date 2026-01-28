@@ -11,11 +11,46 @@ const quickLinks = [
 
 const cityTours = [
   { 
-    title: "Global City Tour Experience", 
-    desc_it: "Produzione video professionale per agenzie turistiche e navi da crociera.",
-    desc_en: "Professional video production for travel agencies and cruise lines.",
-    url: "IL_LINK_CHE_MI_DARAI", 
-    category: "Drone & Cinematic" 
+    title: "Rome: The Eternal City", 
+    desc_it: "Un viaggio cinematografico nel cuore della storia imperiale.",
+    desc_en: "A cinematic journey through the heart of imperial history.",
+    url: "https://youtu.be/I6D_WXXDE0o", 
+    category: "Imperial Italy"
+  },
+  { 
+    title: "Venice: Serene Waters", 
+    desc_it: "Esplorazione aerea e urbana della città sull'acqua.",
+    desc_en: "Aerial and urban exploration of the city on water.",
+    url: "https://youtu.be/6HA0Han_aqc", 
+    category: "Imperial Italy"
+  },
+  { 
+    title: "Greenland Expedition", 
+    desc_it: "Riprese esclusive in condizioni estreme tra i ghiacci del nord.",
+    desc_en: "Exclusive footage in extreme conditions among northern icebergs.",
+    url: "https://youtu.be/nD8ppejGs4Q", 
+    category: "Extreme Expeditions"
+  },
+  { 
+    title: "Barcelona Experience", 
+    desc_it: "L'energia della Catalogna vista attraverso l'occhio del drone.",
+    desc_en: "The energy of Catalonia seen through the drone's eye.",
+    url: "https://youtu.be/n6kDGHPseNc", 
+    category: "Mediterranean Gems"
+  },
+  { 
+    title: "Dubrovnik: Pearl of the Adriatic", 
+    desc_it: "Tour delle mura storiche e della costa croata.",
+    desc_en: "Tour of historical walls and the Croatian coastline.",
+    url: "https://youtu.be/Wq83nqRWJKI", 
+    category: "Mediterranean Gems"
+  },
+  { 
+    title: "Zante: The Blue Horizon", 
+    desc_it: "Scoperta delle acque cristalline e delle scogliere greche.",
+    desc_en: "Discovery of crystal clear waters and Greek cliffs.",
+    url: "https://youtu.be/VYvCDKUl9PE", 
+    category: "Mediterranean Gems"
   }
 ];
 ---
@@ -33,15 +68,14 @@ const cityTours = [
         .nav-card { background: var(--card); padding: 2rem; border-radius: 1rem; border: 1px solid rgba(56, 189, 248, 0.3); text-decoration: none; color: white; transition: 0.3s; display: block; }
         .nav-card:hover { transform: translateY(-5px); border-color: var(--accent); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
         
-        /* Stili per la nuova sezione Video */
         .video-section { margin-top: 4rem; text-align: left; }
         .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
-        .video-card { background: #0f172a; border-left: 4px solid var(--accent); padding: 1.5rem; border-radius: 0.5rem; text-decoration: none; color: white; transition: 0.2s; }
-        .video-card:hover { background: #1e293b; }
+        .video-card { background: #0f172a; border-left: 4px solid var(--accent); padding: 1.5rem; border-radius: 0.5rem; text-decoration: none; color: white; transition: 0.2s; display: block; }
+        .video-card:hover { background: #1e293b; transform: scale(1.02); }
         
         .bio { opacity: 0.8; margin-top: 3rem; font-style: italic; line-height: 1.6; }
         h1 { font-size: clamp(2.5rem, 8vw, 4rem); margin-bottom: 0; letter-spacing: -1px; }
-        .badge { font-size: 0.7rem; text-transform: uppercase; color: var(--accent); letter-spacing: 2px; }
+        .badge { font-size: 0.7rem; text-transform: uppercase; color: var(--accent); letter-spacing: 2px; background: rgba(56, 189, 248, 0.1); padding: 4px 8px; border-radius: 4px; }
     </style>
 </head>
 <body>
@@ -59,16 +93,29 @@ const cityTours = [
         </div>
 
         <div class="video-section">
-            <h2 style="font-size: 1.5rem; border-bottom: 1px solid #334155; padding-bottom: 0.5rem;">
-                🌍 City Tours & Media Operations
+            <h2 style="font-size: 1.8rem; border-bottom: 2px solid var(--accent); padding-bottom: 0.8rem; margin-bottom: 2rem;">
+                🌍 Global City Tours & Drone Media
             </h2>
             <div class="video-grid">
                 {cityTours.map(tour => (
                     <a href={tour.url} target="_blank" class="video-card">
-                        <div class="badge">{tour.category}</div>
-                        <h3 style="margin: 0.5rem 0;">{tour.title}</h3>
-                        <p style="font-size: 0.9rem; color: #94a3b8; margin-bottom: 0.5rem;">🇮🇹 {tour.desc_it}</p>
-                        <p style="font-size: 0.9rem; color: #94a3b8;">🇬🇧 {tour.desc_en}</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <span class="badge">{tour.category}</span>
+                            <span style="font-size: 1.2rem;">📹</span>
+                        </div>
+                        
+                        <h3 style="margin: 0 0 1rem 0; font-size: 1.3rem; color: #fff;">{tour.title}</h3>
+                        
+                        <div style="display: flex; flex-direction: column; gap: 12px;">
+                            <div style="display: flex; align-items: flex-start; gap: 10px;">
+                                <span style="font-size: 1.1rem;">🇮🇹</span>
+                                <p style="font-size: 0.85rem; color: #94a3b8; margin: 0; line-height: 1.4;">{tour.desc_it}</p>
+                            </div>
+                            <div style="display: flex; align-items: flex-start; gap: 10px;">
+                                <span style="font-size: 1.1rem;">🇬🇧</span>
+                                <p style="font-size: 0.85rem; color: #94a3b8; margin: 0; line-height: 1.4;">{tour.desc_en}</p>
+                            </div>
+                        </div>
                     </a>
                 ))}
             </div>
@@ -79,7 +126,7 @@ const cityTours = [
             Knowledge: <strong>Otallo, Sanity CMS, Stripe, SourceToAD</strong>."</p>
         </div>
         
-        <div style="margin-top: 4rem; font-size: 0.85rem; opacity: 0.6; border-top: 1px solid #1e293b; pt-4;">
+        <div style="margin-top: 4rem; font-size: 0.85rem; opacity: 0.6; border-top: 1px solid #1e293b; padding-top: 2rem;">
             Digital Experience Lead @ Aroya Cruises | Former Technical Manager @ MSC
         </div>
     </div>

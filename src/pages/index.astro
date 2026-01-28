@@ -1,12 +1,22 @@
 ---
+// --- FRONTMATTER: Logica e Variabili ---
 const name = "Carmine D'alise";
 const headline = "Technical Operations Manager | Digital Solutions Architect";
 
-// Link diretti ai tuoi progetti reali
 const quickLinks = [
   { name: "Main Portfolio", url: "https://carmine-dalise-portfolio.vercel.app/", icon: "📂" },
   { name: "HotelFlow Manager", url: "https://hotelflow-manager.vercel.app/index.html", icon: "🏨" },
-  { name: "Emergent App", url: "https://sea-services.emergent.host", icon: "🚀" }
+  { name: "Cruise CMS (Emergent)", url: "https://sea-services.emergent.host", icon: "🚢" }
+];
+
+const cityTours = [
+  { 
+    title: "Global City Tour Experience", 
+    desc_it: "Produzione video professionale per agenzie turistiche e navi da crociera.",
+    desc_en: "Professional video production for travel agencies and cruise lines.",
+    url: "IL_LINK_CHE_MI_DARAI", 
+    category: "Drone & Cinematic" 
+  }
 ];
 ---
 
@@ -14,30 +24,54 @@ const quickLinks = [
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>The Bridge | Carmine D'alise</title>
+    <title>The Bridge | {name}</title>
     <style>
         :root { --accent: #38bdf8; --bg: #020617; --card: #1e293b; }
-        body { background: var(--bg); color: #f1f5f9; font-family: sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
-        .container { max-width: 800px; width: 90%; text-align: center; }
-        .nav-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 2rem; }
-        .nav-card { background: var(--card); padding: 2rem; border-radius: 1rem; border: 1px solid var(--accent); text-decoration: none; color: white; transition: 0.3s; }
-        .nav-card:hover { transform: scale(1.05); background: var(--accent); color: var(--bg); }
-        .bio { opacity: 0.8; margin-top: 2rem; font-style: italic; }
-        h1 { font-size: 3rem; margin-bottom: 0; }
+        body { background: var(--bg); color: #f1f5f9; font-family: sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; padding: 2rem 0; }
+        .container { max-width: 900px; width: 90%; text-align: center; }
+        .nav-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .nav-card { background: var(--card); padding: 2rem; border-radius: 1rem; border: 1px solid rgba(56, 189, 248, 0.3); text-decoration: none; color: white; transition: 0.3s; display: block; }
+        .nav-card:hover { transform: translateY(-5px); border-color: var(--accent); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+        
+        /* Stili per la nuova sezione Video */
+        .video-section { margin-top: 4rem; text-align: left; }
+        .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
+        .video-card { background: #0f172a; border-left: 4px solid var(--accent); padding: 1.5rem; border-radius: 0.5rem; text-decoration: none; color: white; transition: 0.2s; }
+        .video-card:hover { background: #1e293b; }
+        
+        .bio { opacity: 0.8; margin-top: 3rem; font-style: italic; line-height: 1.6; }
+        h1 { font-size: clamp(2.5rem, 8vw, 4rem); margin-bottom: 0; letter-spacing: -1px; }
+        .badge { font-size: 0.7rem; text-transform: uppercase; color: var(--accent); letter-spacing: 2px; }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>THE BRIDGE</h1>
-        <p style="color: var(--accent); font-weight: bold;">{headline}</p>
+        <p style="color: var(--accent); font-weight: bold; font-size: 1.2rem;">{headline}</p>
         
         <div class="nav-grid">
             {quickLinks.map(link => (
                 <a href={link.url} target="_blank" class="nav-card">
-                    <div style="font-size: 2rem;">{link.icon}</div>
+                    <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">{link.icon}</div>
                     <strong>{link.name}</strong>
                 </a>
             ))}
+        </div>
+
+        <div class="video-section">
+            <h2 style="font-size: 1.5rem; border-bottom: 1px solid #334155; padding-bottom: 0.5rem;">
+                🌍 City Tours & Media Operations
+            </h2>
+            <div class="video-grid">
+                {cityTours.map(tour => (
+                    <a href={tour.url} target="_blank" class="video-card">
+                        <div class="badge">{tour.category}</div>
+                        <h3 style="margin: 0.5rem 0;">{tour.title}</h3>
+                        <p style="font-size: 0.9rem; color: #94a3b8; margin-bottom: 0.5rem;">🇮🇹 {tour.desc_it}</p>
+                        <p style="font-size: 0.9rem; color: #94a3b8;">🇬🇧 {tour.desc_en}</p>
+                    </a>
+                ))}
+            </div>
         </div>
 
         <div class="bio">
@@ -45,8 +79,8 @@ const quickLinks = [
             Knowledge: <strong>Otallo, Sanity CMS, Stripe, SourceToAD</strong>."</p>
         </div>
         
-        <div style="margin-top: 3rem; font-size: 0.8rem; opacity: 0.5;">
-            Digital Experience Lead @ Aroya Cruises | Technical Manager @ MSC
+        <div style="margin-top: 4rem; font-size: 0.85rem; opacity: 0.6; border-top: 1px solid #1e293b; pt-4;">
+            Digital Experience Lead @ Aroya Cruises | Former Technical Manager @ MSC
         </div>
     </div>
 </body>

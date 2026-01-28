@@ -1,17 +1,53 @@
 ---
+const name = "Carmine D'alise";
+const headline = "Technical Operations Manager | Digital Solutions Architect";
 
+// Link diretti ai tuoi progetti reali
+const quickLinks = [
+  { name: "Main Portfolio", url: "https://carmine-dalise-portfolio.vercel.app/", icon: "📂" },
+  { name: "HotelFlow Manager", url: "https://hotelflow-manager.vercel.app/index.html", icon: "🏨" },
+  { name: "Emergent App", url: "https://emergent-app.vercel.app/", icon: "🚀" }
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<html lang="it">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>The Bridge | Carmine D'alise</title>
+    <style>
+        :root { --accent: #38bdf8; --bg: #020617; --card: #1e293b; }
+        body { background: var(--bg); color: #f1f5f9; font-family: sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+        .container { max-width: 800px; width: 90%; text-align: center; }
+        .nav-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 2rem; }
+        .nav-card { background: var(--card); padding: 2rem; border-radius: 1rem; border: 1px solid var(--accent); text-decoration: none; color: white; transition: 0.3s; }
+        .nav-card:hover { transform: scale(1.05); background: var(--accent); color: var(--bg); }
+        .bio { opacity: 0.8; margin-top: 2rem; font-style: italic; }
+        h1 { font-size: 3rem; margin-bottom: 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>THE BRIDGE</h1>
+        <p style="color: var(--accent); font-weight: bold;">{headline}</p>
+        
+        <div class="nav-grid">
+            {quickLinks.map(link => (
+                <a href={link.url} target="_blank" class="nav-card">
+                    <div style="font-size: 2rem;">{link.icon}</div>
+                    <strong>{link.name}</strong>
+                </a>
+            ))}
+        </div>
+
+        <div class="bio">
+            <p>"Unire 20 anni di logistica navale con lo sviluppo software moderno. <br>
+            Knowledge: <strong>Otallo, Sanity CMS, Stripe, SourceToAD</strong>."</p>
+        </div>
+        
+        <div style="margin-top: 3rem; font-size: 0.8rem; opacity: 0.5;">
+            Digital Experience Lead @ Aroya Cruises | Technical Manager @ MSC
+        </div>
+    </div>
+</body>
 </html>

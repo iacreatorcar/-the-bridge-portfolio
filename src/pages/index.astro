@@ -9,115 +9,24 @@ const quickLinks = [
 ];
 
 const certifications = [
-  {
-    title: "High School Diploma: Elettronica e Telecomunicazioni",
-    issuer: "Augusto Righi",
-    date: "1994 - 1999",
-    it: "Diploma tecnico focalizzato su hardware, segnali e sistemi di comunicazione.",
-    en: "Technical diploma focused on hardware, signals, and communication systems.",
-    url: null
-  },
-  {
-    title: "Technical Hardware, Software & Networks",
-    issuer: "Istituto Gamma / Forma Temp",
-    date: "2016 - 2017",
-    it: "Specializzazione in gestione infrastrutture IT e networking professionale.",
-    en: "Specialization in IT infrastructure management and professional networking.",
-    url: null
-  },
-  {
-    title: "Crestron CTI-CTF & 4K Dante Audinate (Lv. 1-2)",
-    issuer: "Crestron / Audinate",
-    date: "2024",
-    it: "Certificazioni tecniche avanzate per sistemi AV over IP e controllo domotico professionale.",
-    en: "Advanced technical certifications for AV over IP systems and professional automation control.",
-    url: null
-  },
-  {
-    title: "AI Automation Agent & Product Masterclass",
-    issuer: "Udemy",
-    date: "2025",
-    it: "Sviluppo di agenti AI, Agile Development e Design Thinking applicato all'intelligenza artificiale.",
-    en: "AI Agent development, Agile Development, and Design Thinking applied to AI.",
-    url: "https://alison.com/verify/aa8ea2b0de"
-  },
-  {
-    title: "Cisco Networking Devices (ICND2) CCNA",
-    issuer: "Alison / Cisco",
-    date: "2023",
-    it: "Diploma professionale in configurazione e gestione di reti complesse Cisco.",
-    en: "Professional diploma in configuring and managing complex Cisco networks.",
-    url: "https://alison.com/verify/9459c939f3"
-  },
-  {
-    title: "Cyber Security: Threats & Prevention",
-    issuer: "Alison",
-    date: "2023",
-    it: "Analisi delle minacce informatiche e implementazione di strategie di difesa.",
-    en: "Cyber threat analysis and implementation of defense strategies.",
-    url: "https://alison.com/verify/82ee5bf1f2"
-  },
-  {
-    title: "SAPUI5 Development & Web Dev (HTML/CSS)",
-    issuer: "Alison",
-    date: "2023",
-    it: "Sviluppo di applicazioni enterprise SAP e interfacce web moderne.",
-    en: "Development of SAP enterprise applications and modern web interfaces.",
-    url: "https://alison.com/verify/e15fb4d2a0"
-  },
-  {
-    title: "Supply Chain & Content Management",
-    issuer: "Alison",
-    date: "2023",
-    it: "Gestione della catena di approvvigionamento e strategie di gestione contenuti.",
-    en: "Supply chain management and content management strategies.",
-    url: "https://alison.com/verify/10d6a15cd9"
-  }
+  { title: "AI Automation Agent & Product Masterclass", issuer: "Udemy", date: "2025", it: "Sviluppo agenti AI e Design Thinking.", en: "AI Agent development and Design Thinking.", url: "https://alison.com/verify/aa8ea2b0de", cat: "Tech" },
+  { title: "Crestron CTI-CTF & 4K Dante Audinate", issuer: "Crestron / Audinate", date: "2024", it: "Sistemi AV over IP e controllo domotico.", en: "AV over IP systems and automation control.", url: null, cat: "Tech" },
+  { title: "Cisco Networking Devices (ICND2) CCNA", issuer: "Alison / Cisco", date: "2023", it: "Gestione reti complesse Cisco.", en: "Managing complex Cisco networks.", url: "https://alison.com/verify/9459c939f3", cat: "Tech" },
+  { title: "Graphic Design & UI Visuals", issuer: "Alison", date: "2023", it: "Design visivo e comunicazione grafica.", en: "Visual design and graphic communication.", url: "https://alison.com/verify/97ee06d337", cat: "Design" },
+  { title: "Cyber Security: Threats & Prevention", issuer: "Alison", date: "2023", it: "Analisi minacce e difesa informatica.", en: "Threat analysis and cyber defense.", url: "https://alison.com/verify/82ee5bf1f2", cat: "Tech" },
+  { title: "SAPUI5 Development & enterprise Apps", issuer: "Alison", date: "2023", it: "Sviluppo enterprise SAP e interfacce web.", en: "SAP enterprise development and web UI.", url: "https://alison.com/verify/e15fb4d2a0", cat: "Tech" },
+  { title: "Supply Chain & Content Management", issuer: "Alison", date: "2023", it: "Logistica e strategie contenuti digitali.", en: "Logistics and digital content strategies.", url: "https://alison.com/verify/10d6a15cd9", cat: "Management" },
+  { title: "Technical Hardware & Networks", issuer: "Istituto Gamma", date: "2017", it: "Infrastrutture IT e networking.", en: "IT infrastructure and networking.", url: null, cat: "Tech" },
+  { title: "High School Diploma: Elettronica", issuer: "Augusto Righi", date: "1999", it: "Hardware e telecomunicazioni.", en: "Hardware and telecommunications.", url: null, cat: "Education" }
 ];
 
 const cityTours = [
-  { 
-    title: "Rome: The Eternal City", 
-    it: "Un viaggio cinematografico nel cuore della storia imperiale.",
-    en: "A cinematic journey through the heart of imperial history.",
-    url: "https://youtu.be/I6D_WXXDE0o", 
-    category: "Imperial Italy"
-  },
-  { 
-    title: "Venice: Serene Waters", 
-    it: "Esplorazione aerea e urbana della città sull'acqua.",
-    en: "Aerial and urban exploration of the city on water.",
-    url: "https://youtu.be/6HA0Han_aqc", 
-    category: "Imperial Italy"
-  },
-  { 
-    title: "Greenland Expedition", 
-    it: "Riprese esclusive in condizioni estreme tra i ghiacci del nord.",
-    en: "Exclusive footage in extreme conditions among northern icebergs.",
-    url: "https://youtu.be/nD8ppejGs4Q", 
-    category: "Extreme Expeditions"
-  },
-  { 
-    title: "Barcelona Experience", 
-    it: "L'energia della Catalogna vista attraverso l'occhio del drone.",
-    en: "The energy of Catalonia seen through the drone's eye.",
-    url: "https://youtu.be/n6kDGHPseNc", 
-    category: "Mediterranean Gems"
-  },
-  { 
-    title: "Dubrovnik: Pearl of the Adriatic", 
-    it: "Tour delle mura storiche e della costa croata.",
-    en: "Tour of historical walls and the Croatian coastline.",
-    url: "https://youtu.be/Wq83nqRWJKI", 
-    category: "Mediterranean Gems"
-  },
-  { 
-    title: "Zante: The Blue Horizon", 
-    it: "Scoperta delle acque cristalline e delle scogliere greche.",
-    en: "Discovery of crystal clear waters and Greek cliffs.",
-    url: "https://youtu.be/VYvCDKUl9PE", 
-    category: "Mediterranean Gems"
-  }
+  { title: "Rome: The Eternal City", it: "Cuore della storia imperiale.", en: "Heart of imperial history.", url: "https://youtu.be/I6D_WXXDE0o", category: "Imperial Italy" },
+  { title: "Venice: Serene Waters", it: "Esplorazione aerea sull'acqua.", en: "Aerial exploration on water.", url: "https://youtu.be/6HA0Han_aqc", category: "Imperial Italy" },
+  { title: "Greenland Expedition", it: "Riprese estreme tra i ghiacci.", en: "Extreme footage among ice.", url: "https://youtu.be/nD8ppejGs4Q", category: "Extreme" },
+  { title: "Barcelona Experience", it: "Energia della Catalogna (Drone).", en: "Catalonia energy (Drone).", url: "https://youtu.be/n6kDGHPseNc", category: "Med Gems" },
+  { title: "Dubrovnik: Pearl of Adriatic", it: "Mura storiche e costa croata.", en: "Historical walls and Croatian coast.", url: "https://youtu.be/Wq83nqRWJKI", category: "Med Gems" },
+  { title: "Zante: The Blue Horizon", it: "Acque cristalline e scogliere greche.", en: "Crystal clear waters and Greek cliffs.", url: "https://youtu.be/VYvCDKUl9PE", category: "Med Gems" }
 ];
 ---
 
@@ -128,127 +37,119 @@ const cityTours = [
     <title>The Bridge | {name}</title>
     <style>
         :root { --accent: #38bdf8; --bg: #020617; --card: #1e293b; --gold: #fbbf24; }
-        body { background: var(--bg); color: #f1f5f9; font-family: sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; padding: 2rem 0; }
-        .container { max-width: 900px; width: 90%; text-align: center; position: relative; }
+        body { background: var(--bg); color: #f1f5f9; font-family: 'Inter', sans-serif; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; }
+        .container { max-width: 1000px; width: 90%; text-align: center; padding: 4rem 0; }
         
-        .lang-switcher { position: fixed; top: 20px; right: 20px; display: flex; gap: 10px; z-index: 100; }
-        .lang-switcher button { 
-            background: #1e293b; border: 1px solid var(--accent); color: white; 
-            padding: 8px 15px; border-radius: 20px; cursor: pointer; transition: 0.3s; font-size: 0.8rem;
-        }
-        .lang-switcher button.active { background: var(--accent); color: var(--bg); font-weight: bold; }
+        /* Navigation Tabs */
+        .tab-bar { display: flex; justify-content: center; gap: 1rem; margin: 3rem 0; border-bottom: 1px solid #1e293b; padding-bottom: 1rem; }
+        .tab-btn { background: none; border: none; color: #94a3b8; font-size: 1.1rem; font-weight: bold; cursor: pointer; padding: 0.5rem 1.5rem; transition: 0.3s; position: relative; }
+        .tab-btn.active { color: var(--accent); }
+        .tab-btn.active::after { content: ''; position: absolute; bottom: -1rem; left: 0; width: 100%; height: 2px; background: var(--accent); }
 
-        .nav-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
-        .nav-card { background: var(--card); padding: 2rem; border-radius: 1rem; border: 1px solid rgba(56, 189, 248, 0.3); text-decoration: none; color: white; transition: 0.3s; display: block; }
-        .nav-card:hover { transform: translateY(-5px); border-color: var(--accent); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+        .content-section { display: none; animation: fadeIn 0.5s ease-in-out; }
+        .content-section.active { display: block; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; text-align: left; }
+        .info-card { background: #0f172a; border: 1px solid #1e293b; padding: 1.2rem; border-radius: 0.75rem; transition: 0.3s; text-decoration: none; color: inherit; display: block; }
+        .info-card:hover { border-color: var(--accent); background: #1e293b; }
+
+        .lang-switcher { position: fixed; top: 20px; right: 20px; z-index: 100; }
+        .lang-switcher button { background: #1e293b; border: 1px solid var(--accent); color: white; padding: 5px 12px; border-radius: 15px; cursor: pointer; font-size: 0.7rem; }
+        .lang-switcher button.active { background: var(--accent); color: var(--bg); }
+
+        .nav-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2rem; }
+        .nav-card { background: var(--card); padding: 1rem; border-radius: 0.5rem; text-decoration: none; color: white; border: 1px solid rgba(56, 189, 248, 0.2); }
         
-        .section-header { margin-top: 4rem; text-align: left; }
-        .grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
-        .info-card { background: #0f172a; border-left: 4px solid var(--accent); padding: 1.5rem; border-radius: 0.5rem; text-decoration: none; color: white; transition: 0.2s; display: block; text-align: left; }
-        .info-card:hover { background: #1e293b; transform: scale(1.02); }
-        
-        .bio { opacity: 0.8; margin-top: 3rem; font-style: italic; line-height: 1.6; }
-        h1 { font-size: clamp(2.5rem, 8vw, 4rem); margin-bottom: 0; letter-spacing: -1px; }
-        .badge { font-size: 0.7rem; text-transform: uppercase; color: var(--accent); letter-spacing: 2px; background: rgba(56, 189, 248, 0.1); padding: 4px 8px; border-radius: 4px; }
+        h1 { font-size: 3.5rem; margin: 0; letter-spacing: -2px; }
+        .badge { font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; background: rgba(56, 189, 248, 0.1); color: var(--accent); border: 1px solid var(--accent); }
     </style>
 </head>
 <body>
     <div class="lang-switcher">
-        <button onclick="setLanguage('it')" id="btn-it" class="active">IT 🇮🇹</button>
-        <button onclick="setLanguage('en')" id="btn-en">EN 🇬🇧</button>
+        <button onclick="setLanguage('it')" id="btn-it" class="active">IT</button>
+        <button onclick="setLanguage('en')" id="btn-en">EN</button>
     </div>
 
     <div class="container">
-        <div style="margin-bottom: 0.5rem; letter-spacing: 3px; font-size: 0.9rem; opacity: 0.7; color: var(--accent); text-transform: uppercase;">
-            {name} Presents
-        </div>
-
+        <div style="letter-spacing: 4px; font-size: 0.8rem; opacity: 0.6; color: var(--accent);">{name} PRESENTS</div>
         <h1>THE BRIDGE</h1>
-        
-        <p id="headline" style="color: var(--accent); font-weight: bold; font-size: 1.2rem;">
-            Technical Operations Manager | Digital Solutions Architect
-        </p>
-        
-        <div class="nav-grid">
+        <p style="opacity: 0.7; font-weight: 300; margin-top: 0.5rem;">Tech Operations Manager | Digital Solutions Architect</p>
+
+        <div class="nav-grid" style="margin-top: 2.5rem;">
             {quickLinks.map(link => (
                 <a href={link.url} target="_blank" class="nav-card">
-                    <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">{link.icon}</div>
-                    <strong>{link.name}</strong>
+                    <span style="display:block; font-size: 1.5rem;">{link.icon}</span>
+                    <small style="font-size: 0.7rem; font-weight: bold;">{link.name}</small>
                 </a>
             ))}
         </div>
 
-        <div class="section-header">
-            <h2 id="cert-title" style="font-size: 1.8rem; border-bottom: 2px solid var(--gold); padding-bottom: 0.8rem; margin-bottom: 2rem;">
-                📜 Certificazioni Professionali
-            </h2>
+        <div class="tab-bar">
+            <button class="tab-btn active" onclick="showTab('certs')" id="tab-certs">PATH & SKILLS</button>
+            <button class="tab-btn" onclick="showTab('media')" id="tab-media">CREATIVE MEDIA</button>
+        </div>
+
+        <div id="section-certs" class="content-section active">
             <div class="grid-layout">
                 {certifications.map(cert => (
-                    <div class="info-card" style="border-left-color: var(--gold);">
-                        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-                            <span class="badge" style="color: var(--gold); border: 1px solid var(--gold); background: none;">{cert.date}</span>
-                            {cert.url && <a href={cert.url} target="_blank" style="text-decoration:none; font-size: 1.2rem;">🔗</a>}
+                    <div class="info-card">
+                        <div style="display:flex; justify-content: space-between;">
+                            <span class="badge" style="border-color: var(--gold); color: var(--gold);">{cert.date}</span>
+                            {cert.url && <a href={cert.url} target="_blank" style="text-decoration:none;">🔗</a>}
                         </div>
-                        <h3 style="margin: 0.8rem 0 0.3rem 0; font-size: 1.1rem; color: #fff;">{cert.title}</h3>
-                        <p style="font-size: 0.8rem; color: var(--gold); margin-bottom: 0.8rem; font-weight: bold;">{cert.issuer}</p>
-                        <p class="lang-text" data-it={cert.it} data-en={cert.en} style="font-size: 0.85rem; color: #94a3b8; line-height: 1.4;">
-                            {cert.it}
-                        </p>
+                        <h4 style="margin: 0.8rem 0 0.2rem 0; color: #fff;">{cert.title}</h4>
+                        <small style="color: var(--accent);">{cert.issuer}</small>
+                        <p class="lang-text" data-it={cert.it} data-en={cert.en} style="font-size: 0.8rem; opacity: 0.6; margin-top: 0.5rem;">{cert.it}</p>
                     </div>
                 ))}
             </div>
         </div>
 
-        <div class="section-header">
-            <h2 id="video-title" style="font-size: 1.8rem; border-bottom: 2px solid var(--accent); padding-bottom: 0.8rem; margin-bottom: 2rem;">
-                🌍 City Tours Globali & Drone Media
-            </h2>
+        <div id="section-media" class="content-section">
             <div class="grid-layout">
                 {cityTours.map(tour => (
                     <a href={tour.url} target="_blank" class="info-card">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                        <div style="display:flex; justify-content: space-between;">
                             <span class="badge">{tour.category}</span>
-                            <span style="font-size: 1.2rem;">📹</span>
+                            <span>📹</span>
                         </div>
-                        <h3 style="margin: 0 0 1rem 0; font-size: 1.3rem; color: #fff;">{tour.title}</h3>
-                        <p class="lang-text" data-it={tour.it} data-en={tour.en} style="font-size: 0.9rem; color: #94a3b8; margin: 0; line-height: 1.4;">
-                            {tour.it}
-                        </p>
+                        <h4 style="margin: 0.8rem 0 0.2rem 0; color: #fff;">{tour.title}</h4>
+                        <p class="lang-text" data-it={tour.it} data-en={tour.en} style="font-size: 0.8rem; opacity: 0.6;">{tour.it}</p>
                     </a>
                 ))}
             </div>
         </div>
 
-        <div class="bio">
-            <p id="bio-text" 
-               data-it=' "Unire 20 anni di logistica navale con lo sviluppo software moderno. <br> Knowledge: Otallo, Sanity CMS, Stripe, SourceToAD." '
-               data-en=' "Merging 20 years of maritime logistics with modern software development. <br> Knowledge: Otallo, Sanity CMS, Stripe, SourceToAD." '>
-                "Unire 20 anni di logistica navale con lo sviluppo software moderno. <br>
-                Knowledge: <strong>Otallo, Sanity CMS, Stripe, SourceToAD</strong>."
+        <div class="bio" style="margin-top: 5rem;">
+            <p id="bio-text" data-it=' "20 anni di logistica navale incontrano lo sviluppo software moderno." ' data-en=' "20 years of maritime logistics meet modern software development." '>
+                "20 anni di logistica navale incontrano lo sviluppo software moderno."
             </p>
         </div>
-        
-        <div style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #1e293b; opacity: 0.9;">
-            <div style="font-weight: bold; font-size: 1.1rem; color: #fff; margin-bottom: 0.3rem;">
-                {name}
-            </div>
-            <div style="font-size: 0.85rem; opacity: 0.6;">
-                Digital Experience Lead @ Aroya Cruises | Former Technical Manager @ MSC
-            </div>
+
+        <div style="margin-top: 3rem; opacity: 0.4; font-size: 0.8rem; border-top: 1px solid #1e293b; padding-top: 2rem;">
+            {name} | Digital Experience Lead @ Aroya Cruises | Former Technical Manager @ MSC
         </div>
     </div>
 
     <script is:inline>
+        function showTab(tabName) {
+            // Gestione visibilità sezioni
+            document.getElementById('section-certs').classList.remove('active');
+            document.getElementById('section-media').classList.remove('active');
+            document.getElementById('section-' + tabName).classList.add('active');
+
+            // Gestione stile pulsanti
+            document.getElementById('tab-certs').classList.remove('active');
+            document.getElementById('tab-media').classList.remove('active');
+            document.getElementById('tab-' + tabName).classList.add('active');
+        }
+
         function setLanguage(lang) {
             document.getElementById('btn-it').classList.toggle('active', lang === 'it');
             document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-
-            const videoTitle = document.getElementById('video-title');
-            videoTitle.innerText = lang === 'it' ? "🌍 City Tours Globali & Drone Media" : "🌍 Global City Tours & Drone Media";
-
-            const certTitle = document.getElementById('cert-title');
-            certTitle.innerText = lang === 'it' ? "📜 Certificazioni Professionali" : "📜 Professional Certifications";
-
+            
             const bio = document.getElementById('bio-text');
             bio.innerHTML = bio.getAttribute('data-' + lang);
 

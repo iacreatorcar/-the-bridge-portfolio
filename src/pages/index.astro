@@ -8,6 +8,73 @@ const quickLinks = [
   { name: "Cruise CMS (Emergent)", url: "https://sea-services.emergent.host", icon: "🚢" }
 ];
 
+const certifications = [
+  {
+    title: "High School Diploma: Elettronica e Telecomunicazioni",
+    issuer: "Augusto Righi",
+    date: "1994 - 1999",
+    it: "Diploma tecnico focalizzato su hardware, segnali e sistemi di comunicazione.",
+    en: "Technical diploma focused on hardware, signals, and communication systems.",
+    url: null
+  },
+  {
+    title: "Technical Hardware, Software & Networks",
+    issuer: "Istituto Gamma / Forma Temp",
+    date: "2016 - 2017",
+    it: "Specializzazione in gestione infrastrutture IT e networking professionale.",
+    en: "Specialization in IT infrastructure management and professional networking.",
+    url: null
+  },
+  {
+    title: "Crestron CTI-CTF & 4K Dante Audinate (Lv. 1-2)",
+    issuer: "Crestron / Audinate",
+    date: "2024",
+    it: "Certificazioni tecniche avanzate per sistemi AV over IP e controllo domotico professionale.",
+    en: "Advanced technical certifications for AV over IP systems and professional automation control.",
+    url: null
+  },
+  {
+    title: "AI Automation Agent & Product Masterclass",
+    issuer: "Udemy",
+    date: "2025",
+    it: "Sviluppo di agenti AI, Agile Development e Design Thinking applicato all'intelligenza artificiale.",
+    en: "AI Agent development, Agile Development, and Design Thinking applied to AI.",
+    url: "https://alison.com/verify/aa8ea2b0de"
+  },
+  {
+    title: "Cisco Networking Devices (ICND2) CCNA",
+    issuer: "Alison / Cisco",
+    date: "2023",
+    it: "Diploma professionale in configurazione e gestione di reti complesse Cisco.",
+    en: "Professional diploma in configuring and managing complex Cisco networks.",
+    url: "https://alison.com/verify/9459c939f3"
+  },
+  {
+    title: "Cyber Security: Threats & Prevention",
+    issuer: "Alison",
+    date: "2023",
+    it: "Analisi delle minacce informatiche e implementazione di strategie di difesa.",
+    en: "Cyber threat analysis and implementation of defense strategies.",
+    url: "https://alison.com/verify/82ee5bf1f2"
+  },
+  {
+    title: "SAPUI5 Development & Web Dev (HTML/CSS)",
+    issuer: "Alison",
+    date: "2023",
+    it: "Sviluppo di applicazioni enterprise SAP e interfacce web moderne.",
+    en: "Development of SAP enterprise applications and modern web interfaces.",
+    url: "https://alison.com/verify/e15fb4d2a0"
+  },
+  {
+    title: "Supply Chain & Content Management",
+    issuer: "Alison",
+    date: "2023",
+    it: "Gestione della catena di approvvigionamento e strategie di gestione contenuti.",
+    en: "Supply chain management and content management strategies.",
+    url: "https://alison.com/verify/10d6a15cd9"
+  }
+];
+
 const cityTours = [
   { 
     title: "Rome: The Eternal City", 
@@ -60,7 +127,7 @@ const cityTours = [
     <meta name="viewport" content="width=device-width" />
     <title>The Bridge | {name}</title>
     <style>
-        :root { --accent: #38bdf8; --bg: #020617; --card: #1e293b; }
+        :root { --accent: #38bdf8; --bg: #020617; --card: #1e293b; --gold: #fbbf24; }
         body { background: var(--bg); color: #f1f5f9; font-family: sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; padding: 2rem 0; }
         .container { max-width: 900px; width: 90%; text-align: center; position: relative; }
         
@@ -75,10 +142,10 @@ const cityTours = [
         .nav-card { background: var(--card); padding: 2rem; border-radius: 1rem; border: 1px solid rgba(56, 189, 248, 0.3); text-decoration: none; color: white; transition: 0.3s; display: block; }
         .nav-card:hover { transform: translateY(-5px); border-color: var(--accent); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
         
-        .video-section { margin-top: 4rem; text-align: left; }
-        .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
-        .video-card { background: #0f172a; border-left: 4px solid var(--accent); padding: 1.5rem; border-radius: 0.5rem; text-decoration: none; color: white; transition: 0.2s; display: block; }
-        .video-card:hover { background: #1e293b; transform: scale(1.02); }
+        .section-header { margin-top: 4rem; text-align: left; }
+        .grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
+        .info-card { background: #0f172a; border-left: 4px solid var(--accent); padding: 1.5rem; border-radius: 0.5rem; text-decoration: none; color: white; transition: 0.2s; display: block; text-align: left; }
+        .info-card:hover { background: #1e293b; transform: scale(1.02); }
         
         .bio { opacity: 0.8; margin-top: 3rem; font-style: italic; line-height: 1.6; }
         h1 { font-size: clamp(2.5rem, 8vw, 4rem); margin-bottom: 0; letter-spacing: -1px; }
@@ -111,24 +178,40 @@ const cityTours = [
             ))}
         </div>
 
-        <div class="video-section">
+        <div class="section-header">
+            <h2 id="cert-title" style="font-size: 1.8rem; border-bottom: 2px solid var(--gold); padding-bottom: 0.8rem; margin-bottom: 2rem;">
+                📜 Certificazioni Professionali
+            </h2>
+            <div class="grid-layout">
+                {certifications.map(cert => (
+                    <div class="info-card" style="border-left-color: var(--gold);">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                            <span class="badge" style="color: var(--gold); border: 1px solid var(--gold); background: none;">{cert.date}</span>
+                            {cert.url && <a href={cert.url} target="_blank" style="text-decoration:none; font-size: 1.2rem;">🔗</a>}
+                        </div>
+                        <h3 style="margin: 0.8rem 0 0.3rem 0; font-size: 1.1rem; color: #fff;">{cert.title}</h3>
+                        <p style="font-size: 0.8rem; color: var(--gold); margin-bottom: 0.8rem; font-weight: bold;">{cert.issuer}</p>
+                        <p class="lang-text" data-it={cert.it} data-en={cert.en} style="font-size: 0.85rem; color: #94a3b8; line-height: 1.4;">
+                            {cert.it}
+                        </p>
+                    </div>
+                ))}
+            </div>
+        </div>
+
+        <div class="section-header">
             <h2 id="video-title" style="font-size: 1.8rem; border-bottom: 2px solid var(--accent); padding-bottom: 0.8rem; margin-bottom: 2rem;">
                 🌍 City Tours Globali & Drone Media
             </h2>
-            <div class="video-grid">
+            <div class="grid-layout">
                 {cityTours.map(tour => (
-                    <a href={tour.url} target="_blank" class="video-card">
+                    <a href={tour.url} target="_blank" class="info-card">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
                             <span class="badge">{tour.category}</span>
                             <span style="font-size: 1.2rem;">📹</span>
                         </div>
-                        
                         <h3 style="margin: 0 0 1rem 0; font-size: 1.3rem; color: #fff;">{tour.title}</h3>
-                        
-                        <p class="lang-text" 
-                           data-it={tour.it} 
-                           data-en={tour.en} 
-                           style="font-size: 0.9rem; color: #94a3b8; margin: 0; line-height: 1.4;">
+                        <p class="lang-text" data-it={tour.it} data-en={tour.en} style="font-size: 0.9rem; color: #94a3b8; margin: 0; line-height: 1.4;">
                             {tour.it}
                         </p>
                     </a>
@@ -162,6 +245,9 @@ const cityTours = [
 
             const videoTitle = document.getElementById('video-title');
             videoTitle.innerText = lang === 'it' ? "🌍 City Tours Globali & Drone Media" : "🌍 Global City Tours & Drone Media";
+
+            const certTitle = document.getElementById('cert-title');
+            certTitle.innerText = lang === 'it' ? "📜 Certificazioni Professionali" : "📜 Professional Certifications";
 
             const bio = document.getElementById('bio-text');
             bio.innerHTML = bio.getAttribute('data-' + lang);

@@ -1,43 +1,28 @@
-# Astro Starter Kit: Minimal
+# 🚢 THE BRIDGE | Carmine D'Alise - Professional Portfolio
 
-```sh
-npm create astro@latest -- --template minimal
-```
+**THE BRIDGE** è un ecosistema digitale interattivo che rappresenta il punto di incontro tra 20 anni di esperienza nella logistica navale e le più moderne tecnologie di sviluppo software. Sviluppato con **Astro**, questo portfolio è ottimizzato per velocità, SEO e chiarezza professionale.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-## 🚀 Project Structure
 
-Inside of your Astro project, you'll see the following folders and files:
+## 🚀 Visione del Progetto
+A differenza di un portfolio standard, "The Bridge" è progettato come un hub centrale per:
+- **Tech Stack:** Visualizzazione dinamica delle competenze (React, Docker, AI, Cisco).
+- **Maritime SOP & Audit:** Accesso diretto a procedure operative e report tecnici.
+- **Creative Media:** Integrazione di contenuti visivi e riprese aeree (City Tours).
+- **Professional Path:** Timeline interattiva delle certificazioni e dell'esperienza MSC/Aroya.
 
+## 🛠️ Core Tech Stack
+Il progetto utilizza le seguenti tecnologie:
+* **Framework:** Astro (Static Site Generation)
+* **Styling:** CSS3 (Modern Flex/Grid con approccio Mobile-First)
+* **Logic:** JavaScript (Vanilla JS per la gestione dei Tab e Multilingua)
+* **Deploy:** Vercel (CI/CD)
+
+## 📁 Struttura del Progetto
 ```text
 /
-├── public/
+├── public/              # Asset statici (Icone, Immagini)
 ├── src/
 │   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+│       └── index.astro  # Core del Portfolio (Logica, Frontmatter, UI)
+└── package.json         # Dipendenze del progetto

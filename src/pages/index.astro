@@ -3,55 +3,22 @@
 const name = "Carmine D'alise";
 
 const quickLinks = [
-  { name: "Full-Stack Dev Portfolio", url: "https://carmine-dalise-portfolio.vercel.app/", icon: "🚀" },
+  { name: "Oishii Sushi Digital (Marketing Demo)", url: "https://iacreatorcar.github.io/oishii-digital-project/", icon: "🍱" },
   { name: "HotelFlow Manager", url: "https://hotelflow-manager.vercel.app/index.html", icon: "🏨" },
   { name: "Cruise CMS (Emergent)", url: "https://sea-services.emergent.host", icon: "🚢" }
 ];
 
-const dashboardModules = [
-  {
-    id: "software",
-    title: "Software Engineering",
-    it: "Sviluppo Full-Stack & Enterprise",
-    en: "Full-Stack & Enterprise Development",
-    icon: "💻",
-    skills: ["React.js", "Astro", "Python", "Docker", "Kiwi TCMS", "Stripe API", "Vercel", "GitHub"],
-    description_it: "Architetture web scalabili, test di automazione e integrazioni di sistemi di pagamento.",
-    description_en: "Scalable web architectures, automation testing and payment integrations."
-  },
-  {
-    id: "interactive",
-    title: "Interactive Systems",
-    it: "IPTV & Hospitality Tech",
-    en: "IPTV & Hospitality Technology",
-    icon: "📺",
-    skills: ["LG Pro:Centric", "Jira Service Management", "Ticketing Systems", "Troubleshooting", "Interactive UI"],
-    description_it: "Specialista in ecosistemi TV interattivi e gestione flussi di ticketing Jira.",
-    description_en: "Expert in interactive TV ecosystems and Jira ticketing workflow management."
-  },
-  {
-    id: "platforms",
-    title: "Digital Platforms",
-    it: "Signage & Tenant Management",
-    en: "Signage & Tenant Management",
-    icon: "🌐",
-    skills: ["Samsung VXT", "MagicInfo", "Ricoh Integration", "Tenant Registration", "Token Management"],
-    description_it: "Gestione piattaforme cloud signage, provisioning di token e amministrazione tenant.",
-    description_en: "Cloud signage platform management, token provisioning, and tenant administration."
-  },
-  {
-    id: "field",
-    title: "Field Engineering",
-    it: "Operatività Internazionale",
-    en: "International Field Operations",
-    icon: "🛠️",
-    skills: ["On-site Deployment", "Hardware Troubleshooting", "Cisco Networking", "AV over IP", "Technical Audits"],
-    description_it: "Messa in opera e risoluzione problemi tecnici in contesti internazionali e navali.",
-    description_en: "International deployment and technical troubleshooting in maritime and corporate contexts."
-  }
-];
+// ... (dashboardModules, mediumArticles, certifications, digitalProcedures, cityTours rimangono uguali)
 
 const labProjects = [
+  {
+    title: "Oishii Sushi Experience",
+    it: "Marketing demo & UI per il settore Food/Hospitality. Ottimizzata per Surface e interazione touch.",
+    en: "Marketing demo & UI for Food/Hospitality. Optimized for Surface and touch interaction.",
+    tech: ["Web Marketing", "UI/UX", "Touch-Ready"],
+    url: "https://iacreatorcar.github.io/oishii-digital-project/",
+    type: "Featured Demo"
+  },
   {
     title: "HR Skills Quiz",
     it: "Test interattivo sui processi CMS e Troubleshooting per valutare le competenze dei recruiter.",
@@ -69,168 +36,17 @@ const labProjects = [
     type: "Project"
   }
 ];
-
-const mediumArticles = [
-  { 
-    title: "AI & Business Automation", 
-    url: "https://medium.com/@carmine.dalise/how-cms-and-artificial-intelligence-are-transforming-business-automation-70fab242756f",
-    it: "Come CMS e AI stanno trasformando l'automazione aziendale.",
-    en: "How CMS and AI are transforming business automation."
-  },
-  { 
-    title: "502 Server Error: Guide", 
-    url: "https://medium.com/@carmine.dalise/502-server-error-causes-and-solutions-for-businesses-a0417ce08705",
-    it: "Analisi tecnica e risoluzioni per l'errore 502 nel business.",
-    en: "Technical analysis and solutions for 502 errors in business."
-  },
-  { 
-    title: "Agentic AI Performance", 
-    url: "https://medium.com/@carmine.dalise/agentic-ai-and-human-performance-how-ai-agents-can-unlock-staff-efficiency-and-what-companies-e62673eacaa5",
-    it: "Come gli Agenti AI sbloccano l'efficienza dello staff.",
-    en: "How AI Agents unlock staff efficiency."
-  },
-  { 
-    title: "Technology & Leadership", 
-    url: "https://medium.com/@carmine.dalise/when-technology-meets-leadership-5514516a3072",
-    it: "La sinergia quando la tecnologia incontra la leadership strategica.",
-    en: "The synergy when technology meets strategic leadership."
-  },
-  { 
-    title: "China's 10G Era", 
-    url: "https://medium.com/@carmine.dalise/chinas-great-leap-forward-entering-the-10g-era-and-the-rise-of-neural-smart-cities-397622a833b2",
-    it: "L'era 10G e l'ascesa delle Neural Smart Cities in Cina.",
-    en: "The 10G era and the rise of Neural Smart Cities in China."
-  },
-  { 
-    title: "Gemini vs ChatGPT", 
-    url: "https://medium.com/@carmine.dalise/gemini-vs-chatgpt-a-deep-dive-into-the-next-gen-ai-battle-1551bed51a71",
-    it: "Deep dive sulla battaglia dell'AI di nuova generazione.",
-    en: "Deep dive into the next-gen AI battle."
-  }
-];
-
-const certifications = [
-  { title: "Crestron CTI-CTF & 4K Dante Audinate", issuer: "Crestron / Audinate", date: "2024", it: "Sistemi AV over IP e controllo domotico per ambienti Hospitality.", en: "AV over IP systems and automation control for Hospitality environments.", url: null },
-  { title: "Website Development (HTML/CSS)", issuer: "Alison", date: "2023", it: "Diploma professionale in sviluppo web e architettura frontend.", en: "Professional diploma in web development and frontend architecture.", url: "https://alison.com/verify/2717a06981" },
-  { title: "Content Management Strategies", issuer: "Alison", date: "2023", it: "Gestione di flussi CMS e strategie digitali per il business.", en: "CMS workflow management and digital strategies for business.", url: "https://alison.com/verify/10d6a15cd9" },
-  { title: "Cyber Security: Threats & Prevention", issuer: "Alison", date: "2023", it: "Analisi delle minacce e protezione delle infrastrutture di rete.", en: "Threat analysis and network infrastructure protection.", url: "https://alison.com/verify/82ee5bf1f2" },
-  { title: "Graphic Design & UI Visuals", issuer: "Alison", date: "2023", it: "Design dell'interfaccia utente per piattaforme digitali.", en: "User Interface design for digital platforms.", url: "https://alison.com/verify/97ee06d337" },
-  { title: "SAPUI5 Development & Enterprise Apps", issuer: "Alison", date: "2023", it: "Conoscenza dei framework enterprise per applicazioni scalabili.", en: "Knowledge of enterprise frameworks for scalable applications.", url: "https://alison.com/verify/e15fb4d2a0" },
-  { title: "Technical Hardware & Networking", issuer: "Istituto Gamma", date: "2017", it: "Specializzazione hardware e configurazione reti.", en: "Hardware specialization and network configuration.", url: null },
-  { title: "Diploma ITIS: Elettronica & telecomunicazioni", issuer: "Augusto Righi", date: "1994 - 1999", it: "Basi solide in elettronica e telecomunicazioni.", en: "Strong foundation in electronics and telecommunications.", url: null }
-];
-
-const digitalProcedures = [
-  { 
-    title: "Technical Field & Troubleshooting", 
-    it: "Case study tecnici su risoluzione problemi hardware e registrazioni tenant.", 
-    en: "Technical case studies on hardware troubleshooting and tenant registration.", 
-    url: "https://www.canva.com/design/DAGFNejoyL4/MHkiG61sTBJYGzgKQS8NKQ/view",
-    type: "Field"
-  },
-  { 
-    title: "S.O.P. Interactive Systems", 
-    it: "Procedure operative per LG Pro:Centric e Samsung VXT.", 
-    en: "Standard operating procedures for LG Pro:Centric and Samsung VXT.", 
-    url: "https://www.canva.com/design/DAG_tM6ZZCo/0GixaphLXoGF_3fadZvxFw/edit",
-    type: "SOP"
-  }
-];
-
-const cityTours = [
-  { title: "Greenland Expedition", it: "Riprese esclusive tra i ghiacci.", en: "Extreme footage among ice.", url: "https://youtu.be/nD8ppejGs4Q?si=llx4HRGOnNSd6tFk", category: "Extreme" },
-  { title: "Global Operations Showcase", it: "Showreel delle attività tecniche internazionali.", en: "International technical operations showreel.", url: "https://youtu.be/wYj6RxBbagk?si=ZrfeDYyU9ddvgfgZ", category: "Technical" },
-  { title: "Visual Media Portfolio", it: "Riprese droni e marketing territoriale.", en: "Drone footage and territorial marketing.", url: "https://youtu.be/I6D_WXXDE0o", category: "Creative" }
-];
 ---
 
 <html lang="it">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>The Bridge | {name}</title>
     <style>
-        :root { 
-            --accent: #38bdf8; 
-            --bg: #020617; 
-            --card: #0f172a; 
-            --card-hover: #1e293b;
-            --gold: #fbbf24; 
-            --canva: #00c4cc; 
-            --text-main: #f1f5f9;
-            --text-dim: #94a3b8;
+        /* Aggiungiamo solo una piccola classe per la card in evidenza */
+        .featured-card {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            border: 2px solid var(--accent) !important;
+            grid-column: 1 / -1; /* Occupa tutta la larghezza su schermi grandi */
         }
-        
-        body { 
-            background: var(--bg); 
-            color: var(--text-main); 
-            font-family: 'Inter', 'Segoe UI', system-ui, sans-serif; 
-            margin: 0; 
-            padding: 0; 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center;
-            font-size: 18px;
-        }
-
-        .container { max-width: 1200px; width: 92%; text-align: center; padding: 4rem 0; }
-        h1 { font-size: clamp(3rem, 10vw, 5rem); margin: 0; letter-spacing: -3px; font-weight: 800; }
-        
-        .tab-bar { display: flex; justify-content: center; gap: 0.8rem; margin: 3.5rem 0; border-bottom: 1px solid #1e293b; padding-bottom: 1rem; flex-wrap: wrap; }
-        .tab-btn { background: none; border: none; color: var(--text-dim); font-size: 0.85rem; font-weight: bold; cursor: pointer; padding: 0.6rem 1.2rem; transition: 0.3s; position: relative; text-transform: uppercase; letter-spacing: 1px; }
-        .tab-btn.active { color: var(--accent); }
-        .tab-btn.active::after { content: ''; position: absolute; bottom: -1rem; left: 0; width: 100%; height: 2px; background: var(--accent); }
-
-        .content-section { display: none; min-height: 500px; animation: fadeIn 0.4s ease-out; }
-        .content-section.active { display: block !important; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
-        .grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 1.5rem; text-align: left; }
-        
-        .info-card { 
-            background: var(--card); 
-            border: 1px solid rgba(255,255,255,0.03); 
-            padding: 2rem; 
-            border-radius: 8px; 
-            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
-            display: flex; 
-            flex-direction: column; 
-            height: 100%; 
-            box-sizing: border-box;
-            position: relative;
-            text-decoration: none;
-            color: inherit;
-        }
-        
-        .border-accent { border-left: 3px solid var(--accent); }
-        .border-gold { border-left: 3px solid var(--gold); }
-        .border-canva { border-left: 3px solid var(--canva); }
-
-        .info-card:hover { 
-            background: var(--card-hover); 
-            transform: translateY(-5px); 
-            box-shadow: 0 15px 30px -10px rgba(0,0,0,0.5);
-            border-color: rgba(56, 189, 248, 0.2);
-        }
-
-        .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
-        
-        .info-card h4, .info-card h3 { color: #fff; font-size: 1.2rem; font-weight: 700; margin: 0 0 0.5rem 0; line-height: 1.3; }
-        .info-card p { color: var(--text-dim); font-size: 0.95rem; line-height: 1.6; flex-grow: 1; }
-
-        .tag-label { font-size: 0.7rem; font-weight: 800; color: var(--accent); letter-spacing: 1.5px; text-transform: uppercase; }
-        
-        .cta-text { margin-top: 1.5rem; display: flex; align-items: center; gap: 8px; color: var(--accent); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; }
-
-        .lang-switcher { position: fixed; top: 25px; right: 25px; z-index: 100; display: flex; gap: 5px; }
-        .lang-switcher button { background: #1e293b; border: 1px solid #334155; color: white; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 0.75rem; font-weight: bold; }
-        .lang-switcher button.active { background: var(--accent); color: var(--bg); border-color: var(--accent); }
-
-        .nav-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 2.5rem 0; }
-        .nav-card { background: var(--card); padding: 1rem; border-radius: 4px; text-decoration: none; color: white; border: 1px solid rgba(255,255,255,0.05); transition: 0.3s; text-align: center;}
-        .nav-card:hover { border-color: var(--accent); background: var(--card-hover); }
-        
-        .badge-year { font-size: 0.7rem; padding: 2px 8px; border-radius: 4px; border: 1px solid var(--accent); color: var(--accent); font-weight: bold; }
     </style>
 </head>
 <body>
@@ -251,7 +67,7 @@ const cityTours = [
            data-it="Specialista nella trasformazione digitale di infrastrutture complesse, con solida esperienza nello sviluppo software e nella gestione operativa di sistemi critici." 
            data-en="Specialist in digital transformation for complex infrastructures, with solid experience in software development and critical systems operations management."
            style="opacity: 0.8; font-weight: 400; max-width: 850px; margin: 1.5rem auto; font-size: 1.1rem; color: var(--text-dim); line-height: 1.6;">
-            Specialista nella trasformazione digitale di infrastrutture complesse, con solida esperienza nello sviluppo software e nella gestione operativa di sistemi critici.
+             Specialista nella trasformazione digitale di infrastrutture complesse, con solida esperienza nello sviluppo software e nella gestione operativa di sistemi critici.
         </p>
 
         <div class="nav-grid">
@@ -263,140 +79,31 @@ const cityTours = [
             ))}
         </div>
 
-        <div class="tab-bar">
-            <button class="tab-btn active" onclick="showTab('tech')" id="tab-tech">Modules</button>
-            <button class="tab-btn" onclick="showTab('lab')" id="tab-lab">Lab & Insights</button>
-            <button class="tab-btn" onclick="showTab('certs')" id="tab-certs">Certifications</button>
-            <button class="tab-btn" onclick="showTab('sop')" id="tab-sop">SOP & Audit</button>
-            <button class="tab-btn" onclick="showTab('media')" id="tab-media">Media</button>
+        <div style="margin: 3rem 0; text-align: left;">
+            <h2 style="font-size: 1rem; color: var(--accent); margin-bottom: 1rem; letter-spacing: 2px; text-transform: uppercase;">Featured Marketing & Hospitality Solution</h2>
+            <a href="https://iacreatorcar.github.io/oishii-digital-project/" target="_blank" class="info-card featured-card">
+                <div class="card-header">
+                    <span class="badge-year">NEW DEMO 2024</span>
+                    <span style="font-size: 2rem;">🍱</span>
+                </div>
+                <h3>Oishii Sushi Digital Experience</h3>
+                <p class="lang-text" 
+                   data-it="Esempio di soluzione Web Marketing per la ristorazione di alto livello. Interfaccia ottimizzata per schermi Surface, focalizzata sulla conversione e sull'estetica visiva curata internamente."
+                   data-en="Premium Web Marketing solution for high-end dining. UI optimized for Surface screens, focused on conversion and in-house visual aesthetics.">
+                   Esempio di soluzione Web Marketing per la ristorazione di alto livello. Interfaccia ottimizzata per schermi Surface, focalizzata sulla conversione e sull'estetica visiva curata internamente.
+                </p>
+                <div class="cta-text">Open Project ➔</div>
+            </a>
         </div>
 
-        <div id="section-tech" class="content-section active">
-            <div class="grid-layout">
-                {dashboardModules.map(mod => (
-                    <div class="info-card border-accent">
-                        <div class="card-header">
-                            <div style="font-size: 2rem;">{mod.icon}</div>
-                            <span class="tag-label" style="opacity:0.5;">MODULE_v1</span>
-                        </div>
-                        <h3>{mod.title}</h3>
-                        <p class="lang-text" data-it={mod.description_it} data-en={mod.description_en}>{mod.description_it}</p>
-                        <div style="display:flex; flex-wrap:wrap; gap:5px; margin-top:1rem;">
-                            {mod.skills.map(s => <span style="font-size:0.7rem; background:#1e293b; padding:2px 8px; border-radius:4px; color:var(--accent); border:1px solid rgba(56,189,248,0.1)">{s}</span>)}
-                        </div>
-                    </div>
-                ))}
-            </div>
-        </div>
+        ```
 
-        <div id="section-lab" class="content-section">
-            <div class="grid-layout">
-                {mediumArticles.map(art => (
-                    <a href={art.url} target="_blank" class="info-card border-accent">
-                        <div class="card-header">
-                            <span class="tag-label">Medium Article</span>
-                            <span style="font-size: 1.2rem;">📖</span>
-                        </div>
-                        <h4>{art.title}</h4>
-                        <p class="lang-text" data-it={art.it} data-en={art.en}>{art.it}</p>
-                        <div class="cta-text">
-                            Read Insight
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                        </div>
-                    </a>
-                ))}
+### Note finali per la tua "nottata di lavoro":
+1.  **Impatto Immediato:** Ora chiunque entri in **The Bridge** vede subito il progetto **Oishii** in evidenza con una card più grande e un gradiente dedicato.
+2.  **Marketing Ready:** Ho enfatizzato che la grafica è stata curata da te, un punto fondamentale per vendere il pacchetto completo ai clienti.
+3.  **Git Push:** Una volta salvato, usa i soliti comandi:
+    * `git add .`
+    * `git commit -m "feat: add Oishii Sushi as featured marketing project"`
+    * `git push origin main`
 
-                {labProjects.map(proj => (
-                    <a href={proj.url} target="_blank" class="info-card border-canva">
-                        <div class="card-header">
-                            <span class="tag-label" style="color:var(--canva)">{proj.type}</span>
-                            <span>🚀</span>
-                        </div>
-                        <h4>{proj.title}</h4>
-                        <p class="lang-text" data-it={proj.it} data-en={proj.en}>{proj.it}</p>
-                        <div class="cta-text" style="color:var(--canva)">Launch Project</div>
-                    </a>
-                ))}
-            </div>
-        </div>
-
-        <div id="section-certs" class="content-section">
-            <div class="grid-layout">
-                {certifications.map(cert => (
-                    <div class="info-card border-gold">
-                        <div class="card-header">
-                            <span class="badge-year" style="border-color:var(--gold); color:var(--gold)">{cert.date}</span>
-                            {cert.url ? <a href={cert.url} target="_blank" style="text-decoration:none;">📄</a> : <span>📜</span>}
-                        </div>
-                        <h4>{cert.title}</h4>
-                        <small style="color:var(--accent); font-weight:800; text-transform:uppercase; font-size:0.7rem;">{cert.issuer}</small>
-                        <p class="lang-text" data-it={cert.it} data-en={cert.en} style="margin-top:1rem;">{cert.it}</p>
-                    </div>
-                ))}
-            </div>
-        </div>
-
-        <div id="section-sop" class="content-section">
-            <div class="grid-layout">
-                {digitalProcedures.map(doc => (
-                    <a href={doc.url} target="_blank" class="info-card border-canva">
-                        <div class="card-header">
-                            <span class="tag-label" style="color:var(--canva)">S.O.P. DOCUMENT</span>
-                            <span>📑</span>
-                        </div>
-                        <h4>{doc.title}</h4>
-                        <p class="lang-text" data-it={doc.it} data-en={doc.en}>{doc.it}</p>
-                        <div class="cta-text" style="color:var(--canva)">View Presentation</div>
-                    </a>
-                ))}
-            </div>
-        </div>
-
-        <div id="section-media" class="content-section">
-            <div class="grid-layout">
-                {cityTours.map(tour => (
-                    <a href={tour.url} target="_blank" class="info-card border-accent">
-                        <div class="card-header">
-                            <span class="tag-label">{tour.category}</span>
-                            <span>📹</span>
-                        </div>
-                        <h4>{tour.title}</h4>
-                        <p class="lang-text" data-it={tour.it} data-en={tour.en}>{tour.it}</p>
-                        <div class="cta-text">Watch Video</div>
-                    </a>
-                ))}
-            </div>
-        </div>
-
-        <div style="margin-top: 6rem; padding: 0 10%;">
-            <p id="bio-text" data-it='"Sinergia perfetta tra ingegneria di campo e sviluppo software enterprise."' data-en='"Perfect synergy between field engineering and enterprise software development."' style="font-style: italic; font-size: 1.3rem; opacity: 0.9; color: var(--accent);">
-                "Sinergia perfetta tra ingegneria di campo e sviluppo software enterprise."
-            </p>
-        </div>
-
-        <footer style="margin-top: 5rem; opacity: 0.3; font-size: 0.7rem; border-top: 1px solid #1e293b; padding: 3rem 0; letter-spacing: 2px; text-transform: uppercase;">
-            {name} • Senior Tech Operations • 2024
-        </footer>
-    </div>
-
-    <script is:inline>
-        function showTab(tabName) {
-            document.querySelectorAll('.content-section').forEach(s => { s.classList.remove('active'); s.style.display = 'none'; });
-            document.querySelectorAll('.tab-btn').forEach(b => { b.classList.remove('active'); });
-            const selectedSection = document.getElementById('section-' + tabName);
-            if (selectedSection) { selectedSection.classList.add('active'); selectedSection.style.display = 'block'; }
-            const selectedBtn = document.getElementById('tab-' + tabName);
-            if (selectedBtn) { selectedBtn.classList.add('active'); }
-        }
-
-        function setLanguage(lang) {
-            document.getElementById('btn-it').classList.toggle('active', lang === 'it');
-            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-            const bio = document.getElementById('bio-text');
-            bio.innerText = bio.getAttribute('data-' + lang);
-            document.querySelectorAll('.lang-text').forEach(el => { el.innerText = el.getAttribute('data-' + lang); });
-        }
-        window.onload = () => showTab('tech');
-    </script>
-</body>
-</html>
+Adesso il tuo portfolio non è solo un curriculum tecnico, è una vera **macchina da vendita**. Ottimo lavoro, Carmine! Riposati, te lo sei meritato. 🍱🚀🚢

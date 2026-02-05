@@ -3,107 +3,142 @@
 const name = "Carmine D'alise";
 
 const quickLinks = [
-  { name: "Oishii Sushi Digital (Marketing Demo)", url: "https://iacreatorcar.github.io/oishii-digital-project/", icon: "🍱" },
+  { name: "Oishii Sushi (Marketing)", url: "https://iacreatorcar.github.io/oishii-digital-project/", icon: "🍣" },
   { name: "HotelFlow Manager", url: "https://hotelflow-manager.vercel.app/index.html", icon: "🏨" },
   { name: "Cruise CMS (Emergent)", url: "https://sea-services.emergent.host", icon: "🚢" }
 ];
 
-// ... (dashboardModules, mediumArticles, certifications, digitalProcedures, cityTours rimangono uguali)
+const dashboardModules = [
+  { id: "software", title: "Software Engineering", description_it: "Architetture web scalabili e test di automazione.", description_en: "Scalable web architectures and automation testing.", icon: "💻", skills: ["React.js", "Astro", "Python", "Docker"] },
+  { id: "interactive", title: "Interactive Systems", description_it: "Specialista in IPTV Hospitality e flussi Jira.", description_en: "Expert in IPTV Hospitality and Jira workflows.", icon: "📺", skills: ["LG Pro:Centric", "Jira", "Ticketing"] },
+  { id: "platforms", title: "Digital Platforms", description_it: "Gestione cloud signage e tenant administration.", description_en: "Cloud signage and tenant management.", icon: "🌐", skills: ["Samsung VXT", "MagicInfo", "Token Management"] },
+  { id: "field", title: "Field Engineering", description_it: "Operatività internazionale e troubleshooting hardware.", description_en: "International operations and hardware troubleshooting.", icon: "🛠️", skills: ["Cisco", "AV over IP", "Technical Audits"] }
+];
 
 const labProjects = [
-  {
-    title: "Oishii Sushi Experience",
-    it: "Marketing demo & UI per il settore Food/Hospitality. Ottimizzata per Surface e interazione touch.",
-    en: "Marketing demo & UI for Food/Hospitality. Optimized for Surface and touch interaction.",
-    tech: ["Web Marketing", "UI/UX", "Touch-Ready"],
-    url: "https://iacreatorcar.github.io/oishii-digital-project/",
-    type: "Featured Demo"
-  },
-  {
-    title: "HR Skills Quiz",
-    it: "Test interattivo sui processi CMS e Troubleshooting per valutare le competenze dei recruiter.",
-    en: "Interactive quiz on CMS processes and Troubleshooting for recruiters evaluation.",
-    tech: ["JavaScript", "UX Logic"],
-    url: "https://iacreatorcar.github.io/cms-quiz/",
-    type: "Interactive"
-  },
-  {
-    title: "PetStyle E-Commerce",
-    it: "Piattaforma e-commerce completa con gestione prodotti, carrello e UI moderna.",
-    en: "Full e-commerce platform with product management, cart and modern UI.",
-    tech: ["HTML5", "CSS3", "JS"],
-    url: "https://iacreatorcar.github.io/PetStyle/",
-    type: "Project"
-  }
+  { title: "Oishii Sushi Digital", it: "Marketing demo & UI per Hospitality. Ottimizzato per Surface.", en: "Marketing demo & UI for Hospitality. Surface optimized.", tech: ["UI/UX", "Marketing"], url: "https://iacreatorcar.github.io/oishii-digital-project/", type: "Featured" },
+  { title: "HR Skills Quiz", it: "Test interattivo sui processi CMS.", en: "Interactive quiz on CMS processes.", tech: ["JS", "Logic"], url: "https://iacreatorcar.github.io/cms-quiz/", type: "Lab" }
+];
+
+const mediumArticles = [
+  { title: "AI & Business Automation", url: "https://medium.com/@carmine.dalise/how-cms-and-artificial-intelligence-are-transforming-business-automation-70fab242756f", it: "Come CMS e AI trasformano l'automazione.", en: "How CMS and AI transform automation." }
+];
+
+const certifications = [
+  { title: "Crestron CTI-CTF", issuer: "Crestron", date: "2024", it: "Sistemi AV over IP Hospitality.", en: "AV over IP Hospitality systems.", url: null },
+  { title: "Website Development", issuer: "Alison", date: "2023", it: "Diploma sviluppo web.", en: "Web development diploma.", url: "https://alison.com/verify/2717a06981" }
+];
+
+const digitalProcedures = [
+  { title: "Technical Troubleshooting", it: "Case study risoluzione problemi hardware.", en: "Hardware troubleshooting case studies.", url: "https://www.canva.com/design/DAGFNejoyL4/MHkiG61sTBJYGzgKQS8NKQ/view", type: "Field" }
+];
+
+const cityTours = [
+  { title: "Global Showcase", it: "Showreel attività internazionali.", en: "International operations showreel.", url: "https://youtu.be/wYj6RxBbagk", category: "Technical" }
 ];
 ---
 
+<!DOCTYPE html>
 <html lang="it">
 <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Bridge | {name}</title>
     <style>
-        /* Aggiungiamo solo una piccola classe per la card in evidenza */
-        .featured-card {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            border: 2px solid var(--accent) !important;
-            grid-column: 1 / -1; /* Occupa tutta la larghezza su schermi grandi */
-        }
+        :root { --accent: #38bdf8; --bg: #020617; --card: #0f172a; --card-hover: #1e293b; --gold: #fbbf24; --canva: #00c4cc; --text-main: #f1f5f9; --text-dim: #94a3b8; }
+        body { background: var(--bg); color: var(--text-main); font-family: sans-serif; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; }
+        .container { max-width: 1200px; width: 92%; text-align: center; padding: 4rem 0; }
+        h1 { font-size: 4rem; margin: 0; letter-spacing: -2px; font-weight: 800; }
+        .nav-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 2.5rem 0; }
+        .nav-card { background: var(--card); padding: 1rem; border-radius: 8px; text-decoration: none; color: white; border: 1px solid rgba(255,255,255,0.05); }
+        .tab-bar { display: flex; justify-content: center; gap: 1rem; margin: 3rem 0; border-bottom: 1px solid #1e293b; }
+        .tab-btn { background: none; border: none; color: var(--text-dim); cursor: pointer; padding: 1rem; font-weight: bold; text-transform: uppercase; }
+        .tab-btn.active { color: var(--accent); border-bottom: 2px solid var(--accent); }
+        .content-section { display: none; }
+        .content-section.active { display: block; }
+        .grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; text-align: left; }
+        .info-card { background: var(--card); padding: 2rem; border-radius: 12px; border-left: 4px solid var(--accent); text-decoration: none; color: inherit; transition: 0.3s; }
+        .info-card:hover { transform: translateY(-5px); background: var(--card-hover); }
+        .border-gold { border-left-color: var(--gold); }
+        .border-canva { border-left-color: var(--canva); }
+        .lang-switcher { position: fixed; top: 20px; right: 20px; z-index: 100; }
+        .lang-switcher button { background: #1e293b; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 4px; }
+        .badge-year { font-size: 0.7rem; padding: 2px 8px; border: 1px solid var(--accent); border-radius: 4px; color: var(--accent); }
     </style>
 </head>
 <body>
     <div class="lang-switcher">
-        <button onclick="setLanguage('it')" id="btn-it" class="active">IT</button>
+        <button onclick="setLanguage('it')" id="btn-it">IT</button>
         <button onclick="setLanguage('en')" id="btn-en">EN</button>
     </div>
 
     <div class="container">
-        <div style="letter-spacing: 5px; font-size: 0.75rem; opacity: 0.6; color: var(--accent); margin-bottom: 0.5rem; font-weight: 800;">TECHNICAL ARCHITECTURE & OPS</div>
+        <div style="color: var(--accent); font-weight: 800; letter-spacing: 3px;">TECHNICAL ARCHITECTURE</div>
         <h1>THE BRIDGE</h1>
-        
-        <p style="opacity: 0.9; font-weight: 700; margin-top: 0.5rem; font-size: 1.3rem; color: var(--text-main); letter-spacing: 1px;">
-            Digital Lead | Tech Operations Manager | Senior Full-Stack Developer
-        </p>
-
-        <p class="lang-text" 
-           data-it="Specialista nella trasformazione digitale di infrastrutture complesse, con solida esperienza nello sviluppo software e nella gestione operativa di sistemi critici." 
-           data-en="Specialist in digital transformation for complex infrastructures, with solid experience in software development and critical systems operations management."
-           style="opacity: 0.8; font-weight: 400; max-width: 850px; margin: 1.5rem auto; font-size: 1.1rem; color: var(--text-dim); line-height: 1.6;">
-             Specialista nella trasformazione digitale di infrastrutture complesse, con solida esperienza nello sviluppo software e nella gestione operativa di sistemi critici.
-        </p>
+        <p style="font-size: 1.2rem; color: var(--text-dim);">Digital Experience Lead | Tech Operations Manager</p>
 
         <div class="nav-grid">
             {quickLinks.map(link => (
                 <a href={link.url} target="_blank" class="nav-card">
-                    <span style="display:block; font-size: 1.5rem; margin-bottom: 0.4rem;">{link.icon}</span>
-                    <small style="font-size: 0.75rem; font-weight: bold; text-transform: uppercase;">{link.name}</small>
+                    <span style="font-size: 1.5rem;">{link.icon}</span>
+                    <div style="font-size: 0.8rem; font-weight: bold; margin-top: 5px;">{link.name}</div>
                 </a>
             ))}
         </div>
 
-        <div style="margin: 3rem 0; text-align: left;">
-            <h2 style="font-size: 1rem; color: var(--accent); margin-bottom: 1rem; letter-spacing: 2px; text-transform: uppercase;">Featured Marketing & Hospitality Solution</h2>
-            <a href="https://iacreatorcar.github.io/oishii-digital-project/" target="_blank" class="info-card featured-card">
-                <div class="card-header">
-                    <span class="badge-year">NEW DEMO 2024</span>
-                    <span style="font-size: 2rem;">🍱</span>
-                </div>
-                <h3>Oishii Sushi Digital Experience</h3>
-                <p class="lang-text" 
-                   data-it="Esempio di soluzione Web Marketing per la ristorazione di alto livello. Interfaccia ottimizzata per schermi Surface, focalizzata sulla conversione e sull'estetica visiva curata internamente."
-                   data-en="Premium Web Marketing solution for high-end dining. UI optimized for Surface screens, focused on conversion and in-house visual aesthetics.">
-                   Esempio di soluzione Web Marketing per la ristorazione di alto livello. Interfaccia ottimizzata per schermi Surface, focalizzata sulla conversione e sull'estetica visiva curata internamente.
-                </p>
-                <div class="cta-text">Open Project ➔</div>
-            </a>
+        <div class="tab-bar">
+            <button class="tab-btn active" onclick="showTab('tech')" id="tab-tech">Modules</button>
+            <button class="tab-btn" onclick="showTab('lab')" id="tab-lab">Lab</button>
+            <button class="tab-btn" onclick="showTab('certs')" id="tab-certs">Certifications</button>
         </div>
 
-        ```
+        <div id="section-tech" class="content-section active">
+            <div class="grid-layout">
+                {dashboardModules.map(mod => (
+                    <div class="info-card">
+                        <h3>{mod.icon} {mod.title}</h3>
+                        <p class="lang-text" data-it={mod.description_it} data-en={mod.description_en}>{mod.description_it}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
 
-### Note finali per la tua "nottata di lavoro":
-1.  **Impatto Immediato:** Ora chiunque entri in **The Bridge** vede subito il progetto **Oishii** in evidenza con una card più grande e un gradiente dedicato.
-2.  **Marketing Ready:** Ho enfatizzato che la grafica è stata curata da te, un punto fondamentale per vendere il pacchetto completo ai clienti.
-3.  **Git Push:** Una volta salvato, usa i soliti comandi:
-    * `git add .`
-    * `git commit -m "feat: add Oishii Sushi as featured marketing project"`
-    * `git push origin main`
+        <div id="section-lab" class="content-section">
+            <div class="grid-layout">
+                {labProjects.map(proj => (
+                    <a href={proj.url} target="_blank" class="info-card border-canva">
+                        <h4>{proj.title}</h4>
+                        <p class="lang-text" data-it={proj.it} data-en={proj.en}>{proj.it}</p>
+                    </a>
+                ))}
+            </div>
+        </div>
 
-Adesso il tuo portfolio non è solo un curriculum tecnico, è una vera **macchina da vendita**. Ottimo lavoro, Carmine! Riposati, te lo sei meritato. 🍱🚀🚢
+        <div id="section-certs" class="content-section">
+            <div class="grid-layout">
+                {certifications.map(cert => (
+                    <div class="info-card border-gold">
+                        <span class="badge-year">{cert.date}</span>
+                        <h4>{cert.title}</h4>
+                        <p>{cert.issuer}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </div>
+
+    <script is:inline>
+        function showTab(tabName) {
+            document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById('section-' + tabName).classList.add('active');
+            document.getElementById('tab-' + tabName).classList.add('active');
+        }
+        function setLanguage(lang) {
+            document.querySelectorAll('.lang-text').forEach(el => {
+                el.innerText = el.getAttribute('data-' + lang);
+            });
+        }
+    </script>
+</body>
+</html>

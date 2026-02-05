@@ -1,89 +1,146 @@
 ---
-// --- FRONTMATTER: Logica e Variabili ---
+// --- FRONTMATTER: Dashboard Evoluta Carmine D'Alise ---
 const name = "Carmine D'alise";
 
 const quickLinks = [
-  { name: "Main Portfolio", url: "https://carmine-dalise-portfolio.vercel.app/", icon: "📂" },
+  { name: "Full-Stack Dev Portfolio", url: "https://carmine-dalise-portfolio.vercel.app/", icon: "🚀" },
   { name: "HotelFlow Manager", url: "https://hotelflow-manager.vercel.app/index.html", icon: "🏨" },
   { name: "Cruise CMS (Emergent)", url: "https://sea-services.emergent.host", icon: "🚢" }
 ];
 
-const techStack = [
+const dashboardModules = [
   {
-    category: "Full-Stack & Web Dev",
-    it: "Sviluppo Web e App Moderne",
-    items: ["React.js", "Astro", "HTML5/CSS3", "JS/JSON", "SQL", "Python", "C++", "Vercel", "GitHub"],
-    icon: "💻"
+    id: "software",
+    title: "Software Engineering",
+    it: "Sviluppo Full-Stack & Enterprise",
+    en: "Full-Stack & Enterprise Development",
+    icon: "💻",
+    skills: ["React.js", "Astro", "Python", "Docker", "Kiwi TCMS", "Stripe API", "Vercel", "GitHub"],
+    description_it: "Architetture web scalabili, test di automazione e integrazioni di sistemi di pagamento.",
+    description_en: "Scalable web architectures, automation testing and payment integrations."
   },
   {
-    category: "Enterprise & CMS",
-    it: "Gestione Contenuti e Pagamenti",
-    items: ["Otallo", "Sanity CMS", "Stripe", "SAP UI", "Enterprise CMS", "API Integration"],
-    icon: "🏢"
+    id: "interactive",
+    title: "Interactive Systems",
+    it: "IPTV & Hospitality Tech",
+    en: "IPTV & Hospitality Technology",
+    icon: "📺",
+    skills: ["LG Pro:Centric", "Jira Service Management", "Ticketing Systems", "Troubleshooting", "Interactive UI"],
+    description_it: "Specialista in ecosistemi TV interattivi e gestione flussi di ticketing Jira.",
+    description_en: "Expert in interactive TV ecosystems and Jira ticketing workflow management."
   },
   {
-    category: "Cloud, AI & DevOps",
-    it: "Infrastruttura e Automazione",
-    items: ["Azure", "Docker", "Relevance AI", "Mesh", "Discord Bots", "API Integrations"],
-    icon: "☁️"
+    id: "platforms",
+    title: "Digital Platforms",
+    it: "Signage & Tenant Management",
+    en: "Signage & Tenant Management",
+    icon: "🌐",
+    skills: ["Samsung VXT", "MagicInfo", "Ricoh Integration", "Tenant Registration", "Token Management"],
+    description_it: "Gestione piattaforme cloud signage, provisioning di token e amministrazione tenant.",
+    description_en: "Cloud signage platform management, token provisioning, and tenant administration."
   },
   {
-    category: "IT Infrastructure & On-Board",
-    it: "Networking e Sistemi di Bordo",
-    items: ["Cisco Tracer", "NAS Procedures", "Digital Signage", "Touch Surface", "Linux/Windows", "iOS/Android"],
-    icon: "⚓"
+    id: "field",
+    title: "Field Engineering",
+    it: "Operatività Internazionale",
+    en: "International Field Operations",
+    icon: "🛠️",
+    skills: ["On-site Deployment", "Hardware Troubleshooting", "Cisco Networking", "AV over IP", "Technical Audits"],
+    description_it: "Messa in opera e risoluzione problemi tecnici in contesti internazionali e navali.",
+    description_en: "International deployment and technical troubleshooting in maritime and corporate contexts."
+  }
+];
+
+const labProjects = [
+  {
+    title: "HR Skills Quiz",
+    it: "Test interattivo sui processi CMS e Troubleshooting per valutare le competenze dei recruiter.",
+    en: "Interactive quiz on CMS processes and Troubleshooting for recruiters evaluation.",
+    tech: ["JavaScript", "UX Logic"],
+    url: "https://iacreatorcar.github.io/cms-quiz/",
+    type: "Interactive"
   },
   {
-    category: "Design & UI/UX Strategy",
-    it: "Strategia Visiva e Grafica",
-    items: ["Figma", "Adobe Family", "Canva", "UI/UX Strategy", "Visual Studio Code"],
-    icon: "🎨"
+    title: "PetStyle E-Commerce",
+    it: "Piattaforma e-commerce completa con gestione prodotti, carrello e UI moderna.",
+    en: "Full e-commerce platform with product management, cart and modern UI.",
+    tech: ["HTML5", "CSS3", "JS"],
+    url: "https://iacreatorcar.github.io/PetStyle/",
+    type: "Project"
+  }
+];
+
+const mediumArticles = [
+  { 
+    title: "AI & Business Automation", 
+    url: "https://medium.com/@carmine.dalise/how-cms-and-artificial-intelligence-are-transforming-business-automation-70fab242756f",
+    it: "Come CMS e AI stanno trasformando l'automazione aziendale.",
+    en: "How CMS and AI are transforming business automation."
+  },
+  { 
+    title: "502 Server Error: Guide", 
+    url: "https://medium.com/@carmine.dalise/502-server-error-causes-and-solutions-for-businesses-a0417ce08705",
+    it: "Analisi tecnica e risoluzioni per l'errore 502 nel business.",
+    en: "Technical analysis and solutions for 502 errors in business."
+  },
+  { 
+    title: "Agentic AI Performance", 
+    url: "https://medium.com/@carmine.dalise/agentic-ai-and-human-performance-how-ai-agents-can-unlock-staff-efficiency-and-what-companies-e62673eacaa5",
+    it: "Come gli Agenti AI sbloccano l'efficienza dello staff.",
+    en: "How AI Agents unlock staff efficiency."
+  },
+  { 
+    title: "Technology & Leadership", 
+    url: "https://medium.com/@carmine.dalise/when-technology-meets-leadership-5514516a3072",
+    it: "La sinergia quando la tecnologia incontra la leadership strategica.",
+    en: "The synergy when technology meets strategic leadership."
+  },
+  { 
+    title: "China's 10G Era", 
+    url: "https://medium.com/@carmine.dalise/chinas-great-leap-forward-entering-the-10g-era-and-the-rise-of-neural-smart-cities-397622a833b2",
+    it: "L'era 10G e l'ascesa delle Neural Smart Cities in Cina.",
+    en: "The 10G era and the rise of Neural Smart Cities in China."
+  },
+  { 
+    title: "Gemini vs ChatGPT", 
+    url: "https://medium.com/@carmine.dalise/gemini-vs-chatgpt-a-deep-dive-into-the-next-gen-ai-battle-1551bed51a71",
+    it: "Deep dive sulla battaglia dell'AI di nuova generazione.",
+    en: "Deep dive into the next-gen AI battle."
   }
 ];
 
 const certifications = [
-  { title: "AI Automation Agent & Product Masterclass", issuer: "Udemy", date: "2025", it: "Sviluppo agenti AI e Design Thinking.", en: "AI Agent development and Design Thinking.", url: "https://alison.com/verify/aa8ea2b0de" },
-  { title: "Crestron CTI-CTF & 4K Dante Audinate", issuer: "Crestron / Audinate", date: "2024", it: "Sistemi AV over IP e controllo domotico.", en: "AV over IP systems and automation control.", url: null },
-  { title: "Cisco Networking Devices (ICND2) CCNA", issuer: "Alison / Cisco", date: "2023", it: "Gestione reti complesse Cisco.", en: "Managing complex Cisco networks.", url: "https://alison.com/verify/9459c939f3" },
-  { title: "Graphic Design & UI Visuals", issuer: "Alison", date: "2023", it: "Design visivo e comunicazione grafica.", en: "Visual design and graphic communication.", url: "https://alison.com/verify/97ee06d337" },
-  { title: "Cyber Security: Threats & Prevention", issuer: "Alison", date: "2023", it: "Analisi minacce e difesa informatica.", en: "Threat analysis and cyber defense.", url: "https://alison.com/verify/82ee5bf1f2" },
-  { title: "SAPUI5 Development & enterprise Apps", issuer: "Alison", date: "2023", it: "Sviluppo enterprise SAP e interfacce web.", en: "SAP enterprise development and web UI.", url: "https://alison.com/verify/e15fb4d2a0" },
-  { title: "Supply Chain & Content Management", issuer: "Alison", date: "2023", it: "Logistica e strategie contenuti digitali.", en: "Logistics and digital content strategies.", url: "https://alison.com/verify/10d6a15cd9" },
-  { title: "Technical Hardware & Networks", issuer: "Istituto Gamma", date: "2017", it: "Infrastrutture IT e networking.", en: "IT infrastructure and networking.", url: null },
-  { title: "High School Diploma: Elettronica", issuer: "Augusto Righi", date: "1999", it: "Hardware e telecomunicazioni.", en: "Hardware and telecommunications.", url: null }
-];
-
-const cityTours = [
-  { title: "Rome: The Eternal City", it: "Cuore della storia imperiale.", en: "Heart of imperial history.", url: "https://youtu.be/I6D_WXXDE0o", category: "Imperial Italy" },
-  { title: "Venice: Serene Waters", it: "Esplorazione aerea sull'acqua.", en: "Aerial exploration on water.", url: "https://youtu.be/6HA0Han_aqc", category: "Imperial Italy" },
-  { title: "Greenland Expedition", it: "Riprese esclusive tra i ghiacci.", en: "Extreme footage among ice.", url: "https://youtu.be/nD8ppejGs4Q", category: "Extreme" },
-  { title: "Barcelona Experience", it: "Energia della Catalogna (Drone).", en: "Catalonia energy (Drone).", url: "https://youtu.be/n6kDGHPseNc", category: "Med Gems" },
-  { title: "Dubrovnik: Pearl of Adriatic", it: "Mura storiche e costa croata.", en: "Historical walls and Croatian coast.", url: "https://youtu.be/Wq83nqRWJKI", category: "Med Gems" },
-  { title: "Zante: The Blue Horizon", it: "Acque cristalline e scogliere greche.", en: "Crystal clear waters and Greek cliffs.", url: "https://youtu.be/VYvCDKUl9PE", category: "Med Gems" }
+  { title: "Crestron CTI-CTF & 4K Dante Audinate", issuer: "Crestron / Audinate", date: "2024", it: "Sistemi AV over IP e controllo domotico per ambienti Hospitality.", en: "AV over IP systems and automation control for Hospitality environments.", url: null },
+  { title: "Website Development (HTML/CSS)", issuer: "Alison", date: "2023", it: "Diploma professionale in sviluppo web e architettura frontend.", en: "Professional diploma in web development and frontend architecture.", url: "https://alison.com/verify/2717a06981" },
+  { title: "Content Management Strategies", issuer: "Alison", date: "2023", it: "Gestione di flussi CMS e strategie digitali per il business.", en: "CMS workflow management and digital strategies for business.", url: "https://alison.com/verify/10d6a15cd9" },
+  { title: "Cyber Security: Threats & Prevention", issuer: "Alison", date: "2023", it: "Analisi delle minacce e protezione delle infrastrutture di rete.", en: "Threat analysis and network infrastructure protection.", url: "https://alison.com/verify/82ee5bf1f2" },
+  { title: "Graphic Design & UI Visuals", issuer: "Alison", date: "2023", it: "Design dell'interfaccia utente per piattaforme digitali.", en: "User Interface design for digital platforms.", url: "https://alison.com/verify/97ee06d337" },
+  { title: "SAPUI5 Development & Enterprise Apps", issuer: "Alison", date: "2023", it: "Conoscenza dei framework enterprise per applicazioni scalabili.", en: "Knowledge of enterprise frameworks for scalable applications.", url: "https://alison.com/verify/e15fb4d2a0" },
+  { title: "Technical Hardware & Networking", issuer: "Istituto Gamma", date: "2017", it: "Specializzazione hardware e configurazione reti.", en: "Hardware specialization and network configuration.", url: null },
+  { title: "Diploma ITIS: Elettronica & telecomunicazioni", issuer: "Augusto Righi", date: "1994 - 1999", it: "Basi solide in elettronica e telecomunicazioni.", en: "Strong foundation in electronics and telecommunications.", url: null }
 ];
 
 const digitalProcedures = [
   { 
-    title: "General Technical Portfolio", 
-    it: "Panoramica completa delle competenze tecniche e demo on-board.", 
-    en: "Comprehensive overview of technical skills and on-board demos.", 
+    title: "Technical Field & Troubleshooting", 
+    it: "Case study tecnici su risoluzione problemi hardware e registrazioni tenant.", 
+    en: "Technical case studies on hardware troubleshooting and tenant registration.", 
     url: "https://www.canva.com/design/DAGFNejoyL4/MHkiG61sTBJYGzgKQS8NKQ/view",
-    type: "Portfolio"
+    type: "Field"
   },
   { 
-    title: "Audit Digital On-board Presentation", 
-    it: "Presentazione demo per l'audit dei sistemi digitali di bordo.", 
-    en: "Demo presentation for on-board digital systems audit.", 
-    url: "https://www.canva.com/design/DAG_slG5SOQ/q103hlBwW8zR5BM4FEqWdQ/edit",
-    type: "Canva"
-  },
-  { 
-    title: "S.O.P. Cabin Guest TVs", 
-    it: "Procedure operative standard per i sistemi TV nelle cabine ospiti.", 
-    en: "Standard operating procedures for guest cabin TV systems.", 
+    title: "S.O.P. Interactive Systems", 
+    it: "Procedure operative per LG Pro:Centric e Samsung VXT.", 
+    en: "Standard operating procedures for LG Pro:Centric and Samsung VXT.", 
     url: "https://www.canva.com/design/DAG_tM6ZZCo/0GixaphLXoGF_3fadZvxFw/edit",
-    type: "Canva"
+    type: "SOP"
   }
+];
+
+const cityTours = [
+  { title: "Greenland Expedition", it: "Riprese esclusive tra i ghiacci.", en: "Extreme footage among ice.", url: "https://youtu.be/nD8ppejGs4Q?si=llx4HRGOnNSd6tFk", category: "Extreme" },
+  { title: "Global Operations Showcase", it: "Showreel delle attività tecniche internazionali.", en: "International technical operations showreel.", url: "https://youtu.be/wYj6RxBbagk?si=ZrfeDYyU9ddvgfgZ", category: "Technical" },
+  { title: "Visual Media Portfolio", it: "Riprese droni e marketing territoriale.", en: "Drone footage and territorial marketing.", url: "https://youtu.be/I6D_WXXDE0o", category: "Creative" }
 ];
 ---
 
@@ -93,40 +150,90 @@ const digitalProcedures = [
     <meta name="viewport" content="width=device-width" />
     <title>The Bridge | {name}</title>
     <style>
-        :root { --accent: #38bdf8; --bg: #020617; --card: #1e293b; --gold: #fbbf24; --canva: #00c4cc; --tech-bg: #111827; }
-        body { background: var(--bg); color: #f1f5f9; font-family: sans-serif; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; }
-        .container { max-width: 1000px; width: 90%; text-align: center; padding: 4rem 0; }
+        :root { 
+            --accent: #38bdf8; 
+            --bg: #020617; 
+            --card: #0f172a; 
+            --card-hover: #1e293b;
+            --gold: #fbbf24; 
+            --canva: #00c4cc; 
+            --text-main: #f1f5f9;
+            --text-dim: #94a3b8;
+        }
         
-        /* Navigation Tabs */
-        .tab-bar { display: flex; justify-content: center; gap: 0.5rem; margin: 3rem 0; border-bottom: 1px solid #1e293b; padding-bottom: 1rem; flex-wrap: wrap; }
-        .tab-btn { background: none; border: none; color: #94a3b8; font-size: 0.85rem; font-weight: bold; cursor: pointer; padding: 0.5rem 0.8rem; transition: 0.3s; position: relative; }
+        body { 
+            background: var(--bg); 
+            color: var(--text-main); 
+            font-family: 'Inter', 'Segoe UI', system-ui, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center;
+            font-size: 18px;
+        }
+
+        .container { max-width: 1200px; width: 92%; text-align: center; padding: 4rem 0; }
+        h1 { font-size: clamp(3rem, 10vw, 5rem); margin: 0; letter-spacing: -3px; font-weight: 800; }
+        
+        .tab-bar { display: flex; justify-content: center; gap: 0.8rem; margin: 3.5rem 0; border-bottom: 1px solid #1e293b; padding-bottom: 1rem; flex-wrap: wrap; }
+        .tab-btn { background: none; border: none; color: var(--text-dim); font-size: 0.85rem; font-weight: bold; cursor: pointer; padding: 0.6rem 1.2rem; transition: 0.3s; position: relative; text-transform: uppercase; letter-spacing: 1px; }
         .tab-btn.active { color: var(--accent); }
         .tab-btn.active::after { content: ''; position: absolute; bottom: -1rem; left: 0; width: 100%; height: 2px; background: var(--accent); }
 
-        .content-section { display: none; min-height: 400px; animation: fadeIn 0.4s ease-out; }
+        .content-section { display: none; min-height: 500px; animation: fadeIn 0.4s ease-out; }
         .content-section.active { display: block !important; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-        .grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; text-align: left; }
-        .info-card { background: #0f172a; border: 1px solid #1e293b; padding: 1.2rem; border-radius: 0.75rem; transition: 0.3s; text-decoration: none; color: inherit; display: block; }
-        .info-card:hover { border-color: var(--accent); background: #1e293b; }
-
-        /* Tech Tags */
-        .tech-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem; }
-        .tag { background: var(--tech-bg); color: var(--accent); font-size: 0.7rem; padding: 3px 8px; border-radius: 12px; border: 1px solid rgba(56, 189, 248, 0.2); }
-
-        .lang-switcher { position: fixed; top: 20px; right: 20px; z-index: 100; display: flex; gap: 5px; }
-        .lang-switcher button { background: #1e293b; border: 1px solid var(--accent); color: white; padding: 5px 10px; border-radius: 10px; cursor: pointer; font-size: 0.7rem; }
-        .lang-switcher button.active { background: var(--accent); color: var(--bg); }
-
-        .nav-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 2rem 0; }
-        .nav-card { background: var(--card); padding: 1rem; border-radius: 0.5rem; text-decoration: none; color: white; border: 1px solid rgba(56, 189, 248, 0.2); transition: 0.3s; }
-        .nav-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+        .grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 1.5rem; text-align: left; }
         
-        h1 { font-size: clamp(2.5rem, 8vw, 4rem); margin: 0; letter-spacing: -2px; }
-        .badge { font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; border: 1px solid var(--accent); color: var(--accent); }
-        .btn-action { display: inline-block; margin-top: 1rem; font-size: 0.7rem; font-weight: bold; border: 1px solid var(--gold); color: var(--gold); padding: 5px 10px; border-radius: 4px; text-decoration: none; transition: 0.2s; }
-        .btn-action:hover { background: rgba(251, 191, 36, 0.1); }
+        /* STILE CARD UNIFICATO (ISPIRATO ALLE CERTIFICAZIONI) */
+        .info-card { 
+            background: var(--card); 
+            border: 1px solid rgba(255,255,255,0.03); 
+            padding: 2rem; 
+            border-radius: 8px; 
+            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+            display: flex; 
+            flex-direction: column; 
+            height: 100%; 
+            box-sizing: border-box;
+            position: relative;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        /* Bordo laterale come nelle certificazioni */
+        .border-accent { border-left: 3px solid var(--accent); }
+        .border-gold { border-left: 3px solid var(--gold); }
+        .border-canva { border-left: 3px solid var(--canva); }
+
+        .info-card:hover { 
+            background: var(--card-hover); 
+            transform: translateY(-5px); 
+            box-shadow: 0 15px 30px -10px rgba(0,0,0,0.5);
+            border-color: rgba(56, 189, 248, 0.2);
+        }
+
+        .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+        
+        .info-card h4, .info-card h3 { color: #fff; font-size: 1.2rem; font-weight: 700; margin: 0 0 0.5rem 0; line-height: 1.3; }
+        .info-card p { color: var(--text-dim); font-size: 0.95rem; line-height: 1.6; flex-grow: 1; }
+
+        .tag-label { font-size: 0.7rem; font-weight: 800; color: var(--accent); letter-spacing: 1.5px; text-transform: uppercase; }
+        
+        .cta-text { margin-top: 1.5rem; display: flex; align-items: center; gap: 8px; color: var(--accent); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; }
+
+        /* Altri stili */
+        .lang-switcher { position: fixed; top: 25px; right: 25px; z-index: 100; display: flex; gap: 5px; }
+        .lang-switcher button { background: #1e293b; border: 1px solid #334155; color: white; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 0.75rem; font-weight: bold; }
+        .lang-switcher button.active { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+
+        .nav-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 2.5rem 0; }
+        .nav-card { background: var(--card); padding: 1rem; border-radius: 4px; text-decoration: none; color: white; border: 1px solid rgba(255,255,255,0.05); transition: 0.3s; text-align: center;}
+        .nav-card:hover { border-color: var(--accent); background: var(--card-hover); }
+        
+        .badge-year { font-size: 0.7rem; padding: 2px 8px; border-radius: 4px; border: 1px solid var(--accent); color: var(--accent); font-weight: bold; }
     </style>
 </head>
 <body>
@@ -136,39 +243,74 @@ const digitalProcedures = [
     </div>
 
     <div class="container">
-        <div style="letter-spacing: 4px; font-size: 0.8rem; opacity: 0.6; color: var(--accent);">CARMINE D'ALISE PRESENTS</div>
+        <div style="letter-spacing: 5px; font-size: 0.75rem; opacity: 0.6; color: var(--accent); margin-bottom: 0.5rem; font-weight: 800;">TECHNICAL ARCHITECTURE & OPS</div>
         <h1>THE BRIDGE</h1>
-        <p style="opacity: 0.7; font-weight: 300; margin-top: 0.5rem;">Tech Operations Manager | Digital Solutions Architect</p>
+        <p style="opacity: 0.8; font-weight: 300; margin-top: 0.5rem; font-size: 1.2rem; color: var(--text-dim);">Digital Experience Lead | Tech Operations Manager</p>
 
         <div class="nav-grid">
             {quickLinks.map(link => (
                 <a href={link.url} target="_blank" class="nav-card">
-                    <span style="display:block; font-size: 1.5rem;">{link.icon}</span>
-                    <small style="font-size: 0.7rem; font-weight: bold;">{link.name}</small>
+                    <span style="display:block; font-size: 1.5rem; margin-bottom: 0.4rem;">{link.icon}</span>
+                    <small style="font-size: 0.75rem; font-weight: bold; text-transform: uppercase;">{link.name}</small>
                 </a>
             ))}
         </div>
 
         <div class="tab-bar">
-            <button class="tab-btn active" onclick="showTab('tech')" id="tab-tech">TECH STACK</button>
-            <button class="tab-btn" onclick="showTab('certs')" id="tab-certs">PATH & SKILLS</button>
-            <button class="tab-btn" onclick="showTab('sop')" id="tab-sop">SOP & AUDIT</button>
-            <button class="tab-btn" onclick="showTab('media')" id="tab-media">CREATIVE MEDIA</button>
+            <button class="tab-btn active" onclick="showTab('tech')" id="tab-tech">Modules</button>
+            <button class="tab-btn" onclick="showTab('lab')" id="tab-lab">Lab & Insights</button>
+            <button class="tab-btn" onclick="showTab('certs')" id="tab-certs">Certifications</button>
+            <button class="tab-btn" onclick="showTab('sop')" id="tab-sop">SOP & Audit</button>
+            <button class="tab-btn" onclick="showTab('media')" id="tab-media">Media</button>
         </div>
 
         <div id="section-tech" class="content-section active">
             <div class="grid-layout">
-                {techStack.map(cat => (
-                    <div class="info-card" style="border-top: 2px solid var(--accent);">
-                        <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">{cat.icon}</div>
-                        <h3 style="margin: 0; font-size: 1.1rem; color: #fff;">{cat.category}</h3>
-                        <p style="font-size: 0.8rem; opacity: 0.6; margin: 0.3rem 0;">{cat.it}</p>
-                        <div class="tech-tags">
-                            {cat.items.map(item => (
-                                <span class="tag">{item}</span>
-                            ))}
+                {dashboardModules.map(mod => (
+                    <div class="info-card border-accent">
+                        <div class="card-header">
+                            <div style="font-size: 2rem;">{mod.icon}</div>
+                            <span class="tag-label" style="opacity:0.5;">MODULE_v1</span>
+                        </div>
+                        <h3>{mod.title}</h3>
+                        <p class="lang-text" data-it={mod.description_it} data-en={mod.description_en}>{mod.description_it}</p>
+                        <div style="display:flex; flex-wrap:wrap; gap:5px; margin-top:1rem;">
+                            {mod.skills.map(s => <span style="font-size:0.7rem; background:#1e293b; padding:2px 8px; border-radius:4px; color:var(--accent); border:1px solid rgba(56,189,248,0.1)">{s}</span>)}
                         </div>
                     </div>
+                ))}
+            </div>
+        </div>
+
+        <div id="section-lab" class="content-section">
+            <div class="grid-layout">
+                {/* Articoli Medium con stile Certificazioni */}
+                {mediumArticles.map(art => (
+                    <a href={art.url} target="_blank" class="info-card border-accent">
+                        <div class="card-header">
+                            <span class="tag-label">Medium Article</span>
+                            <span style="font-size: 1.2rem;">📖</span>
+                        </div>
+                        <h4>{art.title}</h4>
+                        <p class="lang-text" data-it={art.it} data-en={art.en}>{art.it}</p>
+                        <div class="cta-text">
+                            Read Insight
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </div>
+                    </a>
+                ))}
+
+                {/* Progetti Lab */}
+                {labProjects.map(proj => (
+                    <a href={proj.url} target="_blank" class="info-card border-canva">
+                        <div class="card-header">
+                            <span class="tag-label" style="color:var(--canva)">{proj.type}</span>
+                            <span>🚀</span>
+                        </div>
+                        <h4>{proj.title}</h4>
+                        <p class="lang-text" data-it={proj.it} data-en={proj.en}>{proj.it}</p>
+                        <div class="cta-text" style="color:var(--canva)">Launch Project</div>
+                    </a>
                 ))}
             </div>
         </div>
@@ -176,30 +318,15 @@ const digitalProcedures = [
         <div id="section-certs" class="content-section">
             <div class="grid-layout">
                 {certifications.map(cert => (
-                    <div class="info-card">
-                        <div style="display:flex; justify-content: space-between;">
-                            <span class="badge" style="border-color: var(--gold); color: var(--gold);">{cert.date}</span>
-                            {cert.url && <a href={cert.url} target="_blank" style="text-decoration:none;">🔗</a>}
+                    <div class="info-card border-gold">
+                        <div class="card-header">
+                            <span class="badge-year" style="border-color:var(--gold); color:var(--gold)">{cert.date}</span>
+                            {cert.url ? <a href={cert.url} target="_blank" style="text-decoration:none;">📄</a> : <span>📜</span>}
                         </div>
-                        <h4 style="margin: 0.8rem 0 0.2rem 0; color: #fff;">{cert.title}</h4>
-                        <small style="color: var(--accent);">{cert.issuer}</small>
-                        <p class="lang-text" data-it={cert.it} data-en={cert.en} style="font-size: 0.8rem; opacity: 0.6; margin-top: 0.5rem;">{cert.it}</p>
+                        <h4>{cert.title}</h4>
+                        <small style="color:var(--accent); font-weight:800; text-transform:uppercase; font-size:0.7rem;">{cert.issuer}</small>
+                        <p class="lang-text" data-it={cert.it} data-en={cert.en} style="margin-top:1rem;">{cert.it}</p>
                     </div>
-                ))}
-            </div>
-        </div>
-
-        <div id="section-media" class="content-section">
-            <div class="grid-layout">
-                {cityTours.map(tour => (
-                    <a href={tour.url} target="_blank" class="info-card">
-                        <div style="display:flex; justify-content: space-between;">
-                            <span class="badge">{tour.category}</span>
-                            <span>📹</span>
-                        </div>
-                        <h4 style="margin: 0.8rem 0 0.2rem 0; color: #fff;">{tour.title}</h4>
-                        <p class="lang-text" data-it={tour.it} data-en={tour.en} style="font-size: 0.8rem; opacity: 0.6;">{tour.it}</p>
-                    </a>
                 ))}
             </div>
         </div>
@@ -207,55 +334,54 @@ const digitalProcedures = [
         <div id="section-sop" class="content-section">
             <div class="grid-layout">
                 {digitalProcedures.map(doc => (
-                    <div class="info-card">
-                        <div style="display:flex; justify-content: space-between;">
-                            <span style="font-size: 1.5rem;">{doc.type === 'Portfolio' ? '🚀' : '📑'}</span>
-                            <span class="badge" style="border-color: var(--canva); color: var(--canva);">CANVA</span>
+                    <a href={doc.url} target="_blank" class="info-card border-canva">
+                        <div class="card-header">
+                            <span class="tag-label" style="color:var(--canva)">S.O.P. DOCUMENT</span>
+                            <span>📑</span>
                         </div>
-                        <h4 style="margin: 0.8rem 0 0.2rem 0; color: #fff;">{doc.title}</h4>
-                        <p class="lang-text" data-it={doc.it} data-en={doc.en} style="font-size: 0.8rem; opacity: 0.6;">{doc.it}</p>
-                        <a href={doc.url} target="_blank" class="btn-action">VIEW PRESENTATION</a>
-                    </div>
+                        <h4>{doc.title}</h4>
+                        <p class="lang-text" data-it={doc.it} data-en={doc.en}>{doc.it}</p>
+                        <div class="cta-text" style="color:var(--canva)">View Presentation</div>
+                    </a>
                 ))}
             </div>
         </div>
 
-        <div class="bio" style="margin-top: 5rem;">
-            <p id="bio-text" data-it='"20 anni di logistica navale incontrano lo sviluppo software moderno."' data-en='"20 years of maritime logistics meet modern software development."'>
-                "20 anni di logistica navale incontrano lo sviluppo software moderno."
+        <div id="section-media" class="content-section">
+            <div class="grid-layout">
+                {cityTours.map(tour => (
+                    <a href={tour.url} target="_blank" class="info-card border-accent">
+                        <div class="card-header">
+                            <span class="tag-label">{tour.category}</span>
+                            <span>📹</span>
+                        </div>
+                        <h4>{tour.title}</h4>
+                        <p class="lang-text" data-it={tour.it} data-en={tour.en}>{tour.it}</p>
+                        <div class="cta-text">Watch Video</div>
+                    </a>
+                ))}
+            </div>
+        </div>
+
+        <div style="margin-top: 6rem; padding: 0 10%;">
+            <p id="bio-text" data-it='"Sinergia perfetta tra ingegneria di campo e sviluppo software enterprise."' data-en='"Perfect synergy between field engineering and enterprise software development."' style="font-style: italic; font-size: 1.3rem; opacity: 0.9; color: var(--accent);">
+                "Sinergia perfetta tra ingegneria di campo e sviluppo software enterprise."
             </p>
         </div>
 
-        <div style="margin-top: 3rem; opacity: 0.4; font-size: 0.7rem; border-top: 1px solid #1e293b; padding-top: 2rem;">
-            {name} | Digital Experience Lead @ Aroya Cruises | Former Technical Manager @ MSC
-        </div>
+        <footer style="margin-top: 5rem; opacity: 0.3; font-size: 0.7rem; border-top: 1px solid #1e293b; padding: 3rem 0; letter-spacing: 2px; text-transform: uppercase;">
+            {name} • Senior Tech Operations • 2024
+        </footer>
     </div>
 
     <script is:inline>
         function showTab(tabName) {
-            // 1. Rimuovi la classe active da TUTTE le sezioni e nascondile
-            document.querySelectorAll('.content-section').forEach(s => {
-                s.classList.remove('active');
-                s.style.display = 'none';
-            });
-
-            // 2. Rimuovi active da tutti i bottoni
-            document.querySelectorAll('.tab-btn').forEach(b => {
-                b.classList.remove('active');
-            });
-
-            // 3. Mostra solo la sezione selezionata
+            document.querySelectorAll('.content-section').forEach(s => { s.classList.remove('active'); s.style.display = 'none'; });
+            document.querySelectorAll('.tab-btn').forEach(b => { b.classList.remove('active'); });
             const selectedSection = document.getElementById('section-' + tabName);
-            if (selectedSection) {
-                selectedSection.classList.add('active');
-                selectedSection.style.display = 'block';
-            }
-
-            // 4. Attiva il bottone selezionato
+            if (selectedSection) { selectedSection.classList.add('active'); selectedSection.style.display = 'block'; }
             const selectedBtn = document.getElementById('tab-' + tabName);
-            if (selectedBtn) {
-                selectedBtn.classList.add('active');
-            }
+            if (selectedBtn) { selectedBtn.classList.add('active'); }
         }
 
         function setLanguage(lang) {
@@ -263,12 +389,8 @@ const digitalProcedures = [
             document.getElementById('btn-en').classList.toggle('active', lang === 'en');
             const bio = document.getElementById('bio-text');
             bio.innerText = bio.getAttribute('data-' + lang);
-            document.querySelectorAll('.lang-text').forEach(el => {
-                el.innerText = el.getAttribute('data-' + lang);
-            });
+            document.querySelectorAll('.lang-text').forEach(el => { el.innerText = el.getAttribute('data-' + lang); });
         }
-
-        // Inizializzazione per sicurezza
         window.onload = () => showTab('tech');
     </script>
 </body>

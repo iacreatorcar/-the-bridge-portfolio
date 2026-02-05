@@ -1,28 +1,40 @@
 # 🚢 THE BRIDGE | Carmine D'Alise
-### Tech Operations Manager & Digital Solutions Architect
+### Digital Experience Lead & Tech Operations Architect
 
-**THE BRIDGE** is a professional interactive ecosystem representing the nexus between 20 years of expertise in maritime logistics and modern full-stack software development. Built with **Astro**, this portfolio is engineered for high performance, SEO optimization, and professional clarity.
+<p align="center">
+  <img src="./assets/screenshot-bridge.png" alt="The Bridge Dashboard Preview" width="100%" style="border-radius: 10px; box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
+</p>
 
+**THE BRIDGE** è un ecosistema interattivo di alto livello che rappresenta il punto di incontro tra oltre 20 anni di esperienza nella logistica tecnica navale e lo sviluppo di moderne architetture software enterprise. Realizzato con **Astro**, questo hub è progettato per massime prestazioni, autorità professionale e chiarezza modulare.
 
+---
 
-## 🚀 Project Vision
-Unlike a standard resume, "The Bridge" serves as a central hub for:
-- **Comprehensive Tech Stack:** Dynamic visualization of core competencies (React, Docker, AI, Cisco Networking).
-- **Maritime SOP & Audit:** Direct access to standard operating procedures, digital audit reports, and technical demos.
-- **Creative Media:** Integration of high-quality visual content and aerial cinematography (City Tours).
-- **Professional Roadmap:** Interactive timeline of certifications and career milestones (MSC, Aroya Cruises).
+## 🚀 L'Ecosistema Digitale
+"The Bridge" non è un semplice portfolio, ma un centro di comando che collega le mie principali soluzioni enterprise:
 
-## 🛠️ Core Technology Stack
-- **Framework:** Astro (Static Site Generation for lightning-fast loads)
-- **Styling:** CSS3 (Modern Flex/Grid with a Mobile-First approach)
-- **Logic:** Vanilla JavaScript (Efficient Tab management & Localization logic)
-- **Deployment:** Vercel (CI/CD Pipeline)
+* **[Cruise CMS (Emergent)](https://sea-services.emergent.host):** Gestione contenuti ad alte prestazioni per l'ospitalità marittima.
+* **[HotelFlow Manager](https://hotelflow-manager.vercel.app/index.html):** Sistema ottimizzato per le operazioni e la gestione degli ospiti.
+* **[Full-Stack Portfolio](https://carmine-dalise-portfolio.vercel.app/):** Deep-dive tecnico sulle basi di codice e architetture software.
 
-## 📁 Project Structure
+---
+
+## 🛠️ Architettura e Tech Stack
+Progettato con un approccio **Senior UI/UX** focalizzato sulla leggibilità e la precisione tecnica:
+
+* **Framework:** [Astro](https://astro.build/) (Static Site Generation per tempi di caricamento <1s)
+* **Styling:** CSS3 Moderno con estetica "Dark-Mode First" ad alto contrasto.
+* **Logic:** Gestione dinamica dei moduli via JavaScript per filtraggio contenuti e localizzazione (IT/EN).
+* **Insights:** Sezione dedicata ad analisi tecniche e leadership tecnologica (Medium Integration).
+
+---
+
+## 📁 Struttura del Progetto
 ```text
 /
-├── public/              # Static assets (Icons, Images)
+├── assets/                # Screenshot e media per la documentazione
+├── public/                # Asset statici e documentazione professionale (PDF/SOP)
 ├── src/
-│   └── pages/
-│       └── index.astro  # Core Portfolio (Logic, Data, & UI)
-└── package.json         # Project dependencies
+│   ├── pages/
+│   │   └── index.astro    # Core Logic, Dati dei Moduli & Dashboard UI
+│   └── components/        # Elementi UI modulari (Tabs, Cards, Grids)
+└── package.json           # Dipendenze e build scripts

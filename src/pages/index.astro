@@ -187,7 +187,6 @@ const cityTours = [
 
         .grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 1.5rem; text-align: left; }
         
-        /* STILE CARD UNIFICATO (ISPIRATO ALLE CERTIFICAZIONI) */
         .info-card { 
             background: var(--card); 
             border: 1px solid rgba(255,255,255,0.03); 
@@ -203,7 +202,6 @@ const cityTours = [
             color: inherit;
         }
         
-        /* Bordo laterale come nelle certificazioni */
         .border-accent { border-left: 3px solid var(--accent); }
         .border-gold { border-left: 3px solid var(--gold); }
         .border-canva { border-left: 3px solid var(--canva); }
@@ -224,7 +222,6 @@ const cityTours = [
         
         .cta-text { margin-top: 1.5rem; display: flex; align-items: center; gap: 8px; color: var(--accent); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; }
 
-        /* Altri stili */
         .lang-switcher { position: fixed; top: 25px; right: 25px; z-index: 100; display: flex; gap: 5px; }
         .lang-switcher button { background: #1e293b; border: 1px solid #334155; color: white; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 0.75rem; font-weight: bold; }
         .lang-switcher button.active { background: var(--accent); color: var(--bg); border-color: var(--accent); }
@@ -245,7 +242,17 @@ const cityTours = [
     <div class="container">
         <div style="letter-spacing: 5px; font-size: 0.75rem; opacity: 0.6; color: var(--accent); margin-bottom: 0.5rem; font-weight: 800;">TECHNICAL ARCHITECTURE & OPS</div>
         <h1>THE BRIDGE</h1>
-        <p style="opacity: 0.8; font-weight: 300; margin-top: 0.5rem; font-size: 1.2rem; color: var(--text-dim);">Digital Experience Lead | Tech Operations Manager</p>
+        
+        <p style="opacity: 0.9; font-weight: 700; margin-top: 0.5rem; font-size: 1.3rem; color: var(--text-main); letter-spacing: 1px;">
+            Digital Lead | Tech Operations Manager | Senior Full-Stack Developer
+        </p>
+
+        <p class="lang-text" 
+           data-it="Specialista nella trasformazione digitale di infrastrutture complesse, con solida esperienza nello sviluppo software e nella gestione operativa di sistemi critici." 
+           data-en="Specialist in digital transformation for complex infrastructures, with solid experience in software development and critical systems operations management."
+           style="opacity: 0.8; font-weight: 400; max-width: 850px; margin: 1.5rem auto; font-size: 1.1rem; color: var(--text-dim); line-height: 1.6;">
+            Specialista nella trasformazione digitale di infrastrutture complesse, con solida esperienza nello sviluppo software e nella gestione operativa di sistemi critici.
+        </p>
 
         <div class="nav-grid">
             {quickLinks.map(link => (
@@ -284,7 +291,6 @@ const cityTours = [
 
         <div id="section-lab" class="content-section">
             <div class="grid-layout">
-                {/* Articoli Medium con stile Certificazioni */}
                 {mediumArticles.map(art => (
                     <a href={art.url} target="_blank" class="info-card border-accent">
                         <div class="card-header">
@@ -300,7 +306,6 @@ const cityTours = [
                     </a>
                 ))}
 
-                {/* Progetti Lab */}
                 {labProjects.map(proj => (
                     <a href={proj.url} target="_blank" class="info-card border-canva">
                         <div class="card-header">

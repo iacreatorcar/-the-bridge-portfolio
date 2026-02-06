@@ -146,14 +146,13 @@ const cityTours = [
     <meta name="viewport" content="width=device-width" />
     <title>The Bridge | {name}</title>
 
-    <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "vd3swciqr5");
-</script>
-
+    <script type="text/javascript" is:inline>
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "vd3swciqr5");
+    </script>
 
     <style>
         :root { 
@@ -187,6 +186,10 @@ const cityTours = [
         .tab-btn.active { color: var(--accent); }
         .tab-btn.active::after { content: ''; position: absolute; bottom: -1rem; left: 0; width: 100%; height: 2px; background: var(--accent); }
 
+        /* Style speciale per la Tab sviluppatori */
+        .tab-btn-dev { color: #f472b6 !important; border: 1px dotted #f472b6 !important; border-radius: 4px; margin-left: 10px; }
+        .tab-btn-dev.active { background: rgba(244, 114, 182, 0.1); }
+
         .content-section { display: none; min-height: 500px; animation: fadeIn 0.4s ease-out; }
         .content-section.active { display: block !important; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
@@ -211,6 +214,7 @@ const cityTours = [
         .border-accent { border-left: 3px solid var(--accent); }
         .border-gold { border-left: 3px solid var(--gold); }
         .border-canva { border-left: 3px solid var(--canva); }
+        .border-dev { border-left: 3px solid #f472b6; }
 
         .info-card:hover { 
             background: var(--card-hover); 
@@ -236,6 +240,15 @@ const cityTours = [
         .nav-card:hover { border-color: var(--accent); background: var(--card-hover); }
         
         .badge-year { font-size: 0.7rem; padding: 2px 8px; border-radius: 4px; border: 1px solid var(--accent); color: var(--accent); font-weight: bold; }
+
+        .dev-notice {
+            background: rgba(244, 114, 182, 0.05);
+            border: 1px dashed #f472b6;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
     </style>
 </head>
 <body>
@@ -264,6 +277,7 @@ const cityTours = [
             <button class="tab-btn" onclick="showTab('certs')" id="tab-certs">Certifications</button>
             <button class="tab-btn" onclick="showTab('sop')" id="tab-sop">SOP & Audit</button>
             <button class="tab-btn" onclick="showTab('media')" id="tab-media">Media</button>
+            <button class="tab-btn tab-btn-dev" onclick="showTab('dev')" id="tab-dev">System Arch 🛠️</button>
         </div>
 
         <div id="section-tech" class="content-section active">
@@ -360,6 +374,31 @@ const cityTours = [
             </div>
         </div>
 
+        <div id="section-dev" class="content-section">
+            <div class="dev-notice">
+                <h4 style="color: #f472b6; margin-top:0;">🛠️ Developer Access & Proprietary Architecture</h4>
+                <p style="font-size: 0.9rem; color: #94a3b8;">
+                    Benvenuto nella sezione tecnica. La logica di instradamento, la struttura dei metadati e il design di questo hub 
+                    sono di proprietà intellettuale di <strong>Carmine D'Alise</strong>. 
+                    L'uso del codice sorgente è limitato dalla licenza <strong>CC BY-NC-ND 4.0</strong>: 
+                    non è consentita la copia della struttura logica per scopi commerciali o derivativi.
+                </p>
+            </div>
+            
+            <div class="grid-layout">
+                <div class="info-card border-dev">
+                    <div class="card-header"><span class="tag-label" style="color:#f472b6">Infrastructure</span><span>🗄️</span></div>
+                    <h4>Astro Edge Architecture</h4>
+                    <p>Utilizzo di Astro per la generazione statica (SSG) con componenti isolati. Ottimizzazione estrema del caricamento tramite script inline.</p>
+                </div>
+                <div class="info-card border-dev">
+                    <div class="card-header"><span class="tag-label" style="color:#f472b6">Tracking</span><span>📊</span></div>
+                    <h4>Microsoft Clarity Integration</h4>
+                    <p>Implementazione di monitoraggio comportamentale per l'analisi dei flussi UX e la protezione contro il plagio dei contenuti.</p>
+                </div>
+            </div>
+        </div>
+
         <div style="margin-top: 6rem; padding: 0 10%;">
             <p id="bio-text" data-it='"Sinergia perfetta tra ingegneria di campo e sviluppo software enterprise."' data-en='"Perfect synergy between field engineering and enterprise software development."' style="font-style: italic; font-size: 1.3rem; opacity: 0.9; color: var(--accent);">
                 "Sinergia perfetta tra ingegneria di campo e sviluppo software enterprise."
@@ -372,11 +411,11 @@ const cityTours = [
             </div>
             <div style="max-width: 700px; margin: 0 auto; color: var(--text-dim); text-transform: none;">
                 <p>
-                    <strong>Legal Notice:</strong> Il codice sorgente di questo portfolio è rilasciato sotto licenza 
-                    <a href="https://opensource.org/licenses/MIT" target="_blank" style="color: var(--accent); text-decoration: none;">MIT</a>. 
-                    I contenuti testuali, le procedure operative (S.O.P.) e i progetti grafici originali sono protetti da licenza 
-                    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" style="color: var(--accent); text-decoration: none;">CC BY-NC-ND 4.0</a>.
-                    Vietata la riproduzione, la modifica e l'uso commerciale non autorizzato dei contenuti proprietari.
+                    <strong>Intellectual Property & Legal Notice:</strong><br/>
+                    Tutti i contenuti testuali, le procedure operative (S.O.P.), i case study tecnici e l'architettura visiva di questo portfolio sono opere originali di Carmine D'Alise.
+                    L'intero materiale è protetto da licenza 
+                    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: bold;">Creative Commons BY-NC-ND 4.0</a>.<br/>
+                    <strong>È severamente vietata la riproduzione, la modifica o l'utilizzo commerciale dei contenuti senza autorizzazione scritta.</strong>
                 </p>
             </div>
         </footer>

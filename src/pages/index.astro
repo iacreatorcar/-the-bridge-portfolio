@@ -120,17 +120,17 @@ const certifications = [
 const digitalProcedures = [
   { 
     title: "Technical Field & Troubleshooting", 
-    it: "Case study tecnici su risoluzione problemi hardware e registrazioni tenant.", 
-    en: "Technical case studies on hardware troubleshooting and tenant registration.", 
+    it: "Case study tecnici RISERVATI su risoluzione problemi hardware e registrazioni tenant.", 
+    en: "CONFIDENTIAL technical case studies on hardware troubleshooting and tenant registration.", 
     url: "https://www.canva.com/design/DAGFNejoyL4/MHkiG61sTBJYGzgKQS8NKQ/view",
-    type: "Field"
+    type: "Proprietary"
   },
   { 
     title: "S.O.P. Interactive Systems", 
-    it: "Procedure operative per LG Pro:Centric e Samsung VXT.", 
-    en: "Standard operating procedures for LG Pro:Centric and Samsung VXT.", 
+    it: "Procedure operative PROPRIETARIE per LG Pro:Centric e Samsung VXT.", 
+    en: "PROPRIETARY standard operating procedures for LG Pro:Centric and Samsung VXT.", 
     url: "https://www.canva.com/design/DAG_tM6ZZCo/0GixaphLXoGF_3fadZvxFw/edit",
-    type: "SOP"
+    type: "Confidential"
   }
 ];
 
@@ -145,6 +145,16 @@ const cityTours = [
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>The Bridge | {name}</title>
+
+    <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "vd3swciqr5");
+</script>
+
+
     <style>
         :root { 
             --accent: #38bdf8; 
@@ -323,7 +333,7 @@ const cityTours = [
                 {digitalProcedures.map(doc => (
                     <a href={doc.url} target="_blank" class="info-card border-canva">
                         <div class="card-header">
-                            <span class="tag-label" style="color:var(--canva)">S.O.P. DOCUMENT</span>
+                            <span class="tag-label" style="color:var(--canva)">{doc.type}</span>
                             <span>📑</span>
                         </div>
                         <h4>{doc.title}</h4>
@@ -356,8 +366,19 @@ const cityTours = [
             </p>
         </div>
 
-        <footer style="margin-top: 5rem; opacity: 0.3; font-size: 0.7rem; border-top: 1px solid #1e293b; padding: 3rem 0; letter-spacing: 2px; text-transform: uppercase;">
-            {name} • Senior Tech Operations • 2024
+        <footer style="margin-top: 5rem; opacity: 0.6; font-size: 0.75rem; border-top: 1px solid #1e293b; padding: 3rem 0; line-height: 1.6; text-align: center; letter-spacing: 1px;">
+            <div style="margin-bottom: 1rem; font-weight: 800;">
+                {name} • Senior Tech Operations • 2024
+            </div>
+            <div style="max-width: 700px; margin: 0 auto; color: var(--text-dim); text-transform: none;">
+                <p>
+                    <strong>Legal Notice:</strong> Il codice sorgente di questo portfolio è rilasciato sotto licenza 
+                    <a href="https://opensource.org/licenses/MIT" target="_blank" style="color: var(--accent); text-decoration: none;">MIT</a>. 
+                    I contenuti testuali, le procedure operative (S.O.P.) e i progetti grafici originali sono protetti da licenza 
+                    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" style="color: var(--accent); text-decoration: none;">CC BY-NC-ND 4.0</a>.
+                    Vietata la riproduzione, la modifica e l'uso commerciale non autorizzato dei contenuti proprietari.
+                </p>
+            </div>
         </footer>
     </div>
 

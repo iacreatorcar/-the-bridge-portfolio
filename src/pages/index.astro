@@ -1,5 +1,5 @@
 ---
-// --- THE BRIDGE: Dashboard Evoluta Carmine D'Alise (Version 2.1) ---
+// --- THE BRIDGE: Dashboard Evoluta Carmine D'Alise (Version 2.2) ---
 const name = "Carmine D'alise";
 
 const quickLinks = [
@@ -44,30 +44,39 @@ const dashboardModules = [
   }
 ];
 
-const labProjects = [
+// NUOVA SEZIONE: TECHNICAL PROJECTS (Ex Lab)
+const technicalProjects = [
+    {
+    title: "Smart Menu QR - Fleet Ops",
+    it: "Prototipo di menu digitale per operazioni di flotta. per ambienti marittimi UX ottimizzata  Database & QR Code, Accesso Demo -> User: admin | Pass: 1234",
+    en: "Digital menu prototype for fleet operations. Maritime-optimized UX Database & QR Code, Demo Access -> User: admin | Pass: 1234",
+    tech: ["QR Logic", "Maritime UX", "Security"],
+    url: "https://smart-menu-qr.vercel.app", // Assicurati che l'URL sia corretto
+    type: "Digital Prototype"
+  },
   {
-    title: "Oishii Sushi Digital",
-    it: "Progetto di Digital Experience per Hospitality: Menu interattivo e ottimizzazione UI per Surface.",
-    en: "Hospitality Digital Experience project: Interactive menu and Surface UI optimization.",
-    tech: ["Marketing", "UX/UI"],
-    url: "https://oishii-digital-project.vercel.app",
-    type: "Featured"
+    title: "Jira Service Management (Dockerized)",
+    it: "Ambiente demo per la gestione di flussi ITIL e automazione processi ufficio, progettato per architetture containerizzate Docker.",
+    en: "Demo environment for ITIL workflow and office process automation, designed for Docker containerized architectures.",
+    tech: ["Docker", "ITSM", "Atlassian"],
+    url: "https://mini-jira-demo.vercel.app", 
+    type: "DevOps & Office"
   },
   {
     title: "HR Skills Quiz",
     it: "Test interattivo sui processi CMS e Troubleshooting per valutare le competenze dei recruiter.",
     en: "Interactive quiz on CMS processes and Troubleshooting for recruiters evaluation.",
-    tech: ["JavaScript", "UX Logic"],
+    tech: ["JavaScript", "HR Tech"],
     url: "https://iacreatorcar.github.io/cms-quiz/",
-    type: "Interactive"
+    type: "HR Skill Tool"
   },
   {
-    title: "PetStyle E-Commerce",
-    it: "Piattaforma e-commerce completa con gestione prodotti, carrello e UI moderna.",
-    en: "Full e-commerce platform with product management, cart and modern UI.",
-    tech: ["HTML5", "CSS3", "JS"],
-    url: "https://iacreatorcar.github.io/PetStyle/",
-    type: "Project"
+    title: "Oishii Sushi Digital",
+    it: "Progetto di Digital Experience per Hospitality: Menu interattivo e ottimizzazione UI.",
+    en: "Hospitality Digital Experience project: Interactive menu and UI optimization.",
+    tech: ["Marketing", "UX/UI"],
+    url: "https://oishii-digital-project.vercel.app",
+    type: "Featured"
   }
 ];
 
@@ -98,7 +107,6 @@ const mediumArticles = [
   }
 ];
 
-// --- AGGIORNATO CON IL TUO AUDIT ---
 const digitalProcedures = [
   { 
     title: "INTERNAL DIGITAL AUDIT 2025", 
@@ -124,8 +132,8 @@ const digitalProcedures = [
 ];
 
 const cityTours = [
-  { title: "Global Operations Showcase", it: "Showreel delle attività tecniche internazionali.", en: "International technical operations showreel.", url: "https://youtu.be/wYj6RxBbagk?si=ZrfeDYyU9ddvgfgZ", category: "Technical" },
-  { title: "Visual Media Portfolio", it: "Riprese droni e marketing territoriale.", en: "Drone footage and territorial marketing.", url: "https://youtu.be/I6D_WXXDE0o", category: "Creative" }
+  { title: "Global Operations Showcase", it: "Showreel delle attività tecniche internazionali.", en: "International technical operations showreel.", url: "https://youtu.be/wYj6RxBbagk?si=ZrfeDYyU9ddvgfgZ", category: "Technical Video" },
+  { title: "Visual Media Portfolio", it: "Riprese droni e marketing territoriale.", en: "Drone footage and territorial marketing.", url: "https://youtu.be/I6D_WXXDE0o", category: "Creative Video" }
 ];
 ---
 
@@ -241,9 +249,9 @@ const cityTours = [
 
         <div class="tab-bar">
             <button class="tab-btn active" onclick="showTab('tech')" id="tab-tech">Modules</button>
-            <button class="tab-btn" onclick="showTab('lab')" id="tab-lab">Lab & Insights</button>
+            <button class="tab-btn" onclick="showTab('lab')" id="tab-lab">Technical Projects</button>
             <button class="tab-btn" onclick="showTab('sop')" id="tab-sop">SOP & Audit</button>
-            <button class="tab-btn" onclick="showTab('media')" id="tab-media">Media</button>
+            <button class="tab-btn" onclick="showTab('media')" id="tab-media">Media & Info Articles</button>
             <button class="tab-btn tab-btn-dev" onclick="showTab('dev')" id="tab-dev">System Arch 🛠️</button>
         </div>
 
@@ -267,27 +275,15 @@ const cityTours = [
 
         <div id="section-lab" class="content-section">
             <div class="grid-layout">
-                {labProjects.map(proj => (
-                    <a href={proj.url} target="_blank" class="info-card border-canva">
+                {technicalProjects.map(proj => (
+                    <a href={proj.url} target="_blank" class="info-card border-accent">
                         <div class="card-header">
-                            <span class="tag-label" style="color:var(--canva)">{proj.type}</span>
-                            <span>🚀</span>
+                            <span class="tag-label" style="color:var(--accent)">{proj.type}</span>
+                            <span>⚙️</span>
                         </div>
                         <h4>{proj.title}</h4>
                         <p class="lang-text" data-it={proj.it} data-en={proj.en}>{proj.it}</p>
-                        <div class="cta-text" style="color:var(--canva)">Launch Project</div>
-                    </a>
-                ))}
-                
-                {mediumArticles.map(art => (
-                    <a href={art.url} target="_blank" class="info-card border-accent">
-                        <div class="card-header">
-                            <span class="tag-label">Medium Article</span>
-                            <span style="font-size: 1.2rem;">📖</span>
-                        </div>
-                        <h4>{art.title}</h4>
-                        <p class="lang-text" data-it={art.it} data-en={art.en}>{art.it}</p>
-                        <div class="cta-text">Read Insight</div>
+                        <div class="cta-text">Open Demo / Tool</div>
                     </a>
                 ))}
             </div>
@@ -307,24 +303,33 @@ const cityTours = [
                     </a>
                 ))}
             </div>
-            <p class="lang-text" style="margin-top: 2rem; color: var(--text-dim); font-size: 0.8rem; font-style: italic;" 
-               data-it="*Alcune procedure operative e i case study tecnici sono protetti per conformità alle policy di riservatezza industriale."
-               data-en="*Some operating procedures and technical case studies are protected for compliance with industrial confidentiality policies.">
-              *Alcune procedure operative e i case study tecnici sono protetti per conformità alle policy di riservatezza industriale.
-            </p>
         </div>
 
         <div id="section-media" class="content-section">
             <div class="grid-layout">
-                {cityTours.map(tour => (
-                    <a href={tour.url} target="_blank" class="info-card border-accent">
+                {/* ARTICOLI MEDIUM INTEGRATI QUI */}
+                {mediumArticles.map(art => (
+                    <a href={art.url} target="_blank" class="info-card border-accent">
                         <div class="card-header">
-                            <span class="tag-label">{tour.category}</span>
+                            <span class="tag-label">Medium Article</span>
+                            <span style="font-size: 1.2rem;">📖</span>
+                        </div>
+                        <h4>{art.title}</h4>
+                        <p class="lang-text" data-it={art.it} data-en={art.en}>{art.it}</p>
+                        <div class="cta-text">Read Insight</div>
+                    </a>
+                ))}
+
+                {/* VIDEO SHOWREEL */}
+                {cityTours.map(tour => (
+                    <a href={tour.url} target="_blank" class="info-card border-canva">
+                        <div class="card-header">
+                            <span class="tag-label" style="color:var(--canva)">{tour.category}</span>
                             <span>📹</span>
                         </div>
                         <h4>{tour.title}</h4>
                         <p class="lang-text" data-it={tour.it} data-en={tour.en}>{tour.it}</p>
-                        <div class="cta-text">Watch Video</div>
+                        <div class="cta-text" style="color:var(--canva)">Watch Video</div>
                     </a>
                 ))}
             </div>
@@ -398,7 +403,7 @@ const cityTours = [
             document.getElementById('btn-it').classList.toggle('active', lang === 'it');
             document.getElementById('btn-en').classList.toggle('active', lang === 'en');
             const bio = document.getElementById('bio-text');
-            bio.innerText = bio.getAttribute('data-' + lang);
+            if (bio) bio.innerText = bio.getAttribute('data-' + lang);
             document.querySelectorAll('.lang-text').forEach(el => { 
                 el.innerText = el.getAttribute('data-' + lang); 
             });
@@ -406,4 +411,4 @@ const cityTours = [
         window.onload = () => showTab('tech');
     </script>
 </body>
-</html>
+</html

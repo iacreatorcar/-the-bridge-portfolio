@@ -2,7 +2,7 @@
 ### Digital Lead | Tech Operations Manager | Senior Full-Stack Developer
 
 <p align="center">
-  <img src="./assets/screenshot-bridge.png" alt="The Bridge Dashboard Preview" width="100%" style="border-radius: 10px; box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
+  <img src="public/assets/screenshot-bridge.png" alt="The Bridge Dashboard Preview" width="100%" style="border-radius: 10px; box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
 </p>
 
 **THE BRIDGE** is a high-performance interactive ecosystem representing the nexus between 20+ years of expertise in maritime technical logistics and modern enterprise software architecture. Engineered with **Astro**, this hub is architected for maximum performance, professional authority, and modular scalability.

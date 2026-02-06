@@ -1,9 +1,9 @@
 ---
-// --- THE BRIDGE: Dashboard Evoluta Carmine D'Alise (Version 2.0 - Privacy Protected) ---
+// --- THE BRIDGE: Dashboard Evoluta Carmine D'Alise (Version 2.1) ---
 const name = "Carmine D'alise";
 
 const quickLinks = [
-  { name: "Oishii Sushi Digital", url: "https://oishii-digital-project.vercel.app", icon: "🍣" }, // Link aggiornato
+  { name: "Oishii Sushi Digital", url: "https://oishii-digital-project.vercel.app", icon: "🍣" },
   { name: "Full-Stack Portfolio", url: "https://carmine-dalise-portfolio.vercel.app/", icon: "🚀" },
   { name: "HotelFlow Manager", url: "https://hotelflow-manager.vercel.app/index.html", icon: "🏨" },
   { name: "Cruise CMS (Emergent)", url: "https://sea-services.emergent.host", icon: "🚢" }
@@ -50,11 +50,9 @@ const labProjects = [
     it: "Progetto di Digital Experience per Hospitality: Menu interattivo e ottimizzazione UI per Surface.",
     en: "Hospitality Digital Experience project: Interactive menu and Surface UI optimization.",
     tech: ["Marketing", "UX/UI"],
-    url: "https://oishii-digital-project.vercel.app", // Link aggiornato
+    url: "https://oishii-digital-project.vercel.app",
     type: "Featured"
   },
-  // ... restanti progetti invariati
-];
   {
     title: "HR Skills Quiz",
     it: "Test interattivo sui processi CMS e Troubleshooting per valutare le competenze dei recruiter.",
@@ -100,7 +98,15 @@ const mediumArticles = [
   }
 ];
 
+// --- AGGIORNATO CON IL TUO AUDIT ---
 const digitalProcedures = [
+  { 
+    title: "INTERNAL DIGITAL AUDIT 2025", 
+    it: "Analisi completa della presenza digitale e ottimizzazione dei canali (Visione Pubblica).", 
+    en: "Full digital presence analysis and channel optimization (Public View).", 
+    url: "https://www.canva.com/design/DAHAlXL95Oo/PC3HSm_JmKgEvoCD9g6QlA/view?utm_content=DAHAlXL95Oo&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hda894d245e",
+    type: "Audit"
+  },
   { 
     title: "Technical Field & Troubleshooting", 
     it: "Case study tecnici su risoluzione problemi hardware e registrazioni tenant. (Accesso su richiesta)", 
@@ -153,11 +159,8 @@ const cityTours = [
             background: var(--bg); 
             color: var(--text-main); 
             font-family: 'Inter', 'Segoe UI', system-ui, sans-serif; 
-            margin: 0; 
-            padding: 0; 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center;
+            margin: 0; padding: 0; 
+            display: flex; flex-direction: column; align-items: center;
             font-size: 18px;
         }
 
@@ -184,13 +187,8 @@ const cityTours = [
             padding: 2rem; 
             border-radius: 8px; 
             transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
-            display: flex; 
-            flex-direction: column; 
-            height: 100%; 
-            box-sizing: border-box;
-            position: relative;
-            text-decoration: none;
-            color: inherit;
+            display: flex; flex-direction: column; height: 100%; 
+            box-sizing: border-box; position: relative; text-decoration: none; color: inherit;
         }
         
         .border-accent { border-left: 3px solid var(--accent); }
@@ -205,10 +203,8 @@ const cityTours = [
         }
 
         .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
-        
         .info-card h4, .info-card h3 { color: #fff; font-size: 1.2rem; font-weight: 700; margin: 0 0 0.5rem 0; line-height: 1.3; }
         .info-card p { color: var(--text-dim); font-size: 0.95rem; line-height: 1.6; flex-grow: 1; }
-
         .tag-label { font-size: 0.7rem; font-weight: 800; color: var(--accent); letter-spacing: 1.5px; text-transform: uppercase; }
         .cta-text { margin-top: 1.5rem; display: flex; align-items: center; gap: 8px; color: var(--accent); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; }
 
@@ -220,14 +216,7 @@ const cityTours = [
         .nav-card { background: var(--card); padding: 1rem; border-radius: 4px; text-decoration: none; color: white; border: 1px solid rgba(255,255,255,0.05); transition: 0.3s; text-align: center;}
         .nav-card:hover { border-color: var(--accent); background: var(--card-hover); }
 
-        .dev-notice {
-            background: rgba(244, 114, 182, 0.05);
-            border: 1px dashed #f472b6;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-            text-align: left;
-        }
+        .dev-notice { background: rgba(244, 114, 182, 0.05); border: 1px dashed #f472b6; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; text-align: left; }
     </style>
 </head>
 <body>
@@ -314,14 +303,14 @@ const cityTours = [
                         </div>
                         <h4>{doc.title}</h4>
                         <p class="lang-text" data-it={doc.it} data-en={doc.en}>{doc.it}</p>
-                        <div class="cta-text" style="color:var(--canva)">Request Access</div>
+                        <div class="cta-text" style="color:var(--canva)">{doc.type === 'Audit' ? 'View Analysis' : 'Request Access'}</div>
                     </a>
                 ))}
             </div>
             <p class="lang-text" style="margin-top: 2rem; color: var(--text-dim); font-size: 0.8rem; font-style: italic;" 
-               data-it="*Le procedure operative e i case study tecnici sono protetti per conformità alle policy di riservatezza industriale."
-               data-en="*Standard operating procedures and technical case studies are protected for compliance with industrial confidentiality policies.">
-              *Le procedure operative e i case study tecnici sono protetti per conformità alle policy di riservatezza industriale.
+               data-it="*Alcune procedure operative e i case study tecnici sono protetti per conformità alle policy di riservatezza industriale."
+               data-en="*Some operating procedures and technical case studies are protected for compliance with industrial confidentiality policies.">
+              *Alcune procedure operative e i case study tecnici sono protetti per conformità alle policy di riservatezza industriale.
             </p>
         </div>
 
@@ -345,8 +334,8 @@ const cityTours = [
             <div class="dev-notice">
                 <h4 style="color: #f472b6; margin-top:0;">🛠️ Developer Access & Proprietary Architecture</h4>
                 <p class="lang-text" style="font-size: 0.9rem; color: #94a3b8;"
-                   data-it="Benvenuto nella sezione tecnica. La logica di instradamento, la struttura dei metadati e il design di questo hub sono di proprietà intellettuale di Carmine D'Alise. L'uso del codice sorgente è limitato dalla licenza CC BY-NC-ND 4.0."
-                   data-en="Welcome to the technical section. The routing logic, metadata structure, and design of this hub are the intellectual property of Carmine D'Alise. Source code usage is restricted by the CC BY-NC-ND 4.0 license.">
+                    data-it="La logica di instradamento, la struttura dei metadati e il design di questo hub sono di proprietà intellettuale di Carmine D'Alise."
+                    data-en="The routing logic, metadata structure, and design of this hub are the intellectual property of Carmine D'Alise.">
                     Benvenuto nella sezione tecnica. La logica di instradamento, la struttura dei metadati e il design di questo hub 
                     sono di proprietà intellettuale di <strong>Carmine D'Alise</strong>. 
                     L'uso del codice sorgente è limitato dalla licenza <strong>CC BY-NC-ND 4.0</strong>.
@@ -358,18 +347,18 @@ const cityTours = [
                     <div class="card-header"><span class="tag-label" style="color:#f472b6">Infrastructure</span><span>🗄️</span></div>
                     <h4>Astro Edge Architecture</h4>
                     <p class="lang-text" 
-                       data-it="Utilizzo di Astro per la generazione statica (SSG). Ottimizzazione estrema del caricamento tramite script inline e assenza di framework pesanti."
-                       data-en="Using Astro for Static Site Generation (SSG). Extreme load optimization via inline scripts and zero heavy frameworks.">
-                       Utilizzo di Astro per la generazione statica (SSG). Ottimizzazione estrema del caricamento tramite script inline e assenza di framework pesanti.
+                        data-it="Utilizzo di Astro per la generazione statica (SSG). Ottimizzazione estrema del caricamento tramite script inline."
+                        data-en="Using Astro for Static Site Generation (SSG). Extreme load optimization via inline scripts.">
+                        Utilizzo di Astro per la generazione statica (SSG). Ottimizzazione estrema del caricamento tramite script inline e assenza di framework pesanti.
                     </p>
                 </div>
                 <div class="info-card border-dev">
                     <div class="card-header"><span class="tag-label" style="color:#f472b6">Tracking</span><span>📊</span></div>
                     <h4>Microsoft Clarity Integration</h4>
                     <p class="lang-text"
-                       data-it="Implementazione di monitoraggio comportamentale per l'analisi dei flussi UX e la protezione contro il plagio dei contenuti."
-                       data-en="Implementation of behavioral monitoring for UX flow analysis and content plagiarism protection.">
-                       Implementazione di monitoraggio comportamentale per l'analisi dei flussi UX e la protezione contro il plagio dei contenuti.
+                        data-it="Monitoraggio comportamentale per l'analisi dei flussi UX e la protezione dei contenuti."
+                        data-en="Behavioral monitoring for UX flow analysis and content protection.">
+                        Implementazione di monitoraggio comportamentale per l'analisi dei flussi UX e la protezione contro il plagio dei contenuti.
                     </p>
                 </div>
             </div>
@@ -388,9 +377,8 @@ const cityTours = [
             <div style="max-width: 700px; margin: 0 auto; color: var(--text-dim); text-transform: none;">
                 <p>
                     <strong>Intellectual Property & Legal Notice:</strong><br/>
-                    Tutti i contenuti testuali, le procedure operative (S.O.P.) e l'architettura visiva di questo portfolio sono opere originali protette da licenza 
-                    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: bold;">Creative Commons BY-NC-ND 4.0</a>.<br/>
-                    <strong>È severamente vietata la riproduzione o la modifica dei contenuti senza autorizzazione scritta.</strong>
+                    Tutti i contenuti testuali e l'architettura visiva di questo portfolio sono protetti da licenza 
+                    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: bold;">Creative Commons BY-NC-ND 4.0</a>.
                 </p>
             </div>
         </footer>
@@ -409,12 +397,8 @@ const cityTours = [
         function setLanguage(lang) {
             document.getElementById('btn-it').classList.toggle('active', lang === 'it');
             document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-            
-            // Aggiorna Bio
             const bio = document.getElementById('bio-text');
             bio.innerText = bio.getAttribute('data-' + lang);
-            
-            // Aggiorna tutti gli elementi con classe .lang-text
             document.querySelectorAll('.lang-text').forEach(el => { 
                 el.innerText = el.getAttribute('data-' + lang); 
             });

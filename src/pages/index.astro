@@ -1,5 +1,5 @@
 ---
-// --- FRONTMATTER: Dashboard Evoluta Carmine D'Alise ---
+// --- THE BRIDGE: Dashboard Evoluta Carmine D'Alise (Version 2.0 - Privacy Protected) ---
 const name = "Carmine D'alise";
 
 const quickLinks = [
@@ -106,29 +106,18 @@ const mediumArticles = [
   }
 ];
 
-const certifications = [
-  { title: "Crestron CTI-CTF & 4K Dante Audinate", issuer: "Crestron / Audinate", date: "2024", it: "Sistemi AV over IP e controllo domotico per ambienti Hospitality.", en: "AV over IP systems and automation control for Hospitality environments.", url: null },
-  { title: "Website Development (HTML/CSS)", issuer: "Alison", date: "2023", it: "Diploma professionale in sviluppo web e architettura frontend.", en: "Professional diploma in web development and frontend architecture.", url: "https://alison.com/verify/2717a06981" },
-  { title: "Content Management Strategies", issuer: "Alison", date: "2023", it: "Gestione di flussi CMS e strategie digitali per il business.", en: "CMS workflow management and digital strategies for business.", url: "https://alison.com/verify/10d6a15cd9" },
-  { title: "Cyber Security: Threats & Prevention", issuer: "Alison", date: "2023", it: "Analisi delle minacce e protezione delle infrastrutture di rete.", en: "Threat analysis and network infrastructure protection.", url: "https://alison.com/verify/82ee5bf1f2" },
-  { title: "Graphic Design & UI Visuals", issuer: "Alison", date: "2023", it: "Design dell'interfaccia utente per piattaforme digitali.", en: "User Interface design for digital platforms.", url: "https://alison.com/verify/97ee06d337" },
-  { title: "SAPUI5 Development & Enterprise Apps", issuer: "Alison", date: "2023", it: "Conoscenza dei framework enterprise per applicazioni scalabili.", en: "Knowledge of enterprise frameworks for scalable applications.", url: "https://alison.com/verify/e15fb4d2a0" },
-  { title: "Technical Hardware & Networking", issuer: "Istituto Gamma", date: "2017", it: "Specializzazione hardware e configurazione reti.", en: "Hardware specialization and network configuration.", url: null },
-  { title: "Diploma ITIS: Elettronica & telecomunicazioni", issuer: "Augusto Righi", date: "1994 - 1999", it: "Basi solide in elettronica e telecomunicazioni.", en: "Strong foundation in electronics and telecommunications.", url: null }
-];
-
 const digitalProcedures = [
   { 
     title: "Technical Field & Troubleshooting", 
-    it: "Case study tecnici RISERVATI su risoluzione problemi hardware e registrazioni tenant.", 
-    en: "CONFIDENTIAL technical case studies on hardware troubleshooting and tenant registration.", 
+    it: "Case study tecnici su risoluzione problemi hardware e registrazioni tenant. (Accesso su richiesta)", 
+    en: "Technical case studies on hardware troubleshooting and tenant registration. (Access on Request)", 
     url: "https://www.canva.com/design/DAGFNejoyL4/MHkiG61sTBJYGzgKQS8NKQ/view",
     type: "Proprietary"
   },
   { 
     title: "S.O.P. Interactive Systems", 
-    it: "Procedure operative PROPRIETARIE per LG Pro:Centric e Samsung VXT.", 
-    en: "PROPRIETARY standard operating procedures for LG Pro:Centric and Samsung VXT.", 
+    it: "Procedure operative per LG Pro:Centric e Samsung VXT. (Visione protetta)", 
+    en: "Standard operating procedures for LG Pro:Centric and Samsung VXT. (Protected view)", 
     url: "https://www.canva.com/design/DAG_tM6ZZCo/0GixaphLXoGF_3fadZvxFw/edit",
     type: "Confidential"
   }
@@ -186,7 +175,6 @@ const cityTours = [
         .tab-btn.active { color: var(--accent); }
         .tab-btn.active::after { content: ''; position: absolute; bottom: -1rem; left: 0; width: 100%; height: 2px; background: var(--accent); }
 
-        /* Style speciale per la Tab sviluppatori */
         .tab-btn-dev { color: #f472b6 !important; border: 1px dotted #f472b6 !important; border-radius: 4px; margin-left: 10px; }
         .tab-btn-dev.active { background: rgba(244, 114, 182, 0.1); }
 
@@ -212,7 +200,6 @@ const cityTours = [
         }
         
         .border-accent { border-left: 3px solid var(--accent); }
-        .border-gold { border-left: 3px solid var(--gold); }
         .border-canva { border-left: 3px solid var(--canva); }
         .border-dev { border-left: 3px solid #f472b6; }
 
@@ -238,8 +225,6 @@ const cityTours = [
         .nav-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin: 2.5rem 0; }
         .nav-card { background: var(--card); padding: 1rem; border-radius: 4px; text-decoration: none; color: white; border: 1px solid rgba(255,255,255,0.05); transition: 0.3s; text-align: center;}
         .nav-card:hover { border-color: var(--accent); background: var(--card-hover); }
-        
-        .badge-year { font-size: 0.7rem; padding: 2px 8px; border-radius: 4px; border: 1px solid var(--accent); color: var(--accent); font-weight: bold; }
 
         .dev-notice {
             background: rgba(244, 114, 182, 0.05);
@@ -274,7 +259,6 @@ const cityTours = [
         <div class="tab-bar">
             <button class="tab-btn active" onclick="showTab('tech')" id="tab-tech">Modules</button>
             <button class="tab-btn" onclick="showTab('lab')" id="tab-lab">Lab & Insights</button>
-            <button class="tab-btn" onclick="showTab('certs')" id="tab-certs">Certifications</button>
             <button class="tab-btn" onclick="showTab('sop')" id="tab-sop">SOP & Audit</button>
             <button class="tab-btn" onclick="showTab('media')" id="tab-media">Media</button>
             <button class="tab-btn tab-btn-dev" onclick="showTab('dev')" id="tab-dev">System Arch 🛠️</button>
@@ -326,22 +310,6 @@ const cityTours = [
             </div>
         </div>
 
-        <div id="section-certs" class="content-section">
-            <div class="grid-layout">
-                {certifications.map(cert => (
-                    <div class="info-card border-gold">
-                        <div class="card-header">
-                            <span class="badge-year" style="border-color:var(--gold); color:var(--gold)">{cert.date}</span>
-                            {cert.url ? <a href={cert.url} target="_blank" style="text-decoration:none;">📄</a> : <span>📜</span>}
-                        </div>
-                        <h4>{cert.title}</h4>
-                        <small style="color:var(--accent); font-weight:800; text-transform:uppercase; font-size:0.7rem;">{cert.issuer}</small>
-                        <p class="lang-text" data-it={cert.it} data-en={cert.en} style="margin-top:1rem;">{cert.it}</p>
-                    </div>
-                ))}
-            </div>
-        </div>
-
         <div id="section-sop" class="content-section">
             <div class="grid-layout">
                 {digitalProcedures.map(doc => (
@@ -352,10 +320,13 @@ const cityTours = [
                         </div>
                         <h4>{doc.title}</h4>
                         <p class="lang-text" data-it={doc.it} data-en={doc.en}>{doc.it}</p>
-                        <div class="cta-text" style="color:var(--canva)">View Presentation</div>
+                        <div class="cta-text" style="color:var(--canva)">Request Access</div>
                     </a>
                 ))}
             </div>
+            <p style="margin-top: 2rem; color: var(--text-dim); font-size: 0.8rem; font-style: italic;">
+              *Le procedure operative e i case study tecnici sono protetti per conformità alle policy di riservatezza industriale.
+            </p>
         </div>
 
         <div id="section-media" class="content-section">
@@ -380,8 +351,7 @@ const cityTours = [
                 <p style="font-size: 0.9rem; color: #94a3b8;">
                     Benvenuto nella sezione tecnica. La logica di instradamento, la struttura dei metadati e il design di questo hub 
                     sono di proprietà intellettuale di <strong>Carmine D'Alise</strong>. 
-                    L'uso del codice sorgente è limitato dalla licenza <strong>CC BY-NC-ND 4.0</strong>: 
-                    non è consentita la copia della struttura logica per scopi commerciali o derivativi.
+                    L'uso del codice sorgente è limitato dalla licenza <strong>CC BY-NC-ND 4.0</strong>.
                 </p>
             </div>
             
@@ -389,7 +359,7 @@ const cityTours = [
                 <div class="info-card border-dev">
                     <div class="card-header"><span class="tag-label" style="color:#f472b6">Infrastructure</span><span>🗄️</span></div>
                     <h4>Astro Edge Architecture</h4>
-                    <p>Utilizzo di Astro per la generazione statica (SSG) con componenti isolati. Ottimizzazione estrema del caricamento tramite script inline.</p>
+                    <p>Utilizzo di Astro per la generazione statica (SSG). Ottimizzazione estrema del caricamento tramite script inline e assenza di framework pesanti.</p>
                 </div>
                 <div class="info-card border-dev">
                     <div class="card-header"><span class="tag-label" style="color:#f472b6">Tracking</span><span>📊</span></div>
@@ -412,10 +382,9 @@ const cityTours = [
             <div style="max-width: 700px; margin: 0 auto; color: var(--text-dim); text-transform: none;">
                 <p>
                     <strong>Intellectual Property & Legal Notice:</strong><br/>
-                    Tutti i contenuti testuali, le procedure operative (S.O.P.), i case study tecnici e l'architettura visiva di questo portfolio sono opere originali di Carmine D'Alise.
-                    L'intero materiale è protetto da licenza 
+                    Tutti i contenuti testuali, le procedure operative (S.O.P.) e l'architettura visiva di questo portfolio sono opere originali protette da licenza 
                     <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: bold;">Creative Commons BY-NC-ND 4.0</a>.<br/>
-                    <strong>È severamente vietata la riproduzione, la modifica o l'utilizzo commerciale dei contenuti senza autorizzazione scritta.</strong>
+                    <strong>È severamente vietata la riproduzione o la modifica dei contenuti senza autorizzazione scritta.</strong>
                 </p>
             </div>
         </footer>

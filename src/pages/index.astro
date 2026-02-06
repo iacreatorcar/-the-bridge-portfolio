@@ -13,8 +13,6 @@ const dashboardModules = [
   {
     id: "software",
     title: "Software Engineering",
-    it: "Sviluppo Full-Stack & Enterprise",
-    en: "Full-Stack & Enterprise Development",
     icon: "💻",
     skills: ["React.js", "Astro", "Python", "Docker", "Kiwi TCMS", "Stripe API", "Vercel", "GitHub"],
     description_it: "Architetture web scalabili, test di automazione e integrazioni di sistemi di pagamento.",
@@ -23,8 +21,6 @@ const dashboardModules = [
   {
     id: "interactive",
     title: "Interactive Systems",
-    it: "IPTV & Hospitality Tech",
-    en: "IPTV & Hospitality Technology",
     icon: "📺",
     skills: ["LG Pro:Centric", "Jira Service Management", "Ticketing Systems", "Troubleshooting", "Interactive UI"],
     description_it: "Specialista in ecosistemi TV interattivi e gestione flussi di ticketing Jira.",
@@ -33,8 +29,6 @@ const dashboardModules = [
   {
     id: "platforms",
     title: "Digital Platforms",
-    it: "Signage & Tenant Management",
-    en: "Signage & Tenant Management",
     icon: "🌐",
     skills: ["Samsung VXT", "MagicInfo", "Ricoh Integration", "Tenant Registration", "Token Management"],
     description_it: "Gestione piattaforme cloud signage, provisioning di token e amministrazione tenant.",
@@ -43,8 +37,6 @@ const dashboardModules = [
   {
     id: "field",
     title: "Field Engineering",
-    it: "Operatività Internazionale",
-    en: "International Field Operations",
     icon: "🛠️",
     skills: ["On-site Deployment", "Hardware Troubleshooting", "Cisco Networking", "AV over IP", "Technical Audits"],
     description_it: "Messa in opera e risoluzione problemi tecnici in contesti internazionali e navali.",
@@ -324,7 +316,9 @@ const cityTours = [
                     </a>
                 ))}
             </div>
-            <p style="margin-top: 2rem; color: var(--text-dim); font-size: 0.8rem; font-style: italic;">
+            <p class="lang-text" style="margin-top: 2rem; color: var(--text-dim); font-size: 0.8rem; font-style: italic;" 
+               data-it="*Le procedure operative e i case study tecnici sono protetti per conformità alle policy di riservatezza industriale."
+               data-en="*Standard operating procedures and technical case studies are protected for compliance with industrial confidentiality policies.">
               *Le procedure operative e i case study tecnici sono protetti per conformità alle policy di riservatezza industriale.
             </p>
         </div>
@@ -348,7 +342,9 @@ const cityTours = [
         <div id="section-dev" class="content-section">
             <div class="dev-notice">
                 <h4 style="color: #f472b6; margin-top:0;">🛠️ Developer Access & Proprietary Architecture</h4>
-                <p style="font-size: 0.9rem; color: #94a3b8;">
+                <p class="lang-text" style="font-size: 0.9rem; color: #94a3b8;"
+                   data-it="Benvenuto nella sezione tecnica. La logica di instradamento, la struttura dei metadati e il design di questo hub sono di proprietà intellettuale di Carmine D'Alise. L'uso del codice sorgente è limitato dalla licenza CC BY-NC-ND 4.0."
+                   data-en="Welcome to the technical section. The routing logic, metadata structure, and design of this hub are the intellectual property of Carmine D'Alise. Source code usage is restricted by the CC BY-NC-ND 4.0 license.">
                     Benvenuto nella sezione tecnica. La logica di instradamento, la struttura dei metadati e il design di questo hub 
                     sono di proprietà intellettuale di <strong>Carmine D'Alise</strong>. 
                     L'uso del codice sorgente è limitato dalla licenza <strong>CC BY-NC-ND 4.0</strong>.
@@ -359,12 +355,20 @@ const cityTours = [
                 <div class="info-card border-dev">
                     <div class="card-header"><span class="tag-label" style="color:#f472b6">Infrastructure</span><span>🗄️</span></div>
                     <h4>Astro Edge Architecture</h4>
-                    <p>Utilizzo di Astro per la generazione statica (SSG). Ottimizzazione estrema del caricamento tramite script inline e assenza di framework pesanti.</p>
+                    <p class="lang-text" 
+                       data-it="Utilizzo di Astro per la generazione statica (SSG). Ottimizzazione estrema del caricamento tramite script inline e assenza di framework pesanti."
+                       data-en="Using Astro for Static Site Generation (SSG). Extreme load optimization via inline scripts and zero heavy frameworks.">
+                       Utilizzo di Astro per la generazione statica (SSG). Ottimizzazione estrema del caricamento tramite script inline e assenza di framework pesanti.
+                    </p>
                 </div>
                 <div class="info-card border-dev">
                     <div class="card-header"><span class="tag-label" style="color:#f472b6">Tracking</span><span>📊</span></div>
                     <h4>Microsoft Clarity Integration</h4>
-                    <p>Implementazione di monitoraggio comportamentale per l'analisi dei flussi UX e la protezione contro il plagio dei contenuti.</p>
+                    <p class="lang-text"
+                       data-it="Implementazione di monitoraggio comportamentale per l'analisi dei flussi UX e la protezione contro il plagio dei contenuti."
+                       data-en="Implementation of behavioral monitoring for UX flow analysis and content plagiarism protection.">
+                       Implementazione di monitoraggio comportamentale per l'analisi dei flussi UX e la protezione contro il plagio dei contenuti.
+                    </p>
                 </div>
             </div>
         </div>
@@ -403,9 +407,15 @@ const cityTours = [
         function setLanguage(lang) {
             document.getElementById('btn-it').classList.toggle('active', lang === 'it');
             document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+            
+            // Aggiorna Bio
             const bio = document.getElementById('bio-text');
             bio.innerText = bio.getAttribute('data-' + lang);
-            document.querySelectorAll('.lang-text').forEach(el => { el.innerText = el.getAttribute('data-' + lang); });
+            
+            // Aggiorna tutti gli elementi con classe .lang-text
+            document.querySelectorAll('.lang-text').forEach(el => { 
+                el.innerText = el.getAttribute('data-' + lang); 
+            });
         }
         window.onload = () => showTab('tech');
     </script>

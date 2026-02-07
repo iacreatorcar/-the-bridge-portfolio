@@ -5,8 +5,7 @@ const name = "Carmine D'alise";
 const quickLinks = [
   { name: "Oishii Sushi Digital", url: "https://oishii-digital-project.vercel.app", icon: "🍣" },
   { name: "Full-Stack Portfolio", url: "https://carmine-dalise-portfolio.vercel.app/", icon: "🚀" },
-  { name: "HotelFlow Manager", url: "https://hotelflow-manager.vercel.app/index.html", icon: "🏨" },
-  
+  { name: "HotelFlow Manager", url: "https://hotelflow-manager.vercel.app/index.html", icon: "🏨" }, 
 ];
 
 const dashboardModules = [
@@ -187,42 +186,72 @@ const cityTours = [
         .content-section.active { display: block !important; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-        .grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 1.5rem; text-align: left; }
+        /* --- GRID PRINCIPALE INGRANDITA --- */
+        .grid-layout { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); 
+            gap: 2rem; 
+            text-align: left; 
+        }
         
         .info-card { 
             background: var(--card); 
             border: 1px solid rgba(255,255,255,0.03); 
-            padding: 2rem; 
-            border-radius: 8px; 
+            padding: 2.2rem; 
+            border-radius: 12px; 
             transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
             display: flex; flex-direction: column; height: 100%; 
             box-sizing: border-box; position: relative; text-decoration: none; color: inherit;
         }
         
-        .border-accent { border-left: 3px solid var(--accent); }
-        .border-canva { border-left: 3px solid var(--canva); }
-        .border-dev { border-left: 3px solid #f472b6; }
+        .border-accent { border-left: 4px solid var(--accent); }
+        .border-canva { border-left: 4px solid var(--canva); }
+        .border-dev { border-left: 4px solid #f472b6; }
 
         .info-card:hover { 
             background: var(--card-hover); 
-            transform: translateY(-5px); 
-            box-shadow: 0 15px 30px -10px rgba(0,0,0,0.5);
-            border-color: rgba(56, 189, 248, 0.2);
+            transform: translateY(-8px); 
+            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.6);
+            border-color: rgba(56, 189, 248, 0.3);
         }
 
         .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
-        .info-card h4, .info-card h3 { color: #fff; font-size: 1.2rem; font-weight: 700; margin: 0 0 0.5rem 0; line-height: 1.3; }
-        .info-card p { color: var(--text-dim); font-size: 0.95rem; line-height: 1.6; flex-grow: 1; }
-        .tag-label { font-size: 0.7rem; font-weight: 800; color: var(--accent); letter-spacing: 1.5px; text-transform: uppercase; }
-        .cta-text { margin-top: 1.5rem; display: flex; align-items: center; gap: 8px; color: var(--accent); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; }
+        .info-card h4, .info-card h3 { color: #fff; font-size: 1.3rem; font-weight: 700; margin: 0 0 0.5rem 0; line-height: 1.3; }
+        .info-card p { color: var(--text-dim); font-size: 1rem; line-height: 1.6; flex-grow: 1; }
+        .tag-label { font-size: 0.75rem; font-weight: 800; color: var(--accent); letter-spacing: 1.5px; text-transform: uppercase; }
+        .cta-text { margin-top: 1.5rem; display: flex; align-items: center; gap: 8px; color: var(--accent); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; }
+
+        /* --- QUICK LINKS (NAV GRID) INGRANDITI --- */
+        .nav-grid { 
+            display: flex; 
+            justify-content: center; 
+            gap: 2rem; 
+            margin: 4rem 0; 
+            flex-wrap: wrap; 
+        }
+        .nav-card { 
+            background: var(--card); 
+            padding: 1.8rem 2.2rem; 
+            border-radius: 12px; 
+            text-decoration: none; 
+            color: white; 
+            border: 1px solid rgba(255,255,255,0.05); 
+            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+            text-align: center;
+            min-width: 240px;
+            flex: 0 1 auto;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .nav-card:hover { 
+            border-color: var(--accent); 
+            background: var(--card-hover); 
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(56, 189, 248, 0.15);
+        }
 
         .lang-switcher { position: fixed; top: 25px; right: 25px; z-index: 100; display: flex; gap: 5px; }
         .lang-switcher button { background: #1e293b; border: 1px solid #334155; color: white; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 0.75rem; font-weight: bold; }
         .lang-switcher button.active { background: var(--accent); color: var(--bg); border-color: var(--accent); }
-
-        .nav-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin: 2.5rem 0; }
-        .nav-card { background: var(--card); padding: 1rem; border-radius: 4px; text-decoration: none; color: white; border: 1px solid rgba(255,255,255,0.05); transition: 0.3s; text-align: center;}
-        .nav-card:hover { border-color: var(--accent); background: var(--card-hover); }
 
         .dev-notice { background: rgba(244, 114, 182, 0.05); border: 1px dashed #f472b6; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; text-align: left; }
     </style>

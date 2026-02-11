@@ -1,8 +1,9 @@
 ---
-// --- THE BRIDGE: Dashboard Evoluta Carmine D'Alise (Version 2.2) ---
+// --- THE BRIDGE: Dashboard Evoluta Carmine D'Alise (Version 2.3) ---
 const name = "Carmine D'alise";
 
 const quickLinks = [
+  { name: "MarinaFlow", url: "https://marinaflow.vercel.app", icon: "⚓" },
   { name: "Oishii Sushi Digital", url: "https://oishii-digital-project.vercel.app", icon: "🍣" },
   { name: "Full-Stack Portfolio", url: "https://carmine-dalise-portfolio.vercel.app/", icon: "🚀" },
   { name: "HotelFlow Manager", url: "https://hotelflow-manager.vercel.app/index.html", icon: "🏨" }, 
@@ -46,11 +47,20 @@ const dashboardModules = [
 // NUOVA SEZIONE: TECHNICAL PROJECTS (Ex Lab)
 const technicalProjects = [
     {
+    title: "MarinaFlow - Yacht Services",
+    it: "Piattaforma gestionale per servizi portuali e yachting. Ottimizzazione dei flussi operativi marittimi e gestione repository dedicata.",
+    en: "Management platform for port and yachting services. Optimization of maritime operational flows and dedicated repository management.",
+    tech: ["React", "Maritime Ops", "Vercel"],
+    url: "https://marinaflow.vercel.app",
+    repo: "https://github.com/iacreatorcar/marinaflow",
+    type: "Maritime Tech"
+  },
+  {
     title: "Smart Menu QR - Fleet Ops",
     it: "Prototipo di menu digitale per operazioni di flotta. per ambienti marittimi UX ottimizzata  Database & QR Code, Accesso Demo -> User: admin | Pass: 1234",
     en: "Digital menu prototype for fleet operations. Maritime-optimized UX Database & QR Code, Demo Access -> User: admin | Pass: 1234",
     tech: ["QR Logic", "Maritime UX", "Security"],
-    url: "https://smart-menu-qr.vercel.app", // Assicurati che l'URL sia corretto
+    url: "https://smart-menu-qr.vercel.app", 
     type: "Digital Prototype"
   },
   {
@@ -305,15 +315,18 @@ const cityTours = [
         <div id="section-lab" class="content-section">
             <div class="grid-layout">
                 {technicalProjects.map(proj => (
-                    <a href={proj.url} target="_blank" class="info-card border-accent">
+                    <div class="info-card border-accent">
                         <div class="card-header">
                             <span class="tag-label" style="color:var(--accent)">{proj.type}</span>
                             <span>⚙️</span>
                         </div>
                         <h4>{proj.title}</h4>
                         <p class="lang-text" data-it={proj.it} data-en={proj.en}>{proj.it}</p>
-                        <div class="cta-text">Open Demo / Tool</div>
-                    </a>
+                        <div style="display:flex; gap:10px; margin-top:1rem;">
+                            <a href={proj.url} target="_blank" class="cta-text" style="margin-top:0;">Open Demo</a>
+                            {proj.repo && <a href={proj.repo} target="_blank" class="cta-text" style="margin-top:0; color:var(--text-dim);">GitHub</a>}
+                        </div>
+                    </div>
                 ))}
             </div>
         </div>
@@ -440,4 +453,4 @@ const cityTours = [
         window.onload = () => showTab('tech');
     </script>
 </body>
-</html
+</html>

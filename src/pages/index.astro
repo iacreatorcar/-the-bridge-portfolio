@@ -1,8 +1,9 @@
 ---
-// --- THE BRIDGE: Dashboard Evoluta Carmine D'Alise (Version 2.3) ---
+// --- THE BRIDGE: Dashboard Evoluta Carmine D'Alise (Version 2.6) ---
 const name = "Carmine D'alise";
 
 const quickLinks = [
+  { name: "Shipyard Flow", url: "https://shipyard-flow.vercel.app", icon: "🏗️" },
   { name: "MarinaFlow", url: "https://marinaflow.vercel.app", icon: "⚓" },
   { name: "Oishii Sushi Digital", url: "https://oishii-digital-project.vercel.app", icon: "🍣" },
   { name: "Full-Stack Portfolio", url: "https://carmine-dalise-portfolio.vercel.app/", icon: "🚀" },
@@ -44,9 +45,17 @@ const dashboardModules = [
   }
 ];
 
-// NUOVA SEZIONE: TECHNICAL PROJECTS (Ex Lab)
 const technicalProjects = [
-    {
+  {
+    title: "Shipyard Flow - Gantt System",
+    it: "Sistema di gestione e pianificazione per cantieri navali basato su logica Gantt. Ottimizzazione delle tempistiche di refit e costruzione.",
+    en: "Management and planning system for shipyards based on Gantt logic. Optimization of refit and construction timelines.",
+    tech: ["Gantt Logic", "Nautic Architecture", "React"],
+    url: "https://shipyard-flow.vercel.app",
+    repo: "https://github.com/iacreatorcar/nauticgantt",
+    type: "Project Management"
+  },
+  {
     title: "MarinaFlow - Yacht Services",
     it: "Piattaforma gestionale per servizi portuali e yachting. Ottimizzazione dei flussi operativi marittimi e gestione repository dedicata.",
     en: "Management platform for port and yachting services. Optimization of maritime operational flows and dedicated repository management.",
@@ -196,7 +205,6 @@ const cityTours = [
         .content-section.active { display: block !important; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* --- GRID PRINCIPALE INGRANDITA --- */
         .grid-layout { 
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); 
@@ -231,7 +239,6 @@ const cityTours = [
         .tag-label { font-size: 0.75rem; font-weight: 800; color: var(--accent); letter-spacing: 1.5px; text-transform: uppercase; }
         .cta-text { margin-top: 1.5rem; display: flex; align-items: center; gap: 8px; color: var(--accent); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; }
 
-        /* --- QUICK LINKS (NAV GRID) INGRANDITI --- */
         .nav-grid { 
             display: flex; 
             justify-content: center; 
@@ -349,7 +356,6 @@ const cityTours = [
 
         <div id="section-media" class="content-section">
             <div class="grid-layout">
-                {/* ARTICOLI MEDIUM INTEGRATI QUI */}
                 {mediumArticles.map(art => (
                     <a href={art.url} target="_blank" class="info-card border-accent">
                         <div class="card-header">
@@ -362,7 +368,6 @@ const cityTours = [
                     </a>
                 ))}
 
-                {/* VIDEO SHOWREEL */}
                 {cityTours.map(tour => (
                     <a href={tour.url} target="_blank" class="info-card border-canva">
                         <div class="card-header">

@@ -1,5 +1,5 @@
 ---
-// --- THE BRIDGE: Dashboard Evoluta Carmine D'Alise (Version 2.7) ---
+// --- THE BRIDGE: Dashboard Evoluta Carmine D'Alise (Version 2.8) ---
 const name = "Carmine D'alise";
 
 const quickLinks = [
@@ -446,6 +446,13 @@ const cityTours = [
     </div>
 
     <script is:inline>
+        // Funzione per inviare i tag a Clarity
+        function trackSection(name) {
+            if (typeof clarity === "function") {
+                clarity("set", "section", name);
+            }
+        }
+
         function showTab(tabName) {
             document.querySelectorAll('.content-section').forEach(s => { s.classList.remove('active'); s.style.display = 'none'; });
             document.querySelectorAll('.tab-btn').forEach(b => { b.classList.remove('active'); });
@@ -453,6 +460,9 @@ const cityTours = [
             if (selectedSection) { selectedSection.classList.add('active'); selectedSection.style.display = 'block'; }
             const selectedBtn = document.getElementById('tab-' + tabName);
             if (selectedBtn) { selectedBtn.classList.add('active'); }
+            
+            // Registra il cambio tab su Clarity
+            trackSection(tabName);
         }
 
         function setLanguage(lang) {
@@ -463,8 +473,19 @@ const cityTours = [
             document.querySelectorAll('.lang-text').forEach(el => { 
                 el.innerText = el.getAttribute('data-' + lang); 
             });
+            
+            // Registra il cambio lingua su Clarity
+            if (typeof clarity === "function") {
+                clarity("set", "language_preference", lang);
+            }
         }
-        window.onload = () => showTab('tech');
+        window.onload = () => {
+            showTab('tech');
+            // Logga l'inizio sessione
+            if (typeof clarity === "function") {
+                clarity("set", "user_type", "Portfolio_Visitor");
+            }
+        };
     </script>
 </body>
 </html>

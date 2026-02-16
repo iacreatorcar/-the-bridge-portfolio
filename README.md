@@ -2,7 +2,7 @@
 ### Systems Architect | Digital Operations Strategist | Tech Lead
 
 <p align="center">
-  <img src="public/assets/screenshot-bridge.jpg" alt="The Bridge Dashboard Preview" width="100%" style="border-radius: 10px; box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
+  <img src="public/assets/images/screenshot-bridge.jpg" alt="The Bridge Dashboard Preview" width="100%" style="border-radius: 10px; box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
 </p>
 
 **THE BRIDGE** is a high-performance interactive ecosystem representing the nexus between 20+ years of expertise in maritime technical logistics and modern enterprise software architecture. It is not just a portfolio, but a **Digital Command Center** designed to showcase how hardware, software, and human operations converge.

@@ -1,491 +1,426 @@
 ---
-// --- THE BRIDGE: Dashboard Evoluta Carmine D'Alise (Version 2.8) ---
-const name = "Carmine D'alise";
+// THE BRIDGE - Version 5.3 (Final Clean Deployment)
+// Carmine D'Alise - Systems Architect
 
-const quickLinks = [
-  { name: "Symphony Spa", url: "https://symphony-spa.vercel.app", icon: "💆" },
-  { name: "Shipyard Flow", url: "https://shipyard-flow.vercel.app", icon: "🏗️" },
-  { name: "MarinaFlow", url: "https://marinaflow.vercel.app", icon: "⚓" },
-  { name: "Oishii Sushi Digital", url: "https://oishii-digital-project.vercel.app", icon: "🍣" },
-  { name: "Full-Stack Portfolio", url: "https://carmine-dalise-portfolio.vercel.app/", icon: "🚀" },
-];
-
-const dashboardModules = [
+const projects = [
   {
-    id: "software",
-    title: "Software Engineering",
-    icon: "💻",
-    skills: ["React.js", "Astro", "Python", "Docker", "Kiwi TCMS", "Stripe API", "Vercel", "GitHub"],
-    description_it: "Architetture web scalabili, test di automazione e integrazioni di sistemi di pagamento.",
-    description_en: "Scalable web architectures, automation testing and payment integrations."
+    title: "Nexus-XPanel",
+    label: "Smart Systems & Yacht Automation",
+    category: "smart", 
+    color: "#f59e0b",
+    image: "/assets/images/nexus-xpanel.svg",
+    desc_it: "Controllo domotico di lusso per ambienti marittimi. Ottimizzato per sistemi Crestron.",
+    desc_en: "Luxury home automation for maritime environments. Optimized for Crestron systems.",
+    link: "https://nexus-xpanel.vercel.app",
+    repo: "https://github.com/iacreatorcar/Nexus-XPanel"
   },
   {
-    id: "interactive",
-    title: "Interactive Systems",
-    icon: "📺",
-    skills: ["LG Pro:Centric", "Jira Service Management", "Ticketing Systems", "Troubleshooting", "Interactive UI"],
-    description_it: "Specialista in ecosistemi TV interattivi e gestione flussi di ticketing Jira.",
-    description_en: "Expert in interactive TV ecosystems and Jira ticketing workflow management."
+    title: "Smart Ship Menu",
+    label: "QR-Based Hospitality Experience",
+    category: "smart", 
+    color: "#f59e0b",
+    image: "/assets/images/smart-menu.jpg", 
+    desc_it: "Sistema di menu digitale per ristoranti di bordo con tecnologia QR Code. Realizzato in React con interfaccia premium. [Admin Access: user: admin / pass: 1234]",
+    desc_en: "Digital menu system for onboard restaurants using QR Code technology. Built with React and premium UI. [Admin Access: user: admin / pass: 1234]",
+    link: "https://smart-menu-qr.vercel.app",
+    repo: "https://github.com/iacreatorcar/smart-menu-qr"
   },
   {
-    id: "platforms",
-    title: "Digital Platforms",
-    icon: "🌐",
-    skills: ["Samsung VXT", "MagicInfo", "Ricoh Integration", "Tenant Registration", "Token Management"],
-    description_it: "Gestione piattaforme cloud signage, provisioning di token e amministrazione tenant.",
-    description_en: "Cloud signage platform management, token provisioning, and tenant administration."
+    title: "MarinaFlow",
+    label: "Yacht Rental & Booking System",
+    category: "smart", 
+    color: "#f59e0b",
+    image: "/assets/images/marinaflow.jpg",
+    desc_it: "Piattaforma avanzata per il noleggio yacht. Gestione dinamica delle prenotazioni e interfaccia ottimizzata per il settore charter.",
+    desc_en: "Advanced luxury yacht rental platform. Dynamic booking management and optimized interface for the charter industry.",
+    link: "https://marinaflow.vercel.app",
+    repo: "https://github.com/iacreatorcar/marinaflow"
   },
   {
-    id: "field",
-    title: "Field Engineering",
-    icon: "🛠️",
-    skills: ["On-site Deployment", "Hardware Troubleshooting", "Cisco Networking", "AV over IP", "Technical Audits"],
-    description_it: "Messa in opera e risoluzione problemi tecnici in contesti internazionali e navali.",
-    description_en: "International deployment and technical troubleshooting in maritime and corporate contexts."
-  }
-];
-
-const technicalProjects = [
-  {
-    title: "Symphony Spa Digital",
-    it: "Un progetto creato per Cruises & Hospitality dopo anni di esperienza a bordo in ambito digital, multimedia e revenue. Un fiore all'occhiello per un sito a bordo dedicato esclusivamente ai servizi SPA. Dettagli all'interno del sito.",
-    en: "A project created for Cruises & Hospitality following years of onboard experience in digital, multimedia, and revenue. A flagship digital solution for onboard SPA services. Details inside the site.",
-    tech: ["Revenue Optimization", "SPA Tech", "Hospitality"],
-    url: "https://symphony-spa.vercel.app",
-    repo: "https://github.com/iacreatorcar/Symphony-spa",
-    type: "Cruises & Hospitality"
+    title: "Symphony SPA",
+    label: "Luxury Wellness SPA Interface",
+    category: "frontend", 
+    color: "#38bdf8",
+    image: "/assets/images/Symphony-Luxury.jpg",
+    desc_it: "SPA Single Page Application di lusso per navi da crociera. Unisce estetica premium e architettura responsive.",
+    desc_en: "Luxury SPA Single Page Application for cruise ships. Combines premium aesthetics with responsive architecture.",
+    link: "https://symphony-spa.vercel.app",
+    repo: "https://github.com/iacreatorcar/Symphony-spa"
   },
   {
-    title: "Shipyard Flow - Gantt System",
-    it: "Sistema di gestione e pianificazione per cantieri navali basato su logica Gantt. Ottimizzazione delle tempistiche di refit e costruzione.",
-    en: "Management and planning system for shipyards based on Gantt logic. Optimization of refit and construction timelines.",
-    tech: ["Gantt Logic", "Nautic Architecture", "React"],
-    url: "https://shipyard-flow.vercel.app",
-    repo: "https://github.com/iacreatorcar/nauticgantt",
-    type: "Project Management"
+    title: "SeaServices CMS",
+    label: "AI-Powered Cruise Hospitality",
+    category: "frontend", 
+    color: "#38bdf8", 
+    image: "/assets/images/cruise-cms.jpg",
+    desc_it: "Piattaforma hospitality moderna per navi da crociera con AI concierge e menu digitali.",
+    desc_en: "Modern cruise ship hospitality platform featuring AI concierge and digital menus.",
+    link: "https://sea-services.emergent.host",
+    repo: "https://github.com/iacreatorcar/cruise-hospitality-cms"
   },
   {
-    title: "MarinaFlow - Yacht Services",
-    it: "Piattaforma gestionale per servizi portuali e yachting. Ottimizzazione dei flussi operativi marittimi e gestione repository dedicata.",
-    en: "Management platform for port and yachting services. Optimization of maritime operational flows and dedicated repository management.",
-    tech: ["React", "Maritime Ops", "Vercel"],
-    url: "https://marinaflow.vercel.app",
-    repo: "https://github.com/iacreatorcar/marinaflow",
-    type: "Maritime Tech"
+    title: "Oishii Digital",
+    label: "Interactive Sushi Brand Experience",
+    category: "frontend", 
+    color: "#38bdf8", 
+    image: "/assets/images/oishii.jpg",
+    desc_it: "Visual storytelling e strategia digitale per brand di sushi d'élite. Menu interattivo e sistema di prenotazione.",
+    desc_en: "Visual storytelling and digital strategy for elite sushi brands. Interactive menu and booking system.",
+    link: "https://oishii-digital-project.vercel.app",
+    repo: "https://github.com/iacreatorcar/oishii-digital-project"
   },
   {
-    title: "Smart Menu QR - Fleet Ops",
-    it: "Prototipo di menu digitale per operazioni di flotta. UX ottimizzata per ambienti marittimi. Database & QR Code, Accesso Demo -> User: admin | Pass: 1234",
-    en: "Digital menu prototype for fleet operations. Maritime-optimized UX. Database & QR Code, Demo Access -> User: admin | Pass: 1234",
-    tech: ["QR Logic", "Maritime UX", "Security"],
-    url: "https://smart-menu-qr.vercel.app", 
-    type: "Digital Prototype"
+    title: "PetStyle E-commerce",
+    label: "Full Front-End Shop Experience",
+    category: "frontend", 
+    color: "#38bdf8", 
+    image: "/assets/images/petstyle.jpg", // Assicurati di avere uno screenshot in questa cartella
+    desc_it: "Interfaccia e-commerce completa per prodotti pet di lusso. Focus su user experience, carrello dinamico e design pulito.",
+    desc_en: "Complete e-commerce interface for luxury pet products. Focused on user experience, dynamic cart, and clean design.",
+    link: "https://iacreatorcar.github.io/PetStyle/",
+    repo: "https://github.com/iacreatorcar/PetStyle"
   },
   {
-    title: "Jira Service Management (Dockerized)",
-    it: "Ambiente demo per la gestione di flussi ITIL e automazione processi ufficio, progettato per architetture containerizzate Docker.",
-    en: "Demo environment for ITIL workflow and office process automation, designed for Docker containerized architectures.",
-    tech: ["Docker", "ITSM", "Atlassian"],
-    url: "https://mini-jira-demo.vercel.app", 
-    type: "DevOps & Office"
+    title: "HotelFlow Manager",
+    label: "Backend System Logic",
+    category: "backend",
+    color: "#a855f7",
+    image: "/assets/images/hotelflow.jpg", 
+    desc_it: "Architettura backend avanzata per la gestione hospitality e sincronizzazione dati dinamici.",
+    desc_en: "Advanced backend architecture for hospitality management and dynamic data synchronization.",
+    link: "https://hotelflow-manager.vercel.app/",
+    repo: "https://github.com/iacreatorcar/hotelflow-manager"
   },
   {
-    title: "HR Skills Quiz",
-    it: "Test interattivo sui processi CMS e Troubleshooting per valutare le competenze dei recruiter.",
-    en: "Interactive quiz on CMS processes and Troubleshooting for recruiters evaluation.",
-    tech: ["JavaScript", "HR Tech"],
-    url: "https://iacreatorcar.github.io/cms-quiz/",
-    type: "HR Skill Tool"
+    title: "Shipyard Flow",
+    label: "Gantt & Supplier Management",
+    category: "backend",
+    color: "#a855f7", 
+    image: "/assets/images/nauticgantt.jpg",
+    desc_it: "Sistema gestionale per cantieri navali. Monitoraggio diagrammi di Gantt e coordinamento fornitori.",
+    desc_en: "Shipyard management system. Monitoring Gantt charts and supplier coordination.",
+    link: "https://shipyard-flow.vercel.app",
+    repo: "https://github.com/iacreatorcar/nauticgantt"
   },
   {
-    title: "Oishii Sushi Digital",
-    it: "Progetto di Digital Experience per Hospitality: Menu interattivo e ottimizzazione UI.",
-    en: "Hospitality Digital Experience project: Interactive menu and UI optimization.",
-    tech: ["Marketing", "UX/UI"],
-    url: "https://oishii-digital-project.vercel.app",
-    type: "Featured"
-  }
-];
-
-const mediumArticles = [
-  { 
-    title: "AI & Business Automation", 
-    url: "https://medium.com/@carmine.dalise/how-cms-and-artificial-intelligence-are-transforming-business-automation-70fab242756f",
-    it: "Come CMS e AI stanno trasformando l'automazione aziendale.",
-    en: "How CMS and AI are transforming business automation."
+    title: "Mini Jira Demo",
+    label: "Ticketing System & Docker Logic",
+    category: "backend",
+    color: "#a855f7", 
+    image: "/assets/images/jira-demo.jpg", 
+    desc_it: "Sistema di gestione task ispirato a Jira. Implementato con Docker per garantire scalabilità e isolamento dell'ambiente di sviluppo.",
+    desc_en: "Task management system inspired by Jira. Implemented with Docker to ensure scalability and environment isolation.",
+    link: "https://mini-jira-demo.vercel.app",
+    repo: "https://github.com/iacreatorcar/mini-jira-demo"
   },
-  { 
-    title: "502 Server Error: Guide", 
-    url: "https://medium.com/@carmine.dalise/502-server-error-causes-and-solutions-for-businesses-a0417ce08705",
-    it: "Analisi tecnica e risoluzioni per l'errore 502 nel business.",
-    en: "Technical analysis and solutions for 502 errors in business."
+  {
+    title: "HR & Training CMS Quiz",
+    label: "Corporate Assessment Tool",
+    category: "backend",
+    color: "#a855f7", 
+    image: "/assets/images/cms-quiz.jpg", 
+    desc_it: "Piattaforma CMS per la creazione di test e quiz aziendali. Ideato per uffici HR e uffici tecnici per valutare le competenze dei dipendenti in modo digitale.",
+    desc_en: "CMS platform for creating corporate tests and quizzes. Designed for HR and technical offices to digitally assess employee skills.",
+    link: "https://iacreatorcar.github.io/cms-quiz/",
+    repo: "https://github.com/iacreatorcar/cms-quiz"
   },
-  { 
-    title: "Agentic AI Performance", 
-    url: "https://medium.com/@carmine.dalise/agentic-ai-and-human-performance-how-ai-agents-can-unlock-staff-efficiency-and-what-companies-e62673eacaa5",
-    it: "Come gli Agenti AI sbloccano l'efficienza dello staff.",
-    en: "How AI Agents unlock staff efficiency."
+  {
+    title: "Royalty & Assets",
+    label: "Financial Systems Logic",
+    category: "marketing",
+    color: "#10b981", 
+    image: "/assets/images/royalty-flow.jpg", 
+    desc_it: "Gestione flussi di royalty e asset digitali. Architettura finanziaria per rendite ricorsive.",
+    desc_en: "Royalty stream and digital asset management. Financial architecture for recurring revenue.",
+    link: "#",
+    repo: "#"
   },
-  { 
-    title: "Technology & Leadership", 
-    url: "https://medium.com/@carmine.dalise/when-technology-meets-leadership-5514516a3072",
-    it: "La sinergia quando la tecnologia incontra la leadership strategica.",
-    en: "The synergy when technology meets strategic leadership."
-  }
-];
-
-const digitalProcedures = [
-  { 
-    title: "INTERNAL DIGITAL AUDIT 2025", 
-    it: "Analisi completa della presenza digitale e ottimizzazione dei canali (Visione Pubblica).", 
-    en: "Full digital presence analysis and channel optimization (Public View).", 
-    url: "https://www.canva.com/design/DAHAlXL95Oo/PC3HSm_JmKgEvoCD9g6QlA/view?utm_content=DAHAlXL95Oo&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hda894d245e",
-    type: "Audit"
+  {
+    title: "Certificazioni & Media Showcase",
+    label: "Professional Credentials & On-Board Media",
+    category: "marketing",
+    color: "#10b981", 
+    image: "/assets/images/canva-showcase.jpg", 
+    desc_it: "Showcase multimediale delle certificazioni ufficiali (Crestron, AI, Samsung) e raccolta visiva dei progetti tecnologici realizzati operativamente on-board.",
+    desc_en: "Multimedia showcase of official certifications (Crestron, AI, Samsung) and a visual collection of technological projects implemented on-board.",
+    link: "https://www.canva.com/design/DAGFNejoyL4/MHkiG61sTBJYGzgKQS8NKQ/view", // Incolla qui il link di condivisione di Canva
+    repo: "#"
   },
-  { 
-    title: "Technical Field & Troubleshooting", 
-    it: "Case study tecnici su risoluzione problemi hardware e registrazioni tenant. (Accesso su richiesta)", 
-    en: "Technical case studies on hardware troubleshooting and tenant registration. (Access on Request)", 
-    url: "https://www.canva.com/design/DAGFNejoyL4/MHkiG61sTBJYGzgKQS8NKQ/view",
-    type: "Proprietary"
+  {
+    title: "Digital Signage & SOP Audit",
+    label: "Quality Control & Standard Procedures",
+    category: "marketing",
+    color: "#10b981", 
+    image: "/assets/images/audit-digital.jpg", 
+    desc_it: "Sistema di audit per la qualità delle immagini su schermi digital signage e redazione di procedure operative standard (SOP) per la gestione tecnica degli asset digitali.",
+    desc_en: "Audit system for image quality on digital signage screens and creation of Standard Operating Procedures (SOP) for technical digital asset management.",
+    link: "https://www.canva.com/design/DAHAlXL95Oo/PC3HSm_JmKgEvoCD9g6QlA/view?utm_content=DAHAlXL95Oo&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hda894d245e#1", // Se hai un documento o un link Canva, inseriscilo qui
+    repo: "#"
   },
-  { 
-    title: "S.O.P. Interactive Systems", 
-    it: "Procedure operative per LG Pro:Centric e Samsung VXT. (Visione protetta)", 
-    en: "Standard operating procedures for LG Pro:Centric and Samsung VXT. (Protected view)", 
-    url: "https://www.canva.com/design/DAG_tM6ZZCo/0GixaphLXoGF_3fadZvxFw/edit",
-    type: "Confidential"
-  }
-];
-
-const cityTours = [
-  { title: "Global Operations Showcase", it: "Showreel delle attività tecniche internazionali.", en: "International technical operations showreel.", url: "https://youtu.be/wYj6RxBbagk?si=ZrfeDYyU9ddvgfgZ", category: "Technical Video" },
-  { title: "Visual Media Portfolio", it: "Riprese droni e marketing territoriale.", en: "Drone footage and territorial marketing.", url: "https://youtu.be/I6D_WXXDE0o", category: "Creative Video" }
+  {
+    title: "User Behavior & Data Analytics",
+    label: "Performance Tracking & Heatmaps",
+    category: "marketing",
+    color: "#10b981", 
+    image: "/assets/images/clarity-analytics.jpg", // Qui metti lo screenshot di Clarity
+    desc_it: "Integrazione di Microsoft Clarity per l'analisi del comportamento utente. Utilizzo di heatmap e session recording per ottimizzare i flussi UX e aumentare l'efficienza dei sistemi digitali.",
+    desc_en: "Integration of Microsoft Clarity for user behavior analysis. Using heatmaps and session recordings to optimize UX flows and increase the efficiency of digital systems.",
+    link: "#",
+    repo: "#"
+  },
+  {
+    title: "Technical Writing: 502 Errors",
+    label: "Troubleshooting & Server Architecture",
+    category: "marketing",
+    color: "#10b981", 
+    image: "/assets/images/medium-article.jpg", 
+    desc_it: "Pubblicazione tecnica su Medium riguardante l'analisi e la risoluzione degli errori 502 Bad Gateway. Una guida strategica per ottimizzare l'uptime dei sistemi aziendali.",
+    desc_en: "Technical publication on Medium about 502 Bad Gateway error analysis and resolution. A strategic guide to optimizing business system uptime.",
+    link: "https://medium.com/@carmine.dalise/502-server-error-causes-and-solutions-for-businesses-a0417ce08705",
+    repo: "#"
+  },
+  {
+    title: "European City Tours Showcase",
+    label: "Multimedia Content & Travel Experience",
+    category: "marketing",
+    color: "#10b981", 
+    image: "/assets/images/city-tour-video.jpg", // Usa un fermo immagine del video
+    desc_it: "Produzione e gestione di contenuti video per city tour europei. Dimostrazione di competenze multimedia e visual storytelling applicate al settore travel.",
+    desc_en: "Production and management of video content for European city tours. Demonstrating multimedia and visual storytelling skills for the travel industry.",
+    link: "https://www.youtube.com/watch?v=wYj6RxBbagk", // Incolla qui il link (YouTube, Vimeo o Drive)
+    repo: "#"
+  },
 ];
 ---
 
+<!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>The Bridge | {name}</title>
-
-    <script type="text/javascript" is:inline>
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "vd3swciqr5");
-    </script>
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carmine D'Alise | Systems Architect Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    
     <style>
-        :root { 
-            --accent: #38bdf8; 
-            --bg: #020617; 
-            --card: #0f172a; 
-            --card-hover: #1e293b;
-            --gold: #fbbf24; 
-            --canva: #00c4cc; 
-            --text-main: #f1f5f9;
-            --text-dim: #94a3b8;
+        :root {
+            --bg: #0d0f14;
+            --card-bg: #12151c;
+            --blue: #38bdf8;
+            --amber: #f59e0b;
+            --purple: #a855f7;
+            --green: #10b981;
+            --text-dim: #475569;
         }
-        
+
         body { 
-            background: var(--bg); 
-            color: var(--text-main); 
-            font-family: 'Inter', 'Segoe UI', system-ui, sans-serif; 
-            margin: 0; padding: 0; 
-            display: flex; flex-direction: column; align-items: center;
-            font-size: 18px;
-        }
-
-        .container { max-width: 1200px; width: 92%; text-align: center; padding: 4rem 0; }
-        h1 { font-size: clamp(3rem, 10vw, 5rem); margin: 0; letter-spacing: -3px; font-weight: 800; }
-        
-        .tab-bar { display: flex; justify-content: center; gap: 0.8rem; margin: 3.5rem 0; border-bottom: 1px solid #1e293b; padding-bottom: 1rem; flex-wrap: wrap; }
-        .tab-btn { background: none; border: none; color: var(--text-dim); font-size: 0.85rem; font-weight: bold; cursor: pointer; padding: 0.6rem 1.2rem; transition: 0.3s; position: relative; text-transform: uppercase; letter-spacing: 1px; }
-        .tab-btn.active { color: var(--accent); }
-        .tab-btn.active::after { content: ''; position: absolute; bottom: -1rem; left: 0; width: 100%; height: 2px; background: var(--accent); }
-
-        .tab-btn-dev { color: #f472b6 !important; border: 1px dotted #f472b6 !important; border-radius: 4px; margin-left: 10px; }
-        .tab-btn-dev.active { background: rgba(244, 114, 182, 0.1); }
-
-        .content-section { display: none; min-height: 500px; animation: fadeIn 0.4s ease-out; }
-        .content-section.active { display: block !important; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
-        .grid-layout { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); 
-            gap: 2rem; 
-            text-align: left; 
-        }
-        
-        .info-card { 
-            background: var(--card); 
-            border: 1px solid rgba(255,255,255,0.03); 
-            padding: 2.2rem; 
-            border-radius: 12px; 
-            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
-            display: flex; flex-direction: column; height: 100%; 
-            box-sizing: border-box; position: relative; text-decoration: none; color: inherit;
-        }
-        
-        .border-accent { border-left: 4px solid var(--accent); }
-        .border-canva { border-left: 4px solid var(--canva); }
-        .border-dev { border-left: 4px solid #f472b6; }
-
-        .info-card:hover { 
-            background: var(--card-hover); 
-            transform: translateY(-8px); 
-            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.6);
-            border-color: rgba(56, 189, 248, 0.3);
-        }
-
-        .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
-        .info-card h4, .info-card h3 { color: #fff; font-size: 1.3rem; font-weight: 700; margin: 0 0 0.5rem 0; line-height: 1.3; }
-        .info-card p { color: var(--text-dim); font-size: 1rem; line-height: 1.6; flex-grow: 1; }
-        .tag-label { font-size: 0.75rem; font-weight: 800; color: var(--accent); letter-spacing: 1.5px; text-transform: uppercase; }
-        .cta-text { margin-top: 1.5rem; display: flex; align-items: center; gap: 8px; color: var(--accent); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; }
-
-        .nav-grid { 
-            display: flex; 
-            justify-content: center; 
-            gap: 2rem; 
-            margin: 4rem 0; 
-            flex-wrap: wrap; 
-        }
-        .nav-card { 
-            background: var(--card); 
-            padding: 1.8rem 2.2rem; 
-            border-radius: 12px; 
-            text-decoration: none; 
+            background-color: var(--bg); 
             color: white; 
-            border: 1px solid rgba(255,255,255,0.05); 
-            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
-            text-align: center;
-            min-width: 240px;
-            flex: 0 1 auto;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-        .nav-card:hover { 
-            border-color: var(--accent); 
-            background: var(--card-hover); 
-            transform: scale(1.05);
-            box-shadow: 0 10px 30px rgba(56, 189, 248, 0.15);
+            font-family: 'Inter', sans-serif; 
+            margin: 0; 
+            position: relative; 
+            -webkit-font-smoothing: antialiased;
         }
 
-        .lang-switcher { position: fixed; top: 25px; right: 25px; z-index: 100; display: flex; gap: 5px; }
-        .lang-switcher button { background: #1e293b; border: 1px solid #334155; color: white; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 0.75rem; font-weight: bold; }
-        .lang-switcher button.active { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+        .v3-wrapper { max-width: 1200px; margin: 0 auto; padding: 40px 20px 80px; }
 
-        .dev-notice { background: rgba(244, 114, 182, 0.05); border: 1px dashed #f472b6; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; text-align: left; }
+        /* Top Nav Global */
+        .top-nav-global { position: absolute; top: 30px; right: 30px; z-index: 100; }
+        .lang-switcher { 
+            display: flex; 
+            align-items: center; 
+            gap: 10px; 
+            background: rgba(255,255,255,0.05); 
+            padding: 8px 18px; 
+            border-radius: 30px; 
+            border: 1px solid rgba(255,255,255,0.1); 
+        }
+        .globe-icon { width: 16px; height: 16px; color: var(--blue); }
+        .sep { color: rgba(255,255,255,0.2); }
+        .lang-btn { background: none; border: none; color: #64748b; cursor: pointer; font-size: 0.8rem; font-weight: 900; transition: 0.3s; padding: 0 5px; text-transform: uppercase; }
+        .lang-btn.active { color: white; }
+        .cv-link {
+            color: var(--amber);
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 900;
+            border: 1px solid var(--amber);
+            padding: 2px 10px;
+            border-radius: 4px;
+            transition: 0.3s;
+        }
+        .cv-link:hover { background: var(--amber); color: #000; }
+
+        /* Header */
+        .v3-header { border-left: 5px solid var(--amber); padding-left: 30px; margin-bottom: 50px; }
+        .accent { color: var(--amber); }
+        h1 { font-size: 2.8rem; margin: 0; letter-spacing: -1px; }
+        .subtitle { color: #94a3b8; font-size: 1.2rem; margin-top: 5px; }
+
+        /* Mission & Vision - Font Migliorato */
+        .mission-vision { 
+            margin-bottom: 50px; 
+            padding: 30px; 
+            background: linear-gradient(90deg, rgba(56, 189, 248, 0.08) 0%, transparent 100%); 
+            border-left: 4px solid var(--blue); 
+            border-radius: 0 10px 10px 0; 
+        }
+        .mission-content h2 { font-size: 0.85rem; letter-spacing: 3px; color: var(--blue); text-transform: uppercase; margin-bottom: 15px; font-weight: 900; }
+        .mission-content p { font-style: italic; font-size: 1.2rem; line-height: 1.7; color: #f1f5f9; max-width: 950px; font-weight: 400; }
+
+        /* Tabs */
+        .v3-tabs { display: flex; gap: 12px; margin-bottom: 50px; flex-wrap: wrap; }
+        .tab-btn { padding: 14px 22px; border-radius: 8px; border: none; cursor: pointer; background: #1e293b; color: #94a3b8; font-weight: 800; font-size: 0.7rem; transition: 0.3s; text-transform: uppercase; }
+        .tab-btn.active.amber { background: var(--amber); color: #000; }
+        .tab-btn.active.blue { background: var(--blue); color: #000; }
+        .tab-btn.active.purple { background: var(--purple); color: #fff; }
+        .tab-btn.active.green { background: var(--green); color: #000; }
+
+        /* Grid & Cards */
+        .section-title { color: var(--amber); border-bottom: 2px solid var(--amber); letter-spacing: 4px; font-size: 0.9rem; margin-bottom: 40px; display: inline-block; transition: 0.5s ease; padding-bottom: 5px; }
+        .v3-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(480px, 1fr)); gap: 35px; }
+        .v3-card { background: var(--card-bg); border: 1.5px solid var(--accent-color); padding: 28px; border-radius: 16px; display: flex; flex-direction: column; gap: 20px; }
+        .card-top-info { font-size: 0.65rem; font-weight: 900; color: #64748b; letter-spacing: 1px; }
+        .card-main { display: flex; gap: 25px; }
+        .visual-area { flex: 1; height: 180px; border-radius: 10px; background-color: #000; border: 1px solid #1e293b; }
+        .info-area { flex: 1.5; }
+        h3 { margin: 0; font-size: 1.6rem; letter-spacing: -0.5px; }
+        .category-text { font-size: 0.75rem; font-weight: 900; text-transform: uppercase; letter-spacing: 1.5px; }
+        .description { font-size: 1rem; line-height: 1.6; color: #cbd5e1; margin-top: 15px; }
+
+        .card-actions { display: flex; gap: 12px; margin-top: auto; }
+        .btn-live { flex: 1.5; color: #000; text-align: center; padding: 14px; text-decoration: none; font-weight: 900; border-radius: 8px; font-size: 0.8rem; text-transform: uppercase; }
+        .btn-graphics { flex: 1; border: 1px solid #334155; color: #fff; text-align: center; padding: 14px; text-decoration: none; border-radius: 8px; font-size: 0.8rem; text-transform: uppercase; }
+
+        .hidden { display: none !important; }
+
+        @media (max-width: 768px) {
+            .card-main { flex-direction: column; }
+            .v3-grid { grid-template-columns: 1fr; }
+            .top-nav-global { position: relative; top: 0; right: 0; margin-bottom: 30px; }
+            h1 { font-size: 2.2rem; }
+        }
     </style>
 </head>
 <body>
-    <div class="lang-switcher">
-        <button onclick="setLanguage('it')" id="btn-it" class="active">IT</button>
-        <button onclick="setLanguage('en')" id="btn-en">EN</button>
+
+<div class="v3-wrapper">
+    <div class="top-nav-global">
+        <div class="lang-switcher">
+            <svg class="globe-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            <button class="lang-btn active" data-lang="it">IT</button>
+            <span class="sep">|</span>
+            <button class="lang-btn" data-lang="en">EN</button>
+            <span class="sep">|</span>
+            <a href="https://rxresu.me/vostro-link-qui" target="_blank" class="cv-link">CV</a>
+        </div>
     </div>
 
-    <div class="container">
-        <div style="letter-spacing: 5px; font-size: 0.75rem; opacity: 0.6; color: var(--accent); margin-bottom: 0.5rem; font-weight: 800;">TECHNICAL ARCHITECTURE & OPS</div>
-        <h1>THE BRIDGE</h1>
-        <p style="opacity: 0.8; font-weight: 300; margin-top: 0.5rem; font-size: 1.2rem; color: var(--text-dim);">Digital Experience Lead | Tech Operations Manager</p>
-
-        <div class="nav-grid">
-            {quickLinks.map(link => (
-                <a href={link.url} target="_blank" class="nav-card">
-                    <span style="display:block; font-size: 1.5rem; margin-bottom: 0.4rem;">{link.icon}</span>
-                    <small style="font-size: 0.7rem; font-weight: bold; text-transform: uppercase;">{link.name}</small>
-                </a>
-            ))}
+    <header class="v3-header" id="main-header">
+        <div class="top-bar">
+            <span class="lang-content it">ARCHITETTO DI SISTEMI DIGITALI // TECH OPS</span>
+            <span class="lang-content en hidden">DIGITAL SYSTEMS ARCHITECT // TECH OPS</span>
         </div>
+        <h1>CARMINE <span class="accent">D'ALISE</span></h1>
+        <p class="subtitle lang-content it">The Architecture that Connects.</p>
+        <p class="subtitle lang-content en hidden">The Architecture that Connects.</p>
+    </header>
 
-        <div class="tab-bar">
-            <button class="tab-btn active" onclick="showTab('tech')" id="tab-tech">Modules</button>
-            <button class="tab-btn" onclick="showTab('lab')" id="tab-lab">Technical Projects</button>
-            <button class="tab-btn" onclick="showTab('sop')" id="tab-sop">SOP & Audit</button>
-            <button class="tab-btn" onclick="showTab('media')" id="tab-media">Media & Info Articles</button>
-            <button class="tab-btn tab-btn-dev" onclick="showTab('dev')" id="tab-dev">System Arch 🛠️</button>
-        </div>
-
-        <div id="section-tech" class="content-section active">
-            <div class="grid-layout">
-                {dashboardModules.map(mod => (
-                    <div class="info-card border-accent">
-                        <div class="card-header">
-                            <div style="font-size: 2rem;">{mod.icon}</div>
-                            <span class="tag-label" style="opacity:0.5;">MODULE_v1</span>
-                        </div>
-                        <h3>{mod.title}</h3>
-                        <p class="lang-text" data-it={mod.description_it} data-en={mod.description_en}>{mod.description_it}</p>
-                        <div style="display:flex; flex-wrap:wrap; gap:5px; margin-top:1rem;">
-                            {mod.skills.map(s => <span style="font-size:0.7rem; background:#1e293b; padding:2px 8px; border-radius:4px; color:var(--accent); border:1px solid rgba(56,189,248,0.1)">{s}</span>)}
-                        </div>
-                    </div>
-                ))}
-            </div>
-        </div>
-
-        <div id="section-lab" class="content-section">
-            <div class="grid-layout">
-                {technicalProjects.map(proj => (
-                    <div class="info-card border-accent">
-                        <div class="card-header">
-                            <span class="tag-label" style="color:var(--accent)">{proj.type}</span>
-                            <span>⚙️</span>
-                        </div>
-                        <h4>{proj.title}</h4>
-                        <p class="lang-text" data-it={proj.it} data-en={proj.en}>{proj.it}</p>
-                        <div style="display:flex; gap:10px; margin-top:1rem;">
-                            <a href={proj.url} target="_blank" class="cta-text" style="margin-top:0;">Open Demo</a>
-                            {proj.repo && <a href={proj.repo} target="_blank" class="cta-text" style="margin-top:0; color:var(--text-dim);">GitHub</a>}
-                        </div>
-                    </div>
-                ))}
-            </div>
-        </div>
-
-        <div id="section-sop" class="content-section">
-            <div class="grid-layout">
-                {digitalProcedures.map(doc => (
-                    <a href={doc.url} target="_blank" class="info-card border-canva">
-                        <div class="card-header">
-                            <span class="tag-label" style="color:var(--canva)">{doc.type}</span>
-                            <span>📑</span>
-                        </div>
-                        <h4>{doc.title}</h4>
-                        <p class="lang-text" data-it={doc.it} data-en={doc.en}>{doc.it}</p>
-                        <div class="cta-text" style="color:var(--canva)">{doc.type === 'Audit' ? 'View Analysis' : 'Request Access'}</div>
-                    </a>
-                ))}
-            </div>
-        </div>
-
-        <div id="section-media" class="content-section">
-            <div class="grid-layout">
-                {mediumArticles.map(art => (
-                    <a href={art.url} target="_blank" class="info-card border-accent">
-                        <div class="card-header">
-                            <span class="tag-label">Medium Article</span>
-                            <span style="font-size: 1.2rem;">📖</span>
-                        </div>
-                        <h4>{art.title}</h4>
-                        <p class="lang-text" data-it={art.it} data-en={art.en}>{art.it}</p>
-                        <div class="cta-text">Read Insight</div>
-                    </a>
-                ))}
-
-                {cityTours.map(tour => (
-                    <a href={tour.url} target="_blank" class="info-card border-canva">
-                        <div class="card-header">
-                            <span class="tag-label" style="color:var(--canva)">{tour.category}</span>
-                            <span>📹</span>
-                        </div>
-                        <h4>{tour.title}</h4>
-                        <p class="lang-text" data-it={tour.it} data-en={tour.en}>{tour.it}</p>
-                        <div class="cta-text" style="color:var(--canva)">Watch Video</div>
-                    </a>
-                ))}
-            </div>
-        </div>
-
-        <div id="section-dev" class="content-section">
-            <div class="dev-notice">
-                <h4 style="color: #f472b6; margin-top:0;">🛠️ Developer Access & Proprietary Architecture</h4>
-                <p class="lang-text" style="font-size: 0.9rem; color: #94a3b8;"
-                    data-it="La logica di instradamento, la struttura dei metadati e il design di questo hub sono di proprietà intellettuale di Carmine D'Alise."
-                    data-en="The routing logic, metadata structure, and design of this hub are the intellectual property of Carmine D'Alise.">
-                    Benvenuto nella sezione tecnica. La logica di instradamento, la struttura dei metadati e il design di questo hub 
-                    sono di proprietà intellettuale di <strong>Carmine D'Alise</strong>. 
-                    L'uso del codice sorgente è limitato dalla licenza <strong>CC BY-NC-ND 4.0</strong>.
-                </p>
-            </div>
-            
-            <div class="grid-layout">
-                <div class="info-card border-dev">
-                    <div class="card-header"><span class="tag-label" style="color:#f472b6">Infrastructure</span><span>🗄️</span></div>
-                    <h4>Astro Edge Architecture</h4>
-                    <p class="lang-text" 
-                        data-it="Utilizzo di Astro per la generazione statica (SSG). Ottimizzazione estrema del caricamento tramite script inline."
-                        data-en="Using Astro for Static Site Generation (SSG). Extreme load optimization via inline scripts.">
-                        Utilizzo di Astro per la generazione statica (SSG). Ottimizzazione estrema del caricamento tramite script inline e assenza di framework pesanti.
-                    </p>
-                </div>
-                <div class="info-card border-dev">
-                    <div class="card-header"><span class="tag-label" style="color:#f472b6">Tracking</span><span>📊</span></div>
-                    <h4>Microsoft Clarity Integration</h4>
-                    <p class="lang-text"
-                        data-it="Monitoraggio comportamentale per l'analisi dei flussi UX e la protezione dei contenuti."
-                        data-en="Behavioral monitoring for UX flow analysis and content protection.">
-                        Implementazione di monitoraggio comportamentale per l'analisi dei flussi UX e la protezione contro il plagio dei contenuti.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div style="margin-top: 6rem; padding: 0 10%;">
-            <p id="bio-text" data-it='"Sinergia perfetta tra ingegneria di campo e sviluppo software enterprise."' data-en='"Perfect synergy between field engineering and enterprise software development."' style="font-style: italic; font-size: 1.3rem; opacity: 0.9; color: var(--accent);">
-                "Sinergia perfetta tra ingegneria di campo e sviluppo software enterprise."
+    <section class="mission-vision">
+        <div class="mission-content">
+            <h2 class="lang-content it">Mission & Vision</h2>
+            <h2 class="lang-content en hidden">Mission & Vision</h2>
+            <p class="lang-content it">
+                "Dopo anni di operatività a bordo come Field Technician, Multimedia e Digital Lead e Technical Manager, la passione per le nuove tecnologie mi porta a sviluppare ciò che ho appreso nel tempo. Mi considero una persona umile, affidabile e sempre pronta ad accettare nuove sfide lavorative, aggiornandomi costantemente con sistemi Open Source e Hospitality Mode."
+            </p>
+            <p class="lang-content en hidden">
+                "After years of onboard operations as a Field Technician, Multimedia, and Digital Lead & Technical Manager, my passion for new technologies drives me to develop what I have learned over time. I consider myself a humble and reliable person, always ready to take on new professional challenges while constantly updating my skills with Open Source systems and Hospitality Mode."
             </p>
         </div>
+    </section>
 
-        <footer style="margin-top: 5rem; opacity: 0.6; font-size: 0.75rem; border-top: 1px solid #1e293b; padding: 3rem 0; line-height: 1.6; text-align: center; letter-spacing: 1px;">
-            <div style="margin-bottom: 1rem; font-weight: 800;">
-                {name} • Senior Tech Operations • 2024
+    <nav class="v3-tabs">
+        <button class="tab-btn active amber" data-filter="smart">SMART SYSTEMS</button>
+        <button class="tab-btn blue" data-filter="frontend">UX / FRONT-END</button>
+        <button class="tab-btn purple" data-filter="backend">THE ENGINE</button>
+        <button class="tab-btn green" data-filter="marketing">MARKETING & CLARITY</button>
+    </nav>
+
+    <h2 class="section-title" id="dynamic-title">SMART SYSTEMS</h2>
+
+    <div class="v3-grid">
+        {projects.map((p) => (
+            <div class={`v3-card filter-item ${p.category}`} style={`--accent-color: ${p.color}`}>
+                <div class="card-top-info">
+                    <span>{p.title} // NODE: {p.category.toUpperCase()}</span>
+                </div>
+                
+                <div class="card-main">
+                    <div class="visual-area" style={`background-image: url(${p.image}); background-size: cover; background-position: center;`}>
+                    </div>
+                    
+                    <div class="info-area">
+                        <h3>{p.title}</h3>
+                        <span class="category-text" style={`color: ${p.color}`}>{p.label}</span>
+                        <div class="description">
+                            <p class="lang-content it">{p.desc_it}</p>
+                            <p class="lang-content en hidden">{p.desc_en}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-actions">
+                    <a href={p.link} target="_blank" class="btn-live" style={`background: ${p.color}`}>LIVE_VIEW</a>
+                    <a href={p.repo} target="_blank" class="btn-graphics">INSIGHTS</a>
+                </div>
             </div>
-            <div style="max-width: 700px; margin: 0 auto; color: var(--text-dim); text-transform: none;">
-                <p>
-                    <strong>Intellectual Property & Legal Notice:</strong><br/>
-                    Tutti i contenuti testuali e l'architettura visiva di questo portfolio sono protetti da licenza 
-                    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: bold;">Creative Commons BY-NC-ND 4.0</a>.
-                </p>
-            </div>
-        </footer>
+        ))}
     </div>
+</div>
 
-    <script is:inline>
-        // Funzione per inviare i tag a Clarity
-        function trackSection(name) {
-            if (typeof clarity === "function") {
-                clarity("set", "section", name);
-            }
-        }
+<script>
+    // Filtri Categorie
+    const filterBtns = document.querySelectorAll('.tab-btn');
+    const items = document.querySelectorAll('.filter-item');
+    const title = document.getElementById('dynamic-title');
+    const accentText = document.querySelector('.accent');
+    const headerBorder = document.getElementById('main-header');
 
-        function showTab(tabName) {
-            document.querySelectorAll('.content-section').forEach(s => { s.classList.remove('active'); s.style.display = 'none'; });
-            document.querySelectorAll('.tab-btn').forEach(b => { b.classList.remove('active'); });
-            const selectedSection = document.getElementById('section-' + tabName);
-            if (selectedSection) { selectedSection.classList.add('active'); selectedSection.style.display = 'block'; }
-            const selectedBtn = document.getElementById('tab-' + tabName);
-            if (selectedBtn) { selectedBtn.classList.add('active'); }
-            
-            // Registra il cambio tab su Clarity
-            trackSection(tabName);
-        }
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const filter = btn.getAttribute('data-filter');
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
 
-        function setLanguage(lang) {
-            document.getElementById('btn-it').classList.toggle('active', lang === 'it');
-            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-            const bio = document.getElementById('bio-text');
-            if (bio) bio.innerText = bio.getAttribute('data-' + lang);
-            document.querySelectorAll('.lang-text').forEach(el => { 
-                el.innerText = el.getAttribute('data-' + lang); 
+            let color, label;
+            if (filter === 'smart') { color = "#f59e0b"; label = "SMART SYSTEMS"; }
+            else if (filter === 'frontend') { color = "#38bdf8"; label = "UX / FRONT-END"; }
+            else if (filter === 'backend') { color = "#a855f7"; label = "THE ENGINE (BACK-END)"; }
+            else if (filter === 'marketing') { color = "#10b981"; label = "MARKETING & CLARITY"; }
+
+            if(title) title.innerText = label;
+            if(title) title.style.color = title.style.borderColor = color;
+            if(accentText) accentText.style.color = color;
+            if(headerBorder) headerBorder.style.borderColor = color;
+
+            items.forEach(item => {
+                item.classList.toggle('hidden', !item.classList.contains(filter));
             });
-            
-            // Registra il cambio lingua su Clarity
-            if (typeof clarity === "function") {
-                clarity("set", "language_preference", lang);
-            }
-        }
-        window.onload = () => {
-            showTab('tech');
-            // Logga l'inizio sessione
-            if (typeof clarity === "function") {
-                clarity("set", "user_type", "Portfolio_Visitor");
-            }
-        };
-    </script>
+        });
+    });
+
+    // Switcher Lingua
+    const langBtns = document.querySelectorAll('.lang-btn');
+    langBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const lang = btn.getAttribute('data-lang');
+            langBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            document.querySelectorAll('.lang-content').forEach(c => {
+                c.classList.toggle('hidden', !c.classList.contains(lang));
+            });
+        });
+    });
+</script>
+
 </body>
 </html>

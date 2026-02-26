@@ -1,5 +1,5 @@
 ---
-// THE BRIDGE - Version 5.3 (Final Clean Deployment)
+// THE BRIDGE - Version 5.4 (Clean Deployment - Focus on Products)
 // Carmine D'Alise - Systems Architect
 
 const projects = [
@@ -119,8 +119,8 @@ const projects = [
     category: "backend",
     color: "#a855f7", 
     image: "/assets/images/cms-quiz.jpg", 
-    desc_it: "Piattaforma CMS per la creazione di test e quiz aziendali. Ideato per uffici HR e uffici tecnici per valutare le competenze dei dipendenti in modo digitale.",
-    desc_en: "CMS platform for creating corporate tests and quizzes. Designed for HR and technical offices to digitally assess employee skills.",
+    desc_it: "Piattaforma CMS per la creazione di test e quiz aziendali. Ideato per uffici HR e tecnici.",
+    desc_en: "CMS platform for creating corporate tests and quizzes. Designed for HR and technical offices.",
     link: "https://iacreatorcar.github.io/cms-quiz/",
     repo: "https://github.com/iacreatorcar/cms-quiz"
   },
@@ -136,24 +136,13 @@ const projects = [
     repo: "#"
   },
   {
-    title: "Certificazioni & Media Showcase",
-    label: "Professional Credentials & On-Board Media",
-    category: "marketing",
-    color: "#10b981", 
-    image: "/assets/images/canva-showcase.jpg", 
-    desc_it: "Showcase multimediale delle certificazioni ufficiali (Crestron, AI, Samsung) e accesso diretto al CV professionale aggiornato.",
-    desc_en: "Multimedia showcase of official certifications (Crestron, AI, Samsung) and direct access to the updated professional CV.",
-    link: "/assets/images/cv-carmine-dalise.pdf",
-    repo: "#"
-  },
-  {
     title: "Digital Signage & SOP Audit",
     label: "Quality Control & Standard Procedures",
     category: "marketing",
     color: "#10b981", 
     image: "/assets/images/audit-digital.jpg", 
-    desc_it: "Sistema di audit per la qualità delle immagini su schermi digital signage e redazione di procedure operative standard (SOP) per la gestione tecnica degli asset digitali.",
-    desc_en: "Audit system for image quality on digital signage screens and creation of Standard Operating Procedures (SOP) for technical digital asset management.",
+    desc_it: "Sistema di audit per la qualità delle immagini su schermi digital signage e redazione di SOP tecniche.",
+    desc_en: "Audit system for image quality on digital signage screens and creation of technical SOPs.",
     link: "https://www.canva.com/design/DAHAlXL95Oo/PC3HSm_JmKgEvoCD9g6QlA/view",
     repo: "#"
   },
@@ -163,8 +152,8 @@ const projects = [
     category: "marketing",
     color: "#10b981", 
     image: "/assets/images/clarity-analytics.jpg",
-    desc_it: "Integrazione di Microsoft Clarity per l'analisi del comportamento utente. Utilizzo di heatmap e session recording per ottimizzare i flussi UX.",
-    desc_en: "Integration of Microsoft Clarity for user behavior analysis. Using heatmaps and session recordings to optimize UX flows.",
+    desc_it: "Integrazione di Microsoft Clarity per l'analisi del comportamento utente e ottimizzazione UX.",
+    desc_en: "Integration of Microsoft Clarity for user behavior analysis and UX optimization.",
     link: "#",
     repo: "#"
   },
@@ -174,22 +163,11 @@ const projects = [
     category: "marketing",
     color: "#10b981", 
     image: "/assets/images/medium-article.jpg", 
-    desc_it: "Pubblicazione tecnica su Medium riguardante l'analisi e la risoluzione degli errori 502 Bad Gateway. Guida strategica per l'uptime aziendale.",
-    desc_en: "Technical publication on Medium about 502 Bad Gateway error analysis and resolution. Strategic guide for business uptime.",
+    desc_it: "Pubblicazione tecnica su Medium riguardante l'analisi e la risoluzione degli errori 502 Bad Gateway.",
+    desc_en: "Technical publication on Medium about 502 Bad Gateway error analysis and resolution.",
     link: "https://medium.com/@carmine.dalise/502-server-error-causes-and-solutions-for-businesses-a0417ce08705",
     repo: "#"
-  },
-  {
-    title: "European City Tours Showcase",
-    label: "Multimedia Content & Travel Experience",
-    category: "marketing",
-    color: "#10b981", 
-    image: "/assets/images/city-tour-video.jpg",
-    desc_it: "Produzione e gestione di contenuti video per city tour europei. Competenze multimedia e visual storytelling per il settore travel.",
-    desc_en: "Production and management of video content for European city tours. Multimedia and visual storytelling skills for the travel industry.",
-    link: "https://www.youtube.com/watch?v=wYj6RxBbagk",
-    repo: "#"
-  },
+  }
 ];
 ---
 
@@ -246,17 +224,6 @@ const projects = [
         .sep { color: rgba(255,255,255,0.2); }
         .lang-btn { background: none; border: none; color: #64748b; cursor: pointer; font-size: 0.8rem; font-weight: 900; transition: 0.3s; padding: 0 5px; text-transform: uppercase; }
         .lang-btn.active { color: white; }
-        .cv-link {
-            color: var(--amber);
-            text-decoration: none;
-            font-size: 0.8rem;
-            font-weight: 900;
-            border: 1px solid var(--amber);
-            padding: 2px 10px;
-            border-radius: 4px;
-            transition: 0.3s;
-        }
-        .cv-link:hover { background: var(--amber); color: #000; }
 
         .v3-header { border-left: 5px solid var(--amber); padding-left: 30px; margin-bottom: 50px; transition: border-color 0.5s ease; }
         .accent { color: var(--amber); transition: color 0.5s ease; }
@@ -316,8 +283,6 @@ const projects = [
             <button class="lang-btn active" data-lang="it">IT</button>
             <span class="sep">|</span>
             <button class="lang-btn" data-lang="en">EN</button>
-            <span class="sep">|</span>
-            <a href="/assets/images/cv-carmine-dalise.pdf" target="_blank" class="cv-link">CV</a>
         </div>
     </div>
 
@@ -337,11 +302,11 @@ const projects = [
             <h2 class="lang-content en hidden">Mission & Vision</h2>
             <p class="lang-content it">
                 "Dopo anni di esperienza operativa a bordo come Field Technician, Technical Manager e Digital Lead, ho trasformato la passione per le nuove tecnologie in continua innovazione, dedicandomi allo sviluppo di soluzioni digitali per l’hospitality e l’intrattenimento.
-Persona umile, affidabile e sempre pronta ad accettare nuove sfide lavorative, mi aggiorno costantemente su sistemi Open Source e nuove tecnologie applicate al settore (Hospitality Mode, Multimedia, AV, Digital Experience)."
+Persona umile, affidabile e sempre pronta ad accettare nuove sfide lavorative, mi aggiorno costantemente su sistemi Open Source e nuove tecnologie applicate al settore."
             </p>
             <p class="lang-content en hidden">
                 "After years of on-site experience as Field Technician, Multimedia & Digital Lead and Technical Manager, my passion for new technologies has driven me to develop digital solutions for hospitality and entertainment.
-I am humble, reliable, and always ready for new professional challenges—constantly updating my skills in Open Source systems, Hospitality Mode tools, and multimedia innovation."
+I am humble, reliable, and always ready for new professional challenges—constantly updating my skills in Open Source systems and multimedia innovation."
             </p>
         </div>
     </section>

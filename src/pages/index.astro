@@ -40,21 +40,6 @@ link:"https://sea-services.emergent.host"
 }
 ];
 
----
-
-# ⚙️ Microsoft Clarity Integration (Astro)
-
-Insert this snippet inside the `<head>` of your Astro layout or page:
-
-```html
-<script type="text/javascript">
-(function(c,l,a,r,i,t,y){
-c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-})(window, document, "clarity", "script", "vd3swciqr5");
-</script>
-
 const engine = [
 {title:"UX & Digital Experience",description:"User journey design for cruise and hospitality platforms."},
 {title:"CMS Governance",description:"Structured content lifecycle and publishing workflows."},
@@ -71,15 +56,21 @@ const engine = [
 
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
 <title>{title}</title>
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-<style>
+<!-- Microsoft Clarity -->
+<script>
+(function(c,l,a,r,i,t,y){
+c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "vd3swciqr5");
+</script>
 
-/* GLOBAL */
+<style>
 
 body{
 margin:0;
@@ -89,7 +80,7 @@ color:white;
 scroll-behavior:smooth;
 }
 
-/* NAVBAR */
+/* NAV */
 
 nav{
 display:flex;
@@ -107,11 +98,6 @@ nav a{
 color:#e2e8f0;
 text-decoration:none;
 margin-left:20px;
-transition:.2s;
-}
-
-nav a:hover{
-color:#facc15;
 }
 
 /* HERO */
@@ -135,7 +121,6 @@ margin-bottom:20px;
 .hero p{
 max-width:720px;
 color:#cbd5e1;
-font-size:1.1rem;
 }
 
 .button{
@@ -154,14 +139,6 @@ section{
 padding:100px 20px;
 max-width:1100px;
 margin:auto;
-opacity:0;
-transform:translateY(40px);
-transition:.8s;
-}
-
-section.visible{
-opacity:1;
-transform:translateY(0);
 }
 
 .section-title{
@@ -178,21 +155,12 @@ grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:25px;
 }
 
-/* CARDS */
-
 .card{
 background:#1e293b;
 padding:15px;
 border-radius:10px;
-transition:.25s;
-box-shadow:0 10px 25px rgba(0,0,0,.35);
 text-decoration:none;
 color:white;
-}
-
-.card:hover{
-transform:translateY(-6px);
-box-shadow:0 20px 40px rgba(0,0,0,.7);
 }
 
 .card img{
@@ -276,9 +244,7 @@ Carmine D'Alise
 <h1>Digital Systems Ecosystem</h1>
 
 <p>
-Carmine D'Alise — Digital Experience & Governance Systems.
-Bridging cruise operations, CMS governance, guest platforms,
-digital signage and hospitality technology environments.
+Carmine D'Alise — Digital Experience & Governance Systems bridging cruise operations, CMS governance and hospitality platforms.
 </p>
 
 <a class="button" href="#systems">Explore Systems</a>
@@ -310,12 +276,12 @@ digital signage and hospitality technology environments.
 
 <div class="architecture">
 
-<div class="arch-card"><h3>Guest Layer</h3><p>Mobile apps, IPTV and guest interfaces.</p></div>
+<div class="arch-card"><h3>Guest Layer</h3><p>Mobile apps and IPTV guest interfaces.</p></div>
 <div class="arch-card"><h3>Content Layer</h3><p>CMS governance controlling publishing workflows.</p></div>
-<div class="arch-card"><h3>Experience Layer</h3><p>Digital signage and onboard media systems.</p></div>
-<div class="arch-card"><h3>Operations Layer</h3><p>Workflow tools supporting crew coordination.</p></div>
+<div class="arch-card"><h3>Experience Layer</h3><p>Digital signage and onboard media platforms.</p></div>
+<div class="arch-card"><h3>Operations Layer</h3><p>Crew coordination and workflow tools.</p></div>
 <div class="arch-card"><h3>Data Layer</h3><p>Analytics and monitoring platforms.</p></div>
-<div class="arch-card"><h3>Cloud Layer</h3><p>Deployment infrastructure enabling scalable ecosystems.</p></div>
+<div class="arch-card"><h3>Cloud Layer</h3><p>Scalable infrastructure and deployments.</p></div>
 
 </div>
 
@@ -365,10 +331,6 @@ digital signage and hospitality technology environments.
 
 <h2 class="section-title">Mediterranean Cruise Destinations</h2>
 
-<p style="text-align:center;color:#cbd5e1;">
-Interactive map of Mediterranean cruise ports.
-</p>
-
 <div id="mapContainer"></div>
 
 </section>
@@ -392,8 +354,7 @@ Interactive map of Mediterranean cruise ports.
 <h2 class="section-title">About</h2>
 
 <p style="text-align:center;max-width:700px;margin:auto;color:#cbd5e1;">
-Senior Digital Systems Leader with 20+ years of experience across
-cruise operations, CMS governance, digital signage and hospitality platforms.
+Senior Digital Systems Leader with 20+ years of experience across cruise operations, CMS governance, digital signage and hospitality platforms.
 </p>
 
 </section>
@@ -407,41 +368,24 @@ cruise operations, CMS governance, digital signage and hospitality platforms.
 
 <script>
 
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add("visible");
-}
-});
-});
-
-document.querySelectorAll("section").forEach(sec=>observer.observe(sec));
-
 document.addEventListener("DOMContentLoaded",()=>{
 
 const map=L.map('mapContainer').setView([41.5,12.5],4);
 
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
-maxZoom:18
-}).addTo(map);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18}).addTo(map);
 
 const ports=[
-{name:"Barcelona",coords:[41.3851,2.1734],video:"https://www.youtube.com/embed/n6kDGHPseNc"},
-{name:"Palma de Mallorca",coords:[39.5696,2.6502],video:"https://www.youtube.com/embed/DANi1zlzXtg"},
-{name:"Rome",coords:[41.9028,12.4964],video:"https://www.youtube.com/embed/I6D_WXXDE0o"},
-{name:"Split",coords:[43.5081,16.4402],video:"https://www.youtube.com/embed/XkoI9IjtZJQ"},
-{name:"Dubrovnik",coords:[42.6507,18.0944],video:"https://www.youtube.com/embed/Wq83nqRWJKI"},
-{name:"Athens",coords:[37.9838,23.7275],video:"https://www.youtube.com/embed/wYj6RxBbagk"},
-{name:"Tarragona",coords:[41.1189,1.2445],video:"https://www.youtube.com/embed/k0iDrOoFsoc"}
+{name:"Barcelona",coords:[41.3851,2.1734]},
+{name:"Palma de Mallorca",coords:[39.5696,2.6502]},
+{name:"Rome",coords:[41.9028,12.4964]},
+{name:"Split",coords:[43.5081,16.4402]},
+{name:"Dubrovnik",coords:[42.6507,18.0944]},
+{name:"Athens",coords:[37.9838,23.7275]},
+{name:"Tarragona",coords:[41.1189,1.2445]}
 ];
 
 ports.forEach(port=>{
-L.marker(port.coords)
-.addTo(map)
-.bindPopup(`
-<h3>${port.name}</h3>
-<iframe width="250" height="140" src="${port.video}" frameborder="0" allowfullscreen></iframe>
-`);
+L.marker(port.coords).addTo(map).bindPopup(port.name);
 });
 
 });

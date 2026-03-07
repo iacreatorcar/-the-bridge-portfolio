@@ -2,51 +2,49 @@
 const title = "The Bridge | Digital Systems Ecosystem";
 
 const systems = [
+
 {
 title:"HotelFlow",
 description:"Hospitality workflow platform for operational coordination.",
 image:"/assets/images/hotelflow.jpg",
 link:"https://hotelflow-manager.vercel.app"
 },
+
 {
 title:"Mini Jira",
 description:"Operational ticketing system for technical teams.",
 image:"/assets/images/jira-demo.jpg",
 link:"https://mini-jira-demo.vercel.app"
 },
+
 {
 title:"CMS Governance Simulator",
 description:"Interactive CMS publishing workflow simulator.",
 image:"/assets/images/cms-quiz.jpg",
 link:"https://iacreatorcar.github.io/cms-quiz/"
 },
+
 {
 title:"Symphony Spa",
 description:"Cruise UX concept for spa discovery and booking.",
 image:"/assets/images/Symphony-Luxury.jpg",
 link:"https://symphony-spa.vercel.app"
 },
+
 {
 title:"Nexus XPanel",
-description:"Control panel for onboard digital systems: IPTV, music, navigation and automation.",
+description:"Control panel for onboard digital systems.",
 image:"/assets/images/nexus.jpg",
 link:"https://nexus-xpanel.vercel.app"
 },
+
 {
 title:"Sea Services",
-description:"Cruise internal service platform connecting guest requests, operations and crew systems.",
+description:"Cruise internal service platform connecting guest requests and crew systems.",
 image:"/assets/images/sea-services.jpg",
 link:"https://sea-services.emergent.host"
 }
-];
 
-const engine = [
-{title:"UX & Digital Experience",description:"User journey design for cruise and hospitality platforms."},
-{title:"CMS Governance",description:"Structured content lifecycle and publishing workflows."},
-{title:"Digital Signage & IPTV",description:"Guest-facing media systems and onboard information channels."},
-{title:"Workflow Platforms",description:"Operational tools for team coordination and task tracking."},
-{title:"Cloud & Deployment",description:"Modern deployment workflows using Vercel and container environments."},
-{title:"AI & Automation",description:"Exploring AI-assisted tools and automation for digital ecosystems."}
 ];
 ---
 
@@ -56,12 +54,12 @@ const engine = [
 
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
 <title>{title}</title>
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-<!-- Microsoft Clarity -->
 <script>
 (function(c,l,a,r,i,t,y){
 c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -72,6 +70,8 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 
 <style>
 
+/* GLOBAL */
+
 body{
 margin:0;
 font-family:system-ui;
@@ -80,24 +80,47 @@ color:white;
 scroll-behavior:smooth;
 }
 
-/* NAV */
+/* NAVBAR */
 
 nav{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 40px;
+padding:18px 40px;
 background:#020617;
 position:sticky;
 top:0;
 z-index:100;
-box-shadow:0 10px 20px rgba(0,0,0,.4);
+box-shadow:0 10px 30px rgba(0,0,0,.4);
 }
 
-nav a{
+.brand{
+font-weight:700;
+font-size:18px;
+}
+
+.bridge{
+color:#facc15;
+}
+
+.nav-links{
+display:flex;
+gap:12px;
+}
+
+.nav-links a{
+background:#1e293b;
+padding:8px 16px;
+border-radius:20px;
 color:#e2e8f0;
 text-decoration:none;
-margin-left:20px;
+font-size:14px;
+transition:.2s;
+}
+
+.nav-links a:hover{
+background:#facc15;
+color:#020617;
 }
 
 /* HERO */
@@ -109,7 +132,7 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding:20px;
+padding:40px;
 background:linear-gradient(180deg,#0f172a,#1e293b);
 }
 
@@ -119,32 +142,33 @@ margin-bottom:20px;
 }
 
 .hero p{
-max-width:720px;
+max-width:700px;
 color:#cbd5e1;
 }
 
+/* BUTTON */
+
 .button{
-margin-top:30px;
 background:#facc15;
 color:#020617;
-padding:14px 28px;
+padding:12px 22px;
 border-radius:8px;
 text-decoration:none;
 font-weight:600;
 }
 
-/* SECTIONS */
+/* SECTION */
 
 section{
-padding:100px 20px;
+padding:90px 20px;
 max-width:1100px;
 margin:auto;
 }
 
 .section-title{
 text-align:center;
-margin-bottom:50px;
 font-size:2rem;
+margin-bottom:50px;
 }
 
 /* GRID */
@@ -155,12 +179,19 @@ grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:25px;
 }
 
+/* CARDS */
+
 .card{
 background:#1e293b;
 padding:15px;
 border-radius:10px;
 text-decoration:none;
 color:white;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-6px);
 }
 
 .card img{
@@ -168,41 +199,45 @@ width:100%;
 border-radius:8px;
 }
 
-/* ENGINE */
-
-.engine-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-}
-
-.engine-card{
-background:#1e293b;
-padding:20px;
-border-radius:10px;
-}
-
-/* ARCHITECTURE */
-
-.architecture{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-}
-
-.arch-card{
-background:#1e293b;
-padding:25px;
-border-radius:10px;
-border-left:4px solid #facc15;
-}
-
 /* MAP */
 
 #mapContainer{
-height:520px;
+height:500px;
 border-radius:12px;
 margin-top:40px;
+}
+
+/* TECHNICAL PORTFOLIO */
+
+.portfolio-card{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+align-items:center;
+background:#1e293b;
+padding:30px;
+border-radius:12px;
+}
+
+.portfolio-card img{
+width:100%;
+border-radius:10px;
+}
+
+.portfolio-buttons{
+margin-top:20px;
+display:flex;
+gap:16px;
+align-items:center;
+flex-wrap:wrap;
+}
+
+.button-outline{
+border:2px solid #facc15;
+padding:10px 20px;
+border-radius:8px;
+color:#facc15;
+text-decoration:none;
 }
 
 /* FOOTER */
@@ -214,6 +249,14 @@ background:#020617;
 color:#94a3b8;
 }
 
+@media(max-width:800px){
+
+.portfolio-card{
+grid-template-columns:1fr;
+}
+
+}
+
 </style>
 
 </head>
@@ -222,68 +265,32 @@ color:#94a3b8;
 
 <nav>
 
-<div style="font-weight:700;">
-Carmine D'Alise
-<span style="color:#facc15;">| The Bridge</span>
+<div class="brand">
+Carmine D'Alise |
+<span class="bridge">The Bridge</span>
 </div>
 
-<div>
-<a href="#engine">Engine</a>
-<a href="#architecture">Architecture</a>
+<div class="nav-links">
+
 <a href="#systems">Systems</a>
-<a href="#destinations">Destinations</a>
+<a href="#destinations">Media</a>
 <a href="#map">Map</a>
-<a href="#governance">Governance</a>
-<a href="#about">About</a>
+<a href="#technical">Portfolio</a>
+
 </div>
 
 </nav>
 
 <section class="hero">
 
-<h1>Digital Systems Ecosystem</h1>
+<h1>The Bridge</h1>
 
 <p>
-Carmine D'Alise — Digital Experience & Governance Systems bridging cruise operations, CMS governance and hospitality platforms.
+Digital Systems Ecosystem connecting cruise technology,
+digital governance and operational platforms.
 </p>
 
 <a class="button" href="#systems">Explore Systems</a>
-
-</section>
-
-<section id="engine">
-
-<h2 class="section-title">Platform Engine</h2>
-
-<div class="engine-grid">
-
-{engine.map(item => (
-
-<div class="engine-card">
-<h4>{item.title}</h4>
-<p>{item.description}</p>
-</div>
-
-))}
-
-</div>
-
-</section>
-
-<section id="architecture">
-
-<h2 class="section-title">Digital Architecture</h2>
-
-<div class="architecture">
-
-<div class="arch-card"><h3>Guest Layer</h3><p>Mobile apps and IPTV guest interfaces.</p></div>
-<div class="arch-card"><h3>Content Layer</h3><p>CMS governance controlling publishing workflows.</p></div>
-<div class="arch-card"><h3>Experience Layer</h3><p>Digital signage and onboard media platforms.</p></div>
-<div class="arch-card"><h3>Operations Layer</h3><p>Crew coordination and workflow tools.</p></div>
-<div class="arch-card"><h3>Data Layer</h3><p>Analytics and monitoring platforms.</p></div>
-<div class="arch-card"><h3>Cloud Layer</h3><p>Scalable infrastructure and deployments.</p></div>
-
-</div>
 
 </section>
 
@@ -300,6 +307,7 @@ Carmine D'Alise — Digital Experience & Governance Systems bridging cruise oper
 <img src={system.image} alt={system.title}/>
 
 <h4>{system.title}</h4>
+
 <p>{system.description}</p>
 
 </a>
@@ -316,11 +324,16 @@ Carmine D'Alise — Digital Experience & Governance Systems bridging cruise oper
 
 <div class="grid">
 
-<div class="card"><iframe width="100%" height="160" src="https://www.youtube.com/embed/DANi1zlzXtg"></iframe><h4>Palma de Mallorca</h4></div>
+<div class="card"><iframe width="100%" height="160" src="https://www.youtube.com/embed/DANi1zlzXtg"></iframe><h4>Palma</h4></div>
+
 <div class="card"><iframe width="100%" height="160" src="https://www.youtube.com/embed/I6D_WXXDE0o"></iframe><h4>Rome</h4></div>
+
 <div class="card"><iframe width="100%" height="160" src="https://www.youtube.com/embed/n6kDGHPseNc"></iframe><h4>Barcelona</h4></div>
+
 <div class="card"><iframe width="100%" height="160" src="https://www.youtube.com/embed/XkoI9IjtZJQ"></iframe><h4>Split</h4></div>
+
 <div class="card"><iframe width="100%" height="160" src="https://www.youtube.com/embed/Wq83nqRWJKI"></iframe><h4>Dubrovnik</h4></div>
+
 <div class="card"><iframe width="100%" height="160" src="https://www.youtube.com/embed/k0iDrOoFsoc"></iframe><h4>Tarragona</h4></div>
 
 </div>
@@ -329,39 +342,51 @@ Carmine D'Alise — Digital Experience & Governance Systems bridging cruise oper
 
 <section id="map">
 
-<h2 class="section-title">Mediterranean Cruise Destinations</h2>
+<h2 class="section-title">Mediterranean Cruise Map</h2>
 
 <div id="mapContainer"></div>
 
 </section>
 
-<section id="governance">
+<section id="technical">
 
-<h2 class="section-title">Digital Governance</h2>
+<h2 class="section-title">Technical Portfolio</h2>
 
-<ul style="max-width:600px;margin:auto;line-height:1.8">
-<li>Content lifecycle governance</li>
-<li>Cross-department approval workflows</li>
-<li>Metadata & asset management</li>
-<li>Publishing timeline validation</li>
-<li>Multilingual content control</li>
-</ul>
+<div class="portfolio-card">
 
-</section>
+<img src="/assets/images/technical-portfolio.jpg">
 
-<section id="about">
+<div>
 
-<h2 class="section-title">About</h2>
+<h3>Technical Systems Portfolio</h3>
 
-<p style="text-align:center;max-width:700px;margin:auto;color:#cbd5e1;">
-Senior Digital Systems Leader with 20+ years of experience across cruise operations, CMS governance, digital signage and hospitality platforms.
+<p>
+Download the full engineering portfolio documenting AV systems,
+network infrastructure and cruise digital platforms.
 </p>
+
+<div class="portfolio-buttons">
+
+<a href="/docs/carmine-dalise-technical-portfolio.pdf" class="button" target="_blank">
+Download PDF
+</a>
+
+<a href="https://www.canva.com/design/DAGFNejoyL4/5MlHThgTRUWJmlbR2o-33g/edit" class="button-outline" target="_blank">
+View Portfolio
+</a>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 <footer>
 
 <p>© Carmine D'Alise</p>
+
 <p>The Bridge — Digital Systems Ecosystem</p>
 
 </footer>
@@ -375,17 +400,16 @@ const map=L.map('mapContainer').setView([41.5,12.5],4);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18}).addTo(map);
 
 const ports=[
-{name:"Barcelona",coords:[41.3851,2.1734]},
-{name:"Palma de Mallorca",coords:[39.5696,2.6502]},
-{name:"Rome",coords:[41.9028,12.4964]},
-{name:"Split",coords:[43.5081,16.4402]},
-{name:"Dubrovnik",coords:[42.6507,18.0944]},
-{name:"Athens",coords:[37.9838,23.7275]},
-{name:"Tarragona",coords:[41.1189,1.2445]}
+[41.3851,2.1734],
+[39.5696,2.6502],
+[41.9028,12.4964],
+[43.5081,16.4402],
+[42.6507,18.0944],
+[37.9838,23.7275]
 ];
 
-ports.forEach(port=>{
-L.marker(port.coords).addTo(map).bindPopup(port.name);
+ports.forEach(coords=>{
+L.marker(coords).addTo(map);
 });
 
 });
@@ -393,4 +417,5 @@ L.marker(port.coords).addTo(map).bindPopup(port.name);
 </script>
 
 </body>
+
 </html>
